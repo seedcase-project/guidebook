@@ -1,0 +1,48 @@
+---
+title: "Guidebook"
+toc: false
+about:
+  id: hero-heading
+  template: jolla
+  image: home.svg
+  image-title: "Image from Storyset"
+  image-alt: Illustration of a ...
+  image-shape: rectangle
+  image-width: 25em
+---
+
+<!-- This style is to make the image fit more nicely on the screen. -->
+```{=html}
+<style>
+#quarto-content {
+  padding-top: 0;
+}
+div.quarto-about-jolla {
+  margin-top: 0%;
+}
+div.quarto-about-jolla .about-image {
+  margin-bottom: -5%;
+}
+</style>
+```
+
+::: {#hero-heading}
+Guidebook is about...
+:::
+
+::: {.callout-tip appearance="default"}
+These pages are structured follow the [Diataxis](https://diataxis.fr)
+how-to guide format.
+:::
+
+## Who you are as the reader
+
+We've written these documents considering a few people in mind who we
+think will read the documents:
+
+-   **New contributors/team members**: ...
+-   **Research software/data engineers**: ...
+-   **Managers or leaders**: ...
+-   **Research or development operations personnel**: ...
+
+## Image from [Storyset](https://storyset.com/). {.appendix}

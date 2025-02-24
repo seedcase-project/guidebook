@@ -1,0 +1,25 @@
+project:
+  type: seedcase-theme
+
+website:
+  title: "Guidebook"
+  site-url: "https://guidebook.seedcase-project.org/"
+  repo-url: "https://github.com/seedcase-project/guidebook"
+  navbar:
+    pinned: true
+    left:
+      - text: "Welcome"
+        href: index.qmd
+
+format:
+  seedcase-html:
+    include-before-body:
+      - "includes/site-counter.html"
+
+editor:
+  markdown:
+    wrap: 72
+    canonical: true
+
+execute:
+  echo: false
