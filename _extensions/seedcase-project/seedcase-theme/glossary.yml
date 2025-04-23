@@ -11,8 +11,7 @@ data package: |
 data resource: |
   A single piece of data, such as a table or data file, and its properties, included
   in a data package. It contains the actual data, documented following the Data Package
-  standard. It consists of the raw data, the data saved in parquet format, as well
-  as its properties.
+  standard.
 properties: |
   Metadata that describes the entire data package and each of the data resources
   within it. At the package level, the properties include the package name and
