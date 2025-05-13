@@ -22,6 +22,9 @@ book:
     :::
   chapters:
     - index.qmd
+    - part: "Operations"
+      chapters:
+        - operations/security.qmd
   page-footer:
     center:
       - text: "License: CC BY 4.0 {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}}"
