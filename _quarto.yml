@@ -1,18 +1,34 @@
 project:
-  type: seedcase-theme
+  type: book
+  # pre-render: quarto render LICENSE.md --to html
 
-website:
-  title: "Guidebook"
-  site-url: "https://guidebook.seedcase-project.org/"
+book:
+  title: "Guidebook to doing research software engineering in a team-setting"
+  subtitle: "A living document for how we work in the Seedcase project"
+  search:
+    type: textbox
+  author:
+    - "Luke W. Johnston"
+    - "Signe Kirk Brødbæk"
+    - "Kristiane Beicher"
+    - "Marton Vago"
+  date: last-modified
   repo-url: "https://github.com/seedcase-project/guidebook"
-  navbar:
-    pinned: true
-    left:
-      - text: "Welcome"
-        href: index.qmd
+  site-url: "https://guidebook.seedcase-project.org/"
+  body-header: |
+    ::: {.callout-note appearance="default"}
+    This guidebook is written following the [diátaxis](https://diataxis.fr/how-to-guides/) "how-to guide" style.
+    And because this document reflects how we work in the Seedcase Project, it is living and constantly evolving. It won't ever be in a state of "done".
+    :::
+  chapters:
+    - index.qmd
+  page-footer:
+    center:
+      - text: "License: CC BY 4.0 {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}}"
+        href: LICENSE.html
 
 format:
-  seedcase-html:
+  seedcase-theme-html:
     include-before-body:
       - "includes/site-counter.html"
 
@@ -20,6 +36,3 @@ editor:
   markdown:
     wrap: 72
     canonical: true
-
-execute:
-  echo: false
