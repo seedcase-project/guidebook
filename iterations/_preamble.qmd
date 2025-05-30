@@ -1,0 +1,9 @@
+::: callout-important
+We track our iterations' progress and tasks on GitHub with [this project
+board](https://github.com/orgs/seedcase-project/projects/18/).
+:::
+
+::: callout-tip
+It's good practice to assign a timekeeper to keep us on track and so we
+avoid spending too long on any one topic.
+:::
