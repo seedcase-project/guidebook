@@ -22,6 +22,12 @@ book:
     :::
   chapters:
     - index.qmd
+    - part: "Iterations"
+      chapters:
+        - iterations/index.qmd
+        #- iterations/start.qmd
+        #- iterations/during.qmd
+        #- iterations/end.qmd
     - part: "Operations"
       chapters:
         - operations/security.qmd
