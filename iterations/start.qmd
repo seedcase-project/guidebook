@@ -1,0 +1,52 @@
+# Start of an iteration
+
+{{< include _preamble.qmd >}}
+
+An iteration starts with a planning meeting at the start of each month.
+It should ideally be between 30-45 minutes. You as the team lead should
+already have prepared for and made a general plan for the iteration, so
+this meeting should not be used as a way for everyone to write out and
+list all the tasks needed. Rather, the main purpose of this meeting is
+to get everyone aligned on the aim and overall plan.
+
+This meeting should ideally *not* be held the same day as the previous
+iteration's debrief and retrospective meeting. Two intense meetings in a
+row tend to tire most humans out, and being tired is counterproductive
+for an effective meeting.
+
+::: callout-note
+A basic agenda for the meeting might be:
+
+-   Review and agree on the iteration aims and end date.
+-   Review the list of tasks already listed.
+-   Brainstorm and add any other issues as needed.
+:::
+
+### Before meeting
+
+In general, only you as the team lead are required to prepare for the
+planning meeting. Before the planning meeting, you need to refine (or
+create) the iteration aim and move any existing tasks (GitHub Issues)
+into the iteration that are relevant to the aim of the iteration. An
+iteration aim should be something that is achievable within the
+iteration timeframe.
+
+You will also create any issues that are missing from the current list
+of issues. While making issues, keep them as small as is reasonable and
+as descriptive and targeted as possible.
+
+Other team members can optionally review the aim and output of the
+iteration board, review the list of issues already listed, and write out
+any potential issues as needed to complete the iteration aim.
+
+### During meeting
+
+During the meeting, someone will share their screen (if virtual) and the
+team will go through the tasks on the board together. Everyone will
+discuss and decide or agree on the iteration goal (the "increment" or
+"milestone").
+
+Then, everyone will briefly review the current list of tasks on the
+board and brainstorm any other tasks that are needed. You'll all then
+agree on the number of tasks in the iteration as well as the
+distribution of priority labels of the tasks.
