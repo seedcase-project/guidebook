@@ -18,6 +18,7 @@ for an effective meeting.
 A basic agenda for the meeting might be:
 
 -   Review and agree on the iteration aims and end date.
+-   Review the roadmap
 -   Review the list of tasks already listed.
 -   Brainstorm and add any other issues as needed.
 :::
