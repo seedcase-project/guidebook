@@ -16,8 +16,6 @@ A basic agenda is:
     some other form of progress).
 -   Evaluate the iteration aim and review how you all did and what
     you've all (briefly) accomplished.
--   Go over what you've all accomplished and how you all felt the team
-    did (including struggles).
 -   Do a retrospective reflecting on what each of you think everyone
     should keep doing and what you all should stop doing or improve on,
     as well as how you felt you all did and what struggles or challenges
