@@ -7,7 +7,7 @@ The iteration's end is a meeting to debrief and do a
 on how things went during the iteration. These should be between 1-2
 hours. There generally isn't anything to prepare for, aside from
 considering things that worked well and things that could be improved on
-for the iteration.
+for the iteration, unless a team member will do a demo. 
 
 ::: callout-note
 A basic agenda is:
@@ -32,12 +32,12 @@ the team lead would ideally ask if anyone wants to do the demo before
 the meeting, so that the person can be a bit prepared for it (or at
 least, mentally prepared).
 
-For the retrospective, ideally you all use some type of real-time
+For the retrospective, ideally the team uses some type of real-time
 collaborative note-taking system, such as
 [Figma](https://www.figma.com/). This just makes it easier to write down
 notes while also being able to see what everyone else has written too.
 
-During the retrospective, write out all the things that you felt worked
+During the retrospective, set a timer (for example 4 minutes) and write out all the things that you felt worked
 well or to keep doing and what to improve on or stop doing. Include
 things that are more personal to you, but also to the team as a whole.
 For example, include any personal barriers or struggles you've had
@@ -49,7 +49,7 @@ annoyed or where there was some friction or tension.
 
 Once everyone has written down their notes, move them into the "worked
 well" and "improve on" sections. Then, you each read out your notes and
-share a bit more about them. Afterwards, you can group them into common
+share a bit more about them. Afterwards, everyone helps grouping them into common
 themes or topics. Then you as a team go over them and try to identify if
 there are any action items that can be taken for any of the topics.
 
