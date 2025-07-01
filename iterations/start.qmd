@@ -1,0 +1,65 @@
+# Start of an iteration
+
+{{< include _preamble.qmd >}}
+
+An iteration starts with a planning meeting at the start of each month.
+It should ideally be between 30-45 minutes. If you are the team lead,
+you should already have prepared for and made a general plan for the
+iteration, so this meeting should not be used as a way for everyone to
+write out and list all the tasks needed. Rather, the main purpose of
+this meeting is to get everyone aligned on the aim(s) and overall plan.
+
+This meeting should ideally *not* be held the same day as the previous
+iteration's debrief and retrospective meeting. Two intense meetings in a
+row tend to tire most humans out, and being tired is counterproductive
+for an effective meeting.
+
+::: callout-note
+A basic agenda could be:
+
+-   Review and agree on the iteration aims and end date.
+-   Review the longer-term roadmap
+-   Review the list of tasks on the project board for this iteration.
+-   Brainstorm and add any other issues as needed.
+:::
+
+### Before meeting
+
+In general, if you are not the team lead, you don't really need to
+prepare for this meeting. If you are the team lead though, you do need
+to prepare. So if you are the team lead:
+
+-   Before the planning meeting you need to refine (or create) the
+    iteration aim(s) and move any existing tasks (GitHub Issues) into
+    the iteration that are relevant to the aim(s) of the iteration. An
+    iteration aim (or aims) should be something that is achievable
+    within the iteration timeframe. The iteration should ideally have
+    only a few main, larger aims, but can include a few more smaller
+    aims.
+
+-   create any issues that are missing from the current list of issues.
+    While making issues, keep them as small as is reasonable and as
+    descriptive and targeted as possible.
+
+If you are not the team lead, you can optionally review the aim(s) and
+output of the iteration board, review the list of issues already listed,
+and write out any potential issues as needed to complete the iteration
+aim.
+
+### During meeting
+
+During the meeting, someone will share their screen (if virtual) and the
+team will go through the tasks on the board together. Ideally, the team
+lead would be the one faciliatating the meeting, but it can be anyone.
+
+You all will go over the roadmap or the longer term plan, to keep
+everyone aligned and updated. Then, you all will discuss and decide or
+agree on the iteration aim(s) (the "increment" or "milestone").
+
+Finally, everyone will briefly review the current list of tasks on the
+board and brainstorm any other tasks that are needed. You'll agree on
+the number of tasks in the iteration as well as the distribution of
+priority labels of the tasks.
+
+After that, you're done! Remember, this meeting is not meant to take up
+too much time.
