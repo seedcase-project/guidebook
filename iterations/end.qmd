@@ -7,7 +7,7 @@ The iteration's end is a meeting to debrief and do a
 on how things went during the iteration. These should be between 1-2
 hours. There generally isn't anything to prepare for, aside from
 considering things that worked well and things that could be improved on
-for the iteration, unless a team member will do a demo. 
+for the iteration, unless a team member will do a demo.
 
 ::: callout-note
 A basic agenda is:
@@ -25,33 +25,39 @@ A basic agenda is:
 :::
 
 During the debrief and retrospective meeting, it's helpful and often
-quite insightful to include some type of demo or showcase of what you've
-done during the iteration. This can be a demo of the product or
-something learned or achieved that relates to the iteration aim. You as
-the team lead would ideally ask if anyone wants to do the demo before
-the meeting, so that the person can be a bit prepared for it (or at
-least, mentally prepared).
+quite insightful to include some type of demo or showcase of what the
+team has done during the iteration. This can be a demo of the product or
+something learned or achieved that relates to the iteration aim. If you
+are the team lead, you would ideally ask if anyone wants to do the demo
+before the meeting, so that the person can be a bit prepared for it (or
+at least, mentally prepared).
 
 For the retrospective, ideally the team uses some type of real-time
 collaborative note-taking system, such as
 [Figma](https://www.figma.com/). This just makes it easier to write down
 notes while also being able to see what everyone else has written too.
 
-During the retrospective, set a timer (for example 4 minutes) and write out all the things that you felt worked
-well or to keep doing and what to improve on or stop doing. Include
-things that are more personal to you, but also to the team as a whole.
-For example, include any personal barriers or struggles you've had
-during the iteration or any challenges that you felt the team faced. It
-helps to write down as much as possible, without thinking about
+During the retrospective, set a timer (for example 4 minutes) and write
+out all the things that you felt worked well or to keep doing and what
+to improve on or stop doing. Include things that are more personal to
+you, but also to the team as a whole. For example, include any personal
+barriers or struggles you had during the iteration or any challenges
+that you felt the team faced. If you ever felt any source of tension or
+friction in how you worked or did things, this is an incredibly valuable
+source of information for the retrospective!
+
+It helps to write down as much as possible, without thinking about
 solutions or action items. Write down things that gave you joy or made
 you feel good, as well as things that made you feel frustrated or
 annoyed or where there was some friction or tension.
 
 Once everyone has written down their notes, move them into the "worked
 well" and "improve on" sections. Then, you each read out your notes and
-share a bit more about them. Afterwards, everyone helps grouping them into common
-themes or topics. Then you as a team go over them and try to identify if
-there are any action items that can be taken for any of the topics.
+share a bit more about them. Afterwards, everyone helps grouping them
+into common themes or topics. Then everyone would go over them and try
+to identify if there are any action items that can be taken for any of
+the topics.
 
-If there are any action items, you as the team lead need to add these
-actions items as issues to track and complete them.
+If there are any action items and if you are the team lead, you need to
+add these actions items as issues to track and complete them. Ideally
+add them as soon as the retrospective is done.
