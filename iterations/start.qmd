@@ -15,11 +15,11 @@ row tend to tire most humans out, and being tired is counterproductive
 for an effective meeting.
 
 ::: callout-note
-A basic agenda for the meeting might be:
+A basic agenda could be:
 
 -   Review and agree on the iteration aims and end date.
 -   Review the longer-term roadmap
--   Review the list of tasks already listed.
+-   Review the list of tasks on the project board for this iteration.
 -   Brainstorm and add any other issues as needed.
 :::
 
@@ -30,7 +30,7 @@ planning meeting. Before the planning meeting, you need to refine (or
 create) the iteration aim and move any existing tasks (GitHub Issues)
 into the iteration that are relevant to the aim of the iteration. An
 iteration aim should be something that is achievable within the
-iteration timeframe.
+iteration timeframe. The aim can also include several smaller aims. 
 
 You will also create any issues that are missing from the current list
 of issues. While making issues, keep them as small as is reasonable and
@@ -44,7 +44,7 @@ any potential issues as needed to complete the iteration aim.
 
 During the meeting, someone will share their screen (if virtual) and the
 team will go through the tasks on the board together. Everyone will
-discuss and decide or agree on the iteration goal (the "increment" or
+discuss and decide or agree on the iteration aim(s) (the "increment" or
 "milestone").
 
 Then, everyone will briefly review the current list of tasks on the
