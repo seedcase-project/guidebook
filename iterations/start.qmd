@@ -30,7 +30,7 @@ planning meeting. Before the planning meeting, you need to refine (or
 create) the iteration aim and move any existing tasks (GitHub Issues)
 into the iteration that are relevant to the aim of the iteration. An
 iteration aim should be something that is achievable within the
-iteration timeframe. The aim can also include several smaller aims. 
+iteration timeframe. The aim can also include several smaller aims.
 
 You will also create any issues that are missing from the current list
 of issues. While making issues, keep them as small as is reasonable and
