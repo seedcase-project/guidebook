@@ -26,6 +26,9 @@ book:
       chapters:
         - iterations/start.qmd
         - iterations/end.qmd
+    - part: "Python"
+      chapters:
+        - python/tests.qmd
     - part: "Operations"
       chapters:
         - operations/security.qmd
