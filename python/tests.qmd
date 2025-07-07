@@ -5,14 +5,14 @@ description: "Creating and writing tests for Python packages"
 
 Creating tests for your Python code is essential to ensure that it works
 as expected and to catch any bugs or issues early in the development
-process. This page will guide you through on making tests for your
+process. This page will guide you through making tests for your
 Python package, including what to test, how to structure your tests, and
 how to use [pytest](https://docs.pytest.org/en/stable/) for testing.
 
 ## When to write tests
 
 Writing tests is a powerful way for you to know what your code is doing
-and if its doing what you expect. And while you are completely free (and
+and if it's doing what you expect. And while you are completely free (and
 encouraged) to write tests at any time for any functionality, the only
 tests you *must* write and commit to the Git repository are those for
 functionality that is public (exposed to users) and not for internal or
@@ -25,7 +25,7 @@ The generally
 also agree with this principle, as it helps keep the codebase smaller,
 more maintainable, and focused on what the package is designed to do. In
 particular, it allows you as the developer to relatively easily refactor
-internal code without having to also update tests for that internal
+internal code without having to also update tests for the internal
 functionality that you are modifying.
 :::
 
@@ -68,9 +68,9 @@ that contains public functionality in the `src/` folder. So each test
 file should be named `test_<name>.py`, where `<name>` is the name of the
 Python script with the public functionality. Following this naming
 convention makes it easier to do a cycle of writing and testing when
-using IDEs like [VS Code](https://code.visualstudio.com/) as their
-testing tools will be better able to find and run only those tests for
-the file you are working in.
+using IDEs like [VS Code](https://code.visualstudio.com/), as their
+testing tools will be better able to find and run only the tests for
+the file you are working on.
 
 ::: callout-tip
 For example, let's say you have a package called `math` with a script
@@ -111,9 +111,9 @@ tests, called **given, when, then**:
     (if needed) and any other extra conditions that are needed for the
     test to work. This might be where you create the `expected` output
     that you want to check against.
-2.  When: Call the function or method being tested. This would be the
+2.  When: Call the function or method being tested. This would return the
     `actual` output.
-3.  Then: Check that output of the function or method (`actual`) is as
+3.  Then: Check that the output of the function or method (`actual`) is as
     expected (the `expected` output). This is where you use the `assert`
     statement to check that the output is what you expect it to be.
 
@@ -145,11 +145,11 @@ assert actual == expected
 
 If the tests are short and very simple, you don't have to use these sections
 explicitly, meaning you don't necessarily have to use comments. But as tests get longer and more complex, it can be
-helpful---for reviewers and your future self---to include them. This is the same
-reasoning for using docstrings for test functions. It can help
+helpful---for reviewers and your future self---to include them. The reasoning
+for using docstrings in test functions is the same. It can help
 explain what the test is doing and why it is important.
 
-In generally, it's best to keep the tests as simple as possible and only test one thing at a time.
+In general, it's best to keep the tests as simple as possible and only test one thing at a time.
 If you need to test multiple things, write multiple tests.
 
 ::: callout-tip
@@ -182,7 +182,7 @@ normally need to tell pytest that the package is a "src" package by
 using the `--import-mode=importlib` option when running pytest or by
 setting the option in the `pytest.ini` configuration file. However, the
 [`template-python-package`](https://github.com/seedcase-project/template-python-package)
-already has this option set up in the `pytest.ini` file, so you don't
+already has this option set in the `pytest.ini` file, so you don't
 need to do anything different when running the tests with the commands
 above.
 :::
