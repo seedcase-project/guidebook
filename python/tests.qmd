@@ -5,18 +5,18 @@ description: "Creating and writing tests for Python packages"
 
 Creating tests for your Python code is essential to ensure that it works
 as expected and to catch any bugs or issues early in the development
-process. This page will guide you through making tests for your
-Python package, including what to test, how to structure your tests, and
-how to use [pytest](https://docs.pytest.org/en/stable/) for testing.
+process. This page will guide you through making tests for your Python
+package, including what to test, how to structure your tests, and how to
+use [pytest](https://docs.pytest.org/en/stable/) for testing.
 
 ## When to write tests
 
 Writing tests is a powerful way for you to know what your code is doing
-and if it's doing what you expect. And while you are completely free (and
-encouraged) to write tests at any time for any functionality, the only
-tests you *must* write and commit to the Git repository are those for
-functionality that is public (exposed to users) and not for internal or
-private functionality.
+and if it's doing what you expect. And while you are completely free
+(and encouraged) to write tests at any time for any functionality, the
+only tests you *must* write and commit to the Git repository are those
+for functionality that is public (exposed to users) and not for internal
+or private functionality.
 
 ::: callout-note
 The generally
@@ -69,8 +69,8 @@ file should be named `test_<name>.py`, where `<name>` is the name of the
 Python script with the public functionality. Following this naming
 convention makes it easier to do a cycle of writing and testing when
 using IDEs like [VS Code](https://code.visualstudio.com/), as their
-testing tools will be better able to find and run only the tests for
-the file you are working on.
+testing tools will be better able to find and run only the tests for the
+file you are working on.
 
 ::: callout-tip
 For example, let's say you have a package called `math` with a script
@@ -107,13 +107,14 @@ which pytest will report on. Use the following general structure for
 tests, called **given, when, then**:
 
 1.  Given: Set up the test data and any other necessary conditions. This
-    step isn't always required. This might be where you create the `expected` output
-    that you want to check against.
-2.  When: Call the function or method being tested. This would return the
-    `actual` output.
-3.  Then: Check that the output of the function or method (`actual`) is as
-    expected (the `expected` output). This is where you use the `assert`
-    statement to check that the output is what you expect it to be.
+    step isn't always required. This might be where you create the
+    `expected` output that you want to check against.
+2.  When: Call the function or method being tested. This would return
+    the `actual` output.
+3.  Then: Check that the output of the function or method (`actual`) is
+    as expected (the `expected` output). This is where you use the
+    `assert` statement to check that the output is what you expect it to
+    be.
 
 This is sometimes called ["arrange, act,
 assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
@@ -122,7 +123,7 @@ assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
 In our example of a `math` package and an `adding.py` script, the
 function might look like:
 
-```{.python, filename="src/math/adding.py"}
+``` {.python filename="src/math/adding.py"}
 def add(a, b):
     """Add two numbers together."""
     return a + b
@@ -130,7 +131,7 @@ def add(a, b):
 
 And the test for this function might look like:
 
-```{.python, filename="tests/test_adding.py"}
+``` {.python filename="tests/test_adding.py"}
 import pytest from math.adding
 import add
 
@@ -144,17 +145,20 @@ def test_add_two_numbers():
 ```
 :::
 
-If the tests are short and very simple, you don't have to use these sections
-explicitly, meaning you don't necessarily have to use comments. But as tests get longer and more complex, it can be
-helpful---for reviewers and your future self---to include them. The reasoning
-for using docstrings in test functions is the same. It can help
-explain what the test is doing and why it is important.
+If the tests are short and very simple, you don't have to use these
+sections explicitly, meaning you don't necessarily have to use comments.
+But as tests get longer and more complex, it can be helpful---for
+reviewers and your future self---to include them. The reasoning for
+using docstrings in test functions is the same. It can help explain what
+the test is doing and why it is important.
 
-In general, it's best to keep the tests as simple as possible and only test one thing at a time.
-If you need to test multiple things, write multiple tests.
+In general, it's best to keep the tests as simple as possible and only
+test one thing at a time. If you need to test multiple things, write
+multiple tests.
 
 ::: callout-tip
-It won't be covered in this guide, but you can avoid repeating yourself in tests by using [parameterized
+It won't be covered in this guide, but you can avoid repeating yourself
+in tests by using [parameterized
 tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to test
 multiple inputs and outputs with the same test function.
 :::
@@ -163,19 +167,20 @@ multiple inputs and outputs with the same test function.
 
 The
 [`template-python-package`](https://github.com/seedcase-project/template-python-package)
-includes a file called [`justfile`](https://just.systems/man/en/). This file contains "recipes"
-(commands) for many build and testing tasks. It includes a recipe for
-running the tests with pytest. You can see a list of the recipes,
-including the testing recipe, by running this command in the terminal:
+includes a file called [`justfile`](https://just.systems/man/en/). This
+file contains "recipes" (commands) for many build and testing tasks. It
+includes a recipe for running the tests with pytest. You can see a list
+of the recipes, including the testing recipe, by running this command in
+the terminal:
 
-``` {.bash, filename="Terminal"}
+``` {.bash filename="Terminal"}
 just
 ```
 
 You can also run the tests directly with pytest (via
 [uv](https://docs.astral.sh/uv/)) by running this command:
 
-```{.bash, filename="Terminal"}
+``` {.bash filename="Terminal"}
 # If pytest is installed in the virtual environment
 uv run pytest
 # Or if pytest is installed globally
@@ -188,7 +193,6 @@ normally need to tell pytest that the package is a "src" package by
 using the `--import-mode=importlib` option when running pytest or by
 setting the option in the `pytest.ini` configuration file. However, the
 [`template-python-package`](https://github.com/seedcase-project/template-python-package)
-already has this option set in the `pytest.ini` file, so you don't
-need to do anything different when running the tests with the commands
-above.
+already has this option set in the `pytest.ini` file, so you don't need
+to do anything different when running the tests with the commands above.
 :::
