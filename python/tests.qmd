@@ -118,26 +118,29 @@ tests, called **given, when, then**:
 This is sometimes called ["arrange, act,
 assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
 
-:::: callout-tip
+::: callout-tip
 In our example of a `math` package and an `adding.py` script, the
 function might look like:
 
-`{.python, filename="src/math/adding.py"} def add(a, b):     """Add two numbers together."""     return a + b`
+```{.python, filename="src/math/adding.py"}
+def add(a, b):
+    """Add two numbers together."""
+    return a + b
+```
 
 And the test for this function might look like:
 
-\`\`\`{.python, filename="tests/test_adding.py"} import pytest from
-math.adding import add def test_add_two_numbers(): """Test adding two
-numbers together.""" \# Given expected = 5
+```{.python, filename="tests/test_adding.py"}
+import pytest from math.adding
+import add
 
-```
-# When
-actual = add(2, 5)
-
-# Then
-assert actual == expected
-```
-
+def test_add_two_numbers():
+    """Test adding two numbers together."""
+    # Given expected = 5
+    # When
+    actual = add(2, 5)
+    # Then
+    assert actual == expected
 ```
 :::
 
@@ -172,7 +175,12 @@ just
 You can also run the tests directly with pytest (via
 [uv](https://docs.astral.sh/uv/)) by running this command:
 
-`{.bash, filename="Terminal"} # If pytest is installed in the virtual environment uv run pytest # Or if pytest is installed globally uvx pytest`
+```{.bash, filename="Terminal"}
+# If pytest is installed in the virtual environment
+uv run pytest
+# Or if pytest is installed globally
+uvx pytest
+```
 
 ::: callout-tip
 Because the package is structured with the `src/` folder, you would
@@ -184,4 +192,3 @@ already has this option set in the `pytest.ini` file, so you don't
 need to do anything different when running the tests with the commands
 above.
 :::
-::::
