@@ -78,9 +78,9 @@ called `src/math/adding.py`. The test file for that script would be
 called `tests/test_adding.py`. So it would look like this:
 
 ```
-maths/
+math/
 ├── src/
-│   └── maths/
+│   └── math/
 │       └── adding.py
 └── tests/
     └── test_adding.py
@@ -107,9 +107,7 @@ which pytest will report on. Use the following general structure for
 tests, called **given, when, then**:
 
 1.  Given: Set up the test data and any other necessary conditions. This
-    step isn't always required, as it is used to create the test data
-    (if needed) and any other extra conditions that are needed for the
-    test to work. This might be where you create the `expected` output
+    step isn't always required. This might be where you create the `expected` output
     that you want to check against.
 2.  When: Call the function or method being tested. This would return the
     `actual` output.
