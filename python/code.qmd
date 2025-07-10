@@ -301,10 +301,12 @@ to make it easier to import, you open the `__init__.py` file in the
 `internals/` folder and write it like:
 
 ``` {.python filename="src/health_data_check/internals/__init__.py"}
-# Import the `is.py` script by using the relative `.` import syntax.
+# Import the `is.py` script by using the relative
+# `.` import syntax.
 from .is import _is_data_object
 
-# Use `__all__` to explicitly define what is exported from this module.
+# Use `__all__` to explicitly define what is exported
+# from this module.
 __all__ = [
     "_is_data_object",
 ]
@@ -368,19 +370,24 @@ VS Code extension to automatically generate a skeleton structure for the
 docstrings.
 :::
 
+::: content-hidden
+Need to use `{{python}}` in example below because Quarto seems to interpret that
+as a code block. It renders fine though.
+:::
 ```` {.python filename="src/health_data_checks/check_heart_rate.py"}
 def check_heart_rate(data: dict) -> bool:
     """Check if the heart rate is within a normal range.
 
     Args:
-        data (dict): The data object containing the "heart_rate"
-            variable.
+        data (dict): The data object containing the
+            "heart_rate" variable.
 
     Returns:
-        bool: True if the heart rate is not normal, False otherwise.
+        bool: True if the heart rate is not normal,
+            False otherwise.
 
     Example:
-        ```{python}
+        ```{{python}}
         # Fake data
         data = {
             "heart_rate": 30,
