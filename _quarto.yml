@@ -28,6 +28,7 @@ book:
         - iterations/end.qmd
     - part: "Python"
       chapters:
+        - python/code.qmd
         - python/tests.qmd
     - part: "Operations"
       chapters:
