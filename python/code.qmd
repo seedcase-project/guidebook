@@ -1,0 +1,394 @@
+---
+title: "Writing Python code"
+description: "Guidelines on how to write and style Python code."
+---
+
+What Python code to write is based on the design you've created and
+isn't something that a guide can help with. However, *how* you write
+Python code *is* something that a guide can help with. This page is a
+guide through some common and recommended practices for writing Python
+code, that also includes lessons we've learned.
+
+## General coding style
+
+When writing Python code, you should follow a common and
+well-established style guide. The official style guide for Python is
+called [PEP 8](https://peps.python.org/pep-0008/) and it is a
+comprehensive guide on different aspects of writing Python code. So you
+should start with reading this guide to know some basics on the style of
+Python code.
+
+However, it doesn't cover everything. For additional style guidelines,
+there are several other guides you can refer to, but the one we
+recommend and use is the [Google Style
+Guide](https://google.github.io/styleguide/pyguide.html). This is the
+second resource you should use to learn about how to write effective and
+well-styled Python code.
+
+Thankfully, there are many aspects of both PEP 8 and the Google Style
+Guide that can be automatically checked and fixed. The tools we use and
+recommend are [Ruff](https://decisions.seedcase-project.org/why-ruff/)
+for general styling and [mypy](https://mypy.readthedocs.io/en/stable/)
+for type checking.
+
+To use Ruff and mypy, you need to be in a Python project. If you have
+created a Python project with our
+[`template-python-package`](https://github.com/seedcase-project/template-python-package),
+then running Ruff can be done through our
+[justfile](https://just.systems/man/en/). In your terminal, running
+this:
+
+``` {.bash filename="Terminal"}
+just format-python
+```
+
+Will run Ruff and format your Python code. Then, to check if your code
+needs manually fixes using Ruff and mypy, you can check the code with:
+
+``` {.bash filename="Terminal"}
+just check-python
+```
+
+::: callout-tip
+If you didn't use our template nor do you want to add Ruff to your
+project's dependencies, you can use Ruff through
+[uv](https://docs.astral.sh/uv/):
+
+``` {.bash filename="Terminal"}
+uvx ruff format
+# Tries to fix the linted issues, a bit different from `format`
+uvx ruff check --fix
+uvx ruff check
+uvx mypy .
+```
+:::
+
+## Where to write code {#where-to-write-code}
+
+Before knowing where to write code, you need to know in general what
+code you want to write and specifically what code your user(s) will use.
+An effective software design principle is to have few public-facing
+functions, methods, and classes in a package, but internally have many
+more functions, methods, and classes. This internal code is used to keep
+the code written inside of the public-facing functionality to be smaller
+and clearer in intent and purpose.
+
+Unfortunately, Python does not have any process for making functionality
+completely private or hidden from the user. That means that even
+internal functionality is exposed to the user. However, Python does have
+a
+[convention](https://docs.python.org/3/tutorial/classes.html#tut-private)
+of using an underscore (`_`) before the name of a function, method, or
+class to communicate that it is internal. So a best practice is to use
+these underscores to communicate whether an object is internal or not.
+
+Once you know (generally) what code you want exposed to the user, you
+can decide where to write the code. Python is very flexible in this
+aspect, as how and where you can write code isn't strictly set. This can
+be a good thing, but often makes it difficult to have a consistent and
+standardised way of writing code.
+
+We've found these following guidelines to help keep things organised and
+consistent:
+
+1.  An individual public-facing functionality has it's own Python file.
+    Usually this means that each public function or class has its own
+    file, but if the functionality is similar enough to others, it could
+    be grouped together in a single file.
+2.  If some internal functionality is only used by public-facing
+    functionality that is only in one file, then you should write it in
+    the same file as that public functionality.
+3.  If some internal functionality is used by multiple public-facing
+    functionalities, then you should write it in a separate file in a
+    folder called `internal/`.
+4.  If internal functionality is kept in the `internal/` folder, then
+    group the internal functions by their common action into a single
+    file.
+
+Let's use an example to show how this works in practice. Let's say you
+have a package called `health_data_checks`. In this package there are
+two public functions called `check_blood_pressure()` and
+`check_heart_rate()`. Both of these functions has an internal function
+called `_is_data_object()`. The file structure might look like:
+
+```
+health-data-checks/
+└── src/
+    └── health_data_checks/
+        ├── __init__.py
+        ├── check_blood_pressure.py
+        ├── check_heart_rate.py
+        └── internals/
+            ├── __init__.py
+            └── is.py
+```
+
+Since `_is_data_object()` has an action `is`, it is put into the `is.py`
+file in the `internals/` folder. This is to help keep the internal code
+organised around actions and also allows you to write
+
+## How to write code
+
+As in nearly all programming languages, how you write code is up to you
+as the developer. The exact details depend heavily on the problem your
+software is trying to solve, the design, the constraints, and the
+requirements.
+
+However, there are some good general practices to follow that will help
+you write more effective and maintainable Python code.
+
+### Avoiding "magic"
+
+Code that is "magic" is code that does something unexpected or
+unpredictable. Usually this is because it has ["side
+effects"](#side-effects) or conditionally changes it's action in
+fundamental ways that are not always obvious when using the code.
+
+The way you avoid magic is by writing code that is simple, predictable,
+and consistent. This also means that writing code in a more [functional
+programming](https://en.wikipedia.org/wiki/Functional_programming) style
+tends to produce more maintainable and more predictable code. The way
+you write more functional code include:
+
+-   Keeping functions or methods with clear input and one type of
+    output. There is more explanation on this in the [type
+    hints](#type-hints) section below.
+-   Avoiding side effects by only outputting the result of the function
+    or method. This includes not modifying the input data or variables
+    by treating them as
+    [immutable](https://en.wikipedia.org/wiki/Immutable_object) (not
+    changeable).
+-   Minimizing internal conditional statements that change the action or
+    behaviour of the code.
+-   Prefer using functionals like `map()`, `filter()`, and `reduce()`
+    rather than using loops or list comprehensions, as they tend to be
+    more predictable and easier to read and write.
+
+::: callout-note
+Sometimes it's impossible to write in a purely functional style. For
+example, when you need to write to a file or database, this action is
+inherently a side effect. And that's why the most successful programming
+languages, like Python, are those that are flexible in the type of style
+you can use to write code. However, Python's functional programming
+capabilities are not as strong as some other languages, which can
+sometimes make it quite difficult to write functional code.
+:::
+
+A major benefit to writing more functional code is that it is much
+easier to create unit [tests](tests.qmd) for it and it is easier for the
+user to understand what the code does.
+
+### Type hints {#type-hints}
+
+For keeping the input and output consistent and clear, it helps to write
+[type hints](https://docs.python.org/3/library/typing.html). What are
+type hints in Python? They are a way to formally declare the type of
+object that is given or output by a function or method. For example, for
+the function `check_heart_rate()`, you might write:
+
+``` {.python filename="src/health_data_checks/check_heart_rate.py"}
+def check_heart_rate(data: dict) -> bool:
+    """Check if the heart rate is within a normal range."""
+    # Code ...
+    return boolean_output
+```
+
+Where `data: dict` tells Python that the input to the function must be a
+[`dict`](https://realpython.com/python-dicts/) object and the `-> bool`
+tells Python that the output of the function has to be a boolean value
+(`True` or `False`). So if you were to look at the documentation for the
+function or method, you will be able to read what object types the code
+needs and what it outputs.
+
+::: callout-note
+Since you're using mypy when using a project made from
+`template-python-package`, type hints are required. Otherwise mypy will
+give an error. Unlike other programming languages, Python does not
+enforce type hints when using the code as it is a [dynamically
+typed](https://en.wikipedia.org/wiki/Python_(programming_language)).
+This means that you can use any type of object as input to the function,
+even if it is not the type you declared in the type hint. While this is
+a feature of Python, it does make it more difficult to write code that
+is predictable and consistent.
+:::
+
+### Side effects {#side-effects}
+
+Side effects are when the code does something that isn't obvious, isn't
+clear from the name of the function or method, or if it does actions
+that don't result in a `return`.
+
+Some side effects are intentional and can't be avoided, like writing to
+a file or database, which are inherently side effects. But in general,
+you want to avoid side effects as that introduces unpredictability in
+your code.
+
+For example, if you use a function called `check_heart_rate()`, you
+probably expect it to output a boolean value that tells you if the heart
+rate is normal or not. However, if it also writes to a file or modifies
+the data in some way, then it has a side effect. A side effect for
+`check_heart_rate()` might look like:
+
+``` {.python filename="src/health_data_checks/check_heart_rate.py"}
+def check_heart_rate(data: dict) -> bool:
+    """Check if the heart rate is within a normal range."""
+    # Side effect: Writing
+    data.write_csv("heart_rate.csv")
+    # Pseudocode of a hypothetical check
+    not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
+    return not_normal
+```
+
+But without a side effect, it would be:
+
+``` {.python filename="src/health_data_checks/check_heart_rate.py"}
+def check_heart_rate(data: dict) -> bool:
+    """Check if the heart rate is within a normal range."""
+    # Pseudocode of a hypothetical check
+    not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
+    return not_normal
+```
+
+Other side effects include modifying objects in the global scope, such
+as modifying the input arguments. Using the same `check_heart_rate()`
+function, a side effect that modifies the input might look like this:
+
+``` {.python filename="src/health_data_checks/check_heart_rate.py"}
+# Fake data
+data = {
+    "heart_rate": 30,
+}
+
+
+def check_heart_rate(data: dict) -> bool:
+    """Check if the heart rate is within a normal range."""
+    # Side effect: Modifying the input in the global scope.
+    not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
+    data.update(check=not_normal)
+    return not_normal
+
+
+# Original data
+print(data)
+print(check_heart_rate(data))
+# Modified data
+print(data)
+```
+
+A function should never modify objects in the global scope or modify the
+input arguments, as it makes it much harder to understand, predict, and
+test.
+
+### Internal code
+
+Rarely does a public-facing function or method do everything within
+itself. That would end up making the code very long and difficult to
+read. Instead, you create smaller, well-defined internal functions,
+methods, or classes that do very specific actions and use them to build
+up the larger public-facing functionality.
+
+As already described above in the [where to write
+code](#where-to-write-code), when more than one public-facing function
+or method uses the same internal functionality, keep that internal
+functionality in the `internals/` folder.
+
+How you write this internal functionality is basically no different from
+writing public-facing functionality. The only difference is that you
+should use an underscore (`_`) before the name of the object.
+
+Then, once you've made the function or method, in order to "export" it
+to make it easier to import, you open the `__init__.py` file in the
+`internals/` folder and write it like:
+
+``` {.python filename="src/health_data_check/internals/__init__.py"}
+# Import the `is.py` script by using the relative `.` import syntax.
+from .is import _is_data_object
+
+# Use `__all__` to explicitly define what is exported from this module.
+__all__ = [
+    "_is_data_object",
+]
+```
+
+That way, when you import the internal functionality in other scripts,
+you can use either:
+
+``` python
+from internals import _is_data_object
+
+# Using the function.
+_is_data_object(data)
+```
+
+Or:
+
+``` python
+import internals
+
+# Using the function
+internals._is_data_object(data)
+```
+
+We tend to prefer the first option, as it makes the code a bit cleaner
+and clearer about what exactly is being used in the script.
+
+## Writing code documentation
+
+Documentation is one of the most important parts of writing code.
+Without good documentation, code is near to unusable or at the least
+extremely difficult to use. Documenting at the code level is done with
+["docstrings"](https://peps.python.org/pep-0257/) in Python.
+
+At the least, you should write a docstring for every public-facing
+function, method, and class. This is to help the user understand what
+the code does, what it needs as input, and what it outputs. For internal
+code, docstrings are not strictly required, but we still recommend
+writing them (see guideline below about this).
+
+When writing docstrings, you should follow these guidelines:
+
+-   Use the `"""` triple quotes for docstrings.
+-   Use sentence case for describing things and end with a full stop. So
+    use `path: The path to the file.` rather than
+    `path: the path to the file`.
+-   Include example code in the Quarto code chunk format.
+-   Write simple one-line docstrings for:
+    -   Very small functions or methods (for example, \<5 lines)
+    -   Functions or methods with \<2 arguments
+    -   Functions or methods with simple and clear input and output
+-   Write longer and more detailed docstrings for:
+    -   Larger and/or more complicated internal functions, classes, or
+        methods, such as those with non-standard input or output
+    -   User-facing functions, classes, or methods
+
+::: callout-tip
+When using VS Code and adding docstrings, use the
+[autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
+VS Code extension to automatically generate a skeleton structure for the
+docstrings.
+:::
+
+```` {.python filename="src/health_data_checks/check_heart_rate.py"}
+def check_heart_rate(data: dict) -> bool:
+    """Check if the heart rate is within a normal range.
+
+    Args:
+        data (dict): The data object containing the "heart_rate"
+            variable.
+
+    Returns:
+        bool: True if the heart rate is not normal, False otherwise.
+
+    Example:
+        ```{python}
+        # Fake data
+        data = {
+            "heart_rate": 30,
+        }
+        print(check_heart_rate(data))
+        ```
+    """
+    # Pseudocode of a hypothetical check
+    not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
+    return not_normal
+````
