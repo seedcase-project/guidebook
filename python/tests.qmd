@@ -27,6 +27,12 @@ more maintainable, and focused on what the package is designed to do. In
 particular, it allows you as the developer to relatively easily refactor
 internal code without having to also update tests for the internal
 functionality that you are modifying.
+
+However, there is some developer judgement involved here. Sometimes
+internal code might be a bit complicated or does some non-standard
+stuff. You can use tests to verify your expectations and also
+communicate to your collaborators or reviewers what the code actually
+does. This should be something that should be done infrequently though.
 :::
 
 For every public function, class, or method that is part of the public
