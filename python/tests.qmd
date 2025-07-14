@@ -190,7 +190,7 @@ uv run pytest
 uvx pytest
 ```
 
-::: callout-tip
+::: callout-note
 Because the package is structured with the `src/` folder, you would
 normally need to tell pytest that the package is a "src" package by
 using the `--import-mode=importlib` option when running pytest or by
