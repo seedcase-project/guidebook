@@ -133,12 +133,13 @@ def add(a, b):
 And a test for this function might look like:
 
 ``` {.python filename="tests/test_adding.py"}
-import pytest from math.adding
-import add
+import pytest
+from math.adding import add
 
 def test_add_two_numbers():
-    """Test adding two numbers together."""
-    # Given expected = 5
+    """Test adding two numbers."""
+    # Given
+    expected = 7
     # When
     actual = add(2, 5)
     # Then
