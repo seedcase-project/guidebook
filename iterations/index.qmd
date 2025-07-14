@@ -1,44 +1,48 @@
 # Time-constrained iterative workflow
 
 This chapter describes how to follow a specific, but very effective,
-workflow for managing and completing work in teams, especially knowledge work
-such as software development and research in general that we follow in the Seedcase Project. This chapter covers
-this workflow and how to generally use it.
+workflow for managing and completing work in teams, especially knowledge
+work such as software development and research in general that we follow
+in the Seedcase Project. This chapter covers this workflow and how to
+generally use it.
 
 ## Iterative development in research settings
 
-The way we've designed our work to follow a
-workflow that is inspired from some aspects of [Agile Software
+The way we've designed our work to follow a workflow that is inspired
+from some aspects of [Agile Software
 Development](https://agilemanifesto.org/) and
 [Scrum](https://www.scrum.org/resources/what-scrum-module), especially
 this idea of time-boxed periods ("iterations") of work that follow a
-specific pattern and process for incrementally building or improving
-a project or product. On their own, Agile or Scrum workflows don't generally fit well
-in more academic and research environments. Certain Agile frameworks like Scrum often
-assume that:
+specific pattern and process for incrementally building or improving a
+project or product. On their own, Agile or Scrum workflows don't
+generally fit well in more academic and research environments. Certain
+Agile frameworks like Scrum often assume that:
 
 -   You and the team are in a more traditional "business" environment
-    with customers, which isn't always true in or comparable to
-    research and academic settings.
--   Everyone on the team is working only on the project full-time
-    during the iteration (e.g. with the use of "daily
-    standups"). In research settings, projects are a bit more fluid and
-    people may not work on them full-time or consistently, because they
-    are often involved in many projects at the same time.
+    with customers, which isn't always true in or comparable to research
+    and academic settings.
+-   Everyone on the team is working only on the project full-time during
+    the iteration (e.g. with the use of "daily standups"). In research
+    settings, projects are a bit more fluid and people may not work on
+    them full-time or consistently, because they are often involved in
+    many projects at the same time.
 -   Everyone on the team is highly technically skilled and knowledgeable
-    in software development practices, for instance with the "self-organizing"
-    principle in the [Agile Manifesto](https://agilemanifesto.org/principles.html). Skill and knowledge level is highly variable in research
-    settings, and substantial time may be needed to train people, which impacts how well these practices can be realistically applied and followed.
+    in software development practices, for instance with the
+    "self-organizing" principle in the [Agile
+    Manifesto](https://agilemanifesto.org/principles.html). Skill and
+    knowledge level is highly variable in research settings, and
+    substantial time may be needed to train people, which impacts how
+    well these practices can be realistically applied and followed.
 -   You have the resources to have dedicated personnel for managing the
     iteration and planning the product (e.g. with "Scrum Master" and
     "Product Owner"). In research, the biggest constraint is often funds
     so you likely have fewer people who have to do a wider variety of
     tasks and don't have dedicated personnel for specific roles.
 
-All of these assumptions inherent to Scrum, Agile, or any other common industry
-workflow can't be directly applied to research and academic settings. So
-their effectiveness in those other settings might be very different from
-their effectiveness in these settings. So this guide to
+All of these assumptions inherent to Scrum, Agile, or any other common
+industry workflow can't be directly applied to research and academic
+settings. So their effectiveness in those other settings might be very
+different from their effectiveness in these settings. So this guide to
 using iterative development in research settings is slightly modified to
 fit the needs and constraints typically found in research and academic
 settings.
@@ -53,31 +57,34 @@ towards and the milestones needed to get to that final aim. This is
 usually the team lead, and so for the rest of the iteration
 documentation, we refer to this person as the "team lead".
 
-If you are the team lead, you should (ideally) have a general plan or goal for
-what the team will do in the next two or three iterations and
+If you are the team lead, you should (ideally) have a general plan or
+goal for what the team will do in the next two or three iterations and
 will:
 
--   Create an iteration within the main iteration planning board
-    (for the Seedcase Project, they are all listed
+-   Create an iteration within the main iteration planning board (for
+    the Seedcase Project, they are all listed
     [here](https://github.com/orgs/seedcase-project/projects/)). You
     create an iteration by going into the project board's settings.
 -   Write the title of the iteration as the aim for it, while keeping
     the goal focused, small, achievable, and considerate of the time the
     team has available for that iteration. Ideally, you should write a
     sub-aim for each person in the team for that iteration.
--   Add tasks to the board that are needed to achieve the iteration
-    aim.
+-   Add tasks to the board that are needed to achieve the iteration aim.
 
-Having one iteration be one calendar month makes them easier to
-plan and organise. That way, a year can be divided into 12
-iterations, and you can more easily use that to plan the work and aims
-for the year. It also makes each iteration about 4 weeks, which is generally a
-good amount of time to be flexible while also having enough time to
-achieve a meaningful aim. Depending on your project, shorter iterations of 3 weeks might also be appropriate, but we generally don’t recommend going beyond 4 weeks, since the team might lose focus on the aim and it becomes harder to maintain a clear sense of progress.
+Having one iteration be one calendar month makes them easier to plan and
+organise. That way, a year can be divided into 12 iterations, and you
+can more easily use that to plan the work and aims for the year. It also
+makes each iteration about 4 weeks, which is generally a good amount of
+time to be flexible while also having enough time to achieve a
+meaningful aim. Depending on your project, shorter iterations of 3 weeks
+might also be appropriate, but we generally don’t recommend going beyond
+4 weeks, since the team might lose focus on the aim and it becomes
+harder to maintain a clear sense of progress.
 
-Having an iteration last one calendar month also makes it easier to schedule the iteration's start meeting for
-planning at the [beginning](start.qmd) of the month and the iteration's [end](end.qmd) meeting
-for debriefing and doing the
+Having an iteration last one calendar month also makes it easier to
+schedule the iteration's start meeting for planning at the
+[beginning](start.qmd) of the month and the iteration's [end](end.qmd)
+meeting for debriefing and doing the
 [retrospective](https://www.scrum.org/resources/what-is-a-sprint-retrospective)
 at the end of the month. That way, the team can always assume and
 schedule those dates as meeting dates. You as the team lead should
