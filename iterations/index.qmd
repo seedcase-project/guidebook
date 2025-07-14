@@ -91,3 +91,14 @@ schedule those dates as meeting dates. You as the team lead should
 schedule these meetings well in advance and confirm that as many of the
 team can attend as possible. The scheduled meeting should be put in a
 calendar that everyone on the team can access or see.
+
+::: callout-tip
+We use [Teamup](https://teamup.com/) for scheduling meetings and keeping
+track of the iteration dates. The advantage of Teamup is that anyone
+(with the right permissions) can add events to the calendar, and you can
+easily synchronise it with your own calendar app. So there is no
+"locking-in" to a specific calendar app. We highly recommend using
+Teamup if you are working in a team with others that may or may not be
+in the same organisation or who don't necessarily use the same calendar
+app as you.
+:::
