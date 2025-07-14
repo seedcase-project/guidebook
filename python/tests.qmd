@@ -148,11 +148,12 @@ def test_add_two_numbers():
 :::
 
 If the tests are short and very simple, you don't have to use these
-sections explicitly, meaning you don't necessarily have to use comments.
-But as tests get longer and more complex, it can be helpful---for
-reviewers and your future self---to include them. The reasoning for
-using docstrings in test functions is the same. It can help explain what
-the test is doing and why it is important.
+sections explicitly, meaning you don't necessarily have to include the
+comments `# Given`, `# When`, and `# Then`. But as tests get longer and
+more complex, it can be helpful---for reviewers and your future
+self---to include them. The reasoning for using docstrings in test
+functions is the same. It can help explain what the test is doing and
+why it is important.
 
 In general, it's best to keep the tests as simple as possible and only
 test one thing at a time. If you need to test multiple things, write
