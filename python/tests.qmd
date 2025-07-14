@@ -129,7 +129,7 @@ def add(a, b):
     return a + b
 ```
 
-And the test for this function might look like:
+And a test for this function might look like:
 
 ``` {.python filename="tests/test_adding.py"}
 import pytest from math.adding
