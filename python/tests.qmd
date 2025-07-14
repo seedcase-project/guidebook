@@ -22,8 +22,8 @@ or private functionality.
 The generally
 [accepted](https://softwareengineering.stackexchange.com/questions/380287/why-is-unit-testing-private-methods-considered-as-bad-practice)
 "best practice" is to commit tests for public functionality only. We
-also agree with this principle, as it helps keep the codebase smaller,
-more maintainable, and focused on what the package is designed to do. In
+agree with this principle, as it helps keep the codebase smaller, more
+maintainable, and focused on what the package is designed to do. In
 particular, it allows you as the developer to relatively easily refactor
 internal code without having to also update tests for the internal
 functionality that you are modifying.
