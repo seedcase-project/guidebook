@@ -14,8 +14,8 @@ Development](https://agilemanifesto.org/) and
 this idea of time-boxed periods ("iterations") of work that follow a
 specific pattern and process for incrementally building or improving
 a project or product. On their own, Agile or Scrum workflows don't generally fit well
-in more academic and research environments. Scrum and Agile often
-assumes that:
+in more academic and research environments. Certain Agile frameworks like Scrum often
+assume that:
 
 -   You and the team are in a more traditional "business" environment
     with customers, which isn't always true in or comparable to
@@ -26,9 +26,9 @@ assumes that:
     people may not work on them full-time or consistently, because they
     are often involved in many projects at the same time.
 -   Everyone on the team is highly technically skilled and knowledgeable
-    in software development practices (e.g. with the "self-organizing"
-    principle). Skill and knowledge level is highly variable in research
-    settings, and substantial time may be needed to train people.
+    in software development practices, for instance with the "self-organizing"
+    principle in the [Agile Manifesto](https://agilemanifesto.org/principles.html). Skill and knowledge level is highly variable in research
+    settings, and substantial time may be needed to train people, which impacts how well these practices can be realistically applied and followed.
 -   You have the resources to have dedicated personnel for managing the
     iteration and planning the product (e.g. with "Scrum Master" and
     "Product Owner"). In research, the biggest constraint is often funds
@@ -76,7 +76,7 @@ good amount of time to be flexible while also having enough time to
 achieve a meaningful aim. Depending on your project, shorter iterations of 3 weeks might also be appropriate, but we generally don’t recommend going beyond 4 weeks, since the team might lose focus on the aim and it becomes harder to maintain a clear sense of progress.
 
 Having an iteration last one calendar month also makes it easier to schedule the iteration's start meeting for
-planning at the beginning of the month and the iteration's end meeting
+planning at the [beginning](start.qmd) of the month and the iteration's [end](end.qmd) meeting
 for debriefing and doing the
 [retrospective](https://www.scrum.org/resources/what-is-a-sprint-retrospective)
 at the end of the month. That way, the team can always assume and
