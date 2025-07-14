@@ -160,7 +160,7 @@ test one thing at a time. If you need to test multiple things, write
 multiple tests.
 
 ::: callout-tip
-It won't be covered in this guide, but you can avoid repeating yourself
+We won't cover it in this guide, but you can avoid repeating yourself
 in tests by using [parameterized
 tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to test
 multiple inputs and outputs with the same test function.
