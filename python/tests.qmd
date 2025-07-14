@@ -90,8 +90,9 @@ math/
 ## How to write tests
 
 Now that you know when and where to write tests, let's look at how to
-write them. The tests should be written in Python as functions. When
-writing the name for the test, use this general pattern:
+write them. The tests should be written in Python as functions.
+
+When writing the name for the test, use this general pattern:
 
 -   `test_<function-name>()`, for example `test_adding()`. Use this if
     you only need one test for the function.
