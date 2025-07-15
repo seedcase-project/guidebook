@@ -22,8 +22,8 @@ or private functionality.
 The generally
 [accepted](https://softwareengineering.stackexchange.com/questions/380287/why-is-unit-testing-private-methods-considered-as-bad-practice)
 "best practice" is to commit tests for public functionality only. We
-also agree with this principle, as it helps keep the codebase smaller,
-more maintainable, and focused on what the package is designed to do. In
+agree with this principle, as it helps keep the codebase smaller, more
+maintainable, and focused on what the package is designed to do. In
 particular, it allows you as the developer to relatively easily refactor
 internal code without having to also update tests for the internal
 functionality that you are modifying.
@@ -90,8 +90,9 @@ math/
 ## How to write tests
 
 Now that you know when and where to write tests, let's look at how to
-write them. The tests should be written in Python as functions. When
-writing the name for the test, use this general pattern:
+write them. The tests should be written in Python as functions.
+
+When writing the name for the test, use this general pattern:
 
 -   `test_<function-name>()`, for example `test_adding()`. Use this if
     you only need one test for the function.
@@ -129,15 +130,16 @@ def add(a, b):
     return a + b
 ```
 
-And the test for this function might look like:
+And a test for this function might look like:
 
 ``` {.python filename="tests/test_adding.py"}
-import pytest from math.adding
-import add
+import pytest
+from math.adding import add
 
 def test_add_two_numbers():
-    """Test adding two numbers together."""
-    # Given expected = 5
+    """Test adding two numbers."""
+    # Given
+    expected = 7
     # When
     actual = add(2, 5)
     # Then
@@ -146,19 +148,20 @@ def test_add_two_numbers():
 :::
 
 If the tests are short and very simple, you don't have to use these
-sections explicitly, meaning you don't necessarily have to use comments.
-But as tests get longer and more complex, it can be helpful---for
-reviewers and your future self---to include them. The reasoning for
-using docstrings in test functions is the same. It can help explain what
-the test is doing and why it is important.
+sections explicitly, meaning you don't necessarily have to include the
+comments `# Given`, `# When`, and `# Then`. But as tests get longer and
+more complex, it can be helpful---for reviewers and your future
+self---to include them. The reasoning for using docstrings in test
+functions is the same. It can help explain what the test is doing and
+why it is important.
 
 In general, it's best to keep the tests as simple as possible and only
 test one thing at a time. If you need to test multiple things, write
 multiple tests.
 
 ::: callout-tip
-It won't be covered in this guide, but you can avoid repeating yourself
-in tests by using [parameterized
+We won't cover it in this guide, but you can avoid repeating yourself in
+tests by using [parameterized
 tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to test
 multiple inputs and outputs with the same test function.
 :::
@@ -187,7 +190,7 @@ uv run pytest
 uvx pytest
 ```
 
-::: callout-tip
+::: callout-note
 Because the package is structured with the `src/` folder, you would
 normally need to tell pytest that the package is a "src" package by
 using the `--import-mode=importlib` option when running pytest or by

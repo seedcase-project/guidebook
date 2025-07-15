@@ -18,13 +18,16 @@ book:
   body-header: |
     ::: {.callout-note appearance="default"}
     This guidebook is written following the [diátaxis](https://diataxis.fr/how-to-guides/) "how-to guide" style.
-    And because this document reflects how we work in the Seedcase Project, it is living and constantly evolving. It won't ever be in a state of "done".
+    And because this document reflects how we work in the [Seedcase Project](https://seedcase-project.org/),
+    it is living and constantly evolving. It won't ever be in a state of "done".
     :::
   chapters:
     - index.qmd
     - part: "Iterations"
       chapters:
+        - iterations/index.qmd
         - iterations/start.qmd
+        #- iterations/during.qmd
         - iterations/end.qmd
     - part: "Python"
       chapters:
@@ -36,7 +39,7 @@ book:
   page-footer:
     center:
       - text: "License: CC BY 4.0 {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}}"
-        href: LICENSE.html
+        href: LICENSE.md
 
 format:
   seedcase-theme-html:
