@@ -70,8 +70,8 @@ code you want to write and specifically what code your user(s) will use.
 An effective software design principle is to have few public-facing
 functions, methods, and classes in a package, but internally have many
 more functions, methods, and classes. This internal code is used to keep
-the code for the public-facing functionality smaller
-and clearer in intent and purpose.
+the code for the public-facing functionality smaller and clearer in
+intent and purpose.
 
 Unfortunately, Python does not have any process for making functionality
 completely private or hidden from the user. That means that even
@@ -93,8 +93,8 @@ consistent:
 
 1.  An individual public-facing functionality has its own Python file.
     Usually this means that each public function or class has its own
-    file, but if the functionality is similar enough to others, they could
-    be grouped together in a single file.
+    file, but if the functionality is similar enough to others, they
+    could be grouped together in a single file.
 2.  If some internal functionality is only used by public-facing
     functionality that is only in one file, then you should write it in
     the same file as that public functionality.
@@ -124,7 +124,9 @@ health-data-checks/
 
 Since `_is_data_object()` has an action `is`, it is put into the `is.py`
 file in the `internals/` folder. This is to help keep the internal code
-organised around actions and also allows you to write
+organised around actions and also allows you to use
+`from internals import FUNCTION` when needing to use the internal
+functionality.
 
 ## How to write code
 
@@ -149,9 +151,9 @@ programming](https://en.wikipedia.org/wiki/Functional_programming) style
 tends to produce more maintainable and more predictable code. Strategies
 for writing more functional code include:
 
--   Using clear inputs and one type of output in functions or
-    methods. There is more explanation on this in the [type
-    hints](#type-hints) section below.
+-   Using clear inputs and one type of output in functions or methods.
+    There is more explanation on this in the [type hints](#type-hints)
+    section below.
 -   Avoiding side effects by only outputting the result of the function
     or method. This includes not modifying the input data or variables
     by treating them as
@@ -159,9 +161,9 @@ for writing more functional code include:
     changeable).
 -   Minimizing internal conditional statements that change the action or
     behaviour of the code.
--   Preferring functionals like `map()`, `filter()`, and `reduce()`
-    over loops or list comprehensions, as they tend to be
-    more predictable and easier to read and write.
+-   Preferring functionals like `map()`, `filter()`, and `reduce()` over
+    loops or list comprehensions, as they tend to be more predictable
+    and easier to read and write.
 
 ::: callout-note
 Sometimes it's impossible to write in a purely functional style. For
@@ -169,8 +171,8 @@ example, when you need to write to a file or database, this action is
 inherently a side effect. And that's why the most successful programming
 languages, like Python, are those that are flexible in the type of style
 you can use to write code. However, Python's functional programming
-capabilities are not as strong as those of some other languages, which can
-sometimes make it quite difficult to write functional code.
+capabilities are not as strong as those of some other languages, which
+can sometimes make it quite difficult to write functional code.
 :::
 
 A major benefit to writing more functional code is that it is much
@@ -186,18 +188,19 @@ object that is given or output by a function or method. For example, for
 the function `check_heart_rate()`, you might write:
 
 ``` {.python filename="src/health_data_checks/check_heart_rate.py"}
-def check_heart_rate(data: dict) -> bool:
+def check_heart_rate(data: dict[str, Any]) -> bool:
     """Check if the heart rate is within a normal range."""
     # Code ...
     return boolean_output
 ```
 
-Where `data: dict` tells Python that the input to the function must be a
-[`dict`](https://realpython.com/python-dicts/) object and the `-> bool`
-tells Python that the output of the function has to be a boolean value
-(`True` or `False`). So if you look at the documentation for the
-function or method, you will be able to read what object types the code
-needs and what it outputs.
+Where `data: dict[str, Any]` tells Python that the input to the function
+must be a [`dict`](https://realpython.com/python-dicts/) object with
+`str` or `Any` as internal data types and the `-> bool` tells Python
+that the output of the function has to be a boolean value (`True` or
+`False`). So if you look at the documentation for the function or
+method, you will be able to read what object types the code needs and
+what it outputs.
 
 ::: callout-note
 Since you're using mypy when using a project made from
@@ -213,9 +216,9 @@ is predictable and consistent.
 
 ### Side effects {#side-effects}
 
-Side effects happen when the code does something that isn't obvious
-from the name of the function or method, or when it performs actions
-without returning a value.
+Side effects happen when the code does something that isn't obvious from
+the name of the function or method, or when it performs actions without
+returning a value.
 
 Some side effects are intentional and can't be avoided, like writing to
 a file or database, which are inherently side effects. But in general,
@@ -229,10 +232,13 @@ the data in some way, then it has a side effect. A side effect for
 `check_heart_rate()` might look like:
 
 ``` {.python filename="src/health_data_checks/check_heart_rate.py"}
-def check_heart_rate(data: dict) -> bool:
+import json
+
+def check_heart_rate(data: dict[str, Any]) -> bool:
     """Check if the heart rate is within a normal range."""
     # Side effect: Writing
-    data.write_csv("heart_rate.csv")
+    with open('file.txt', 'w') as file:
+        file.write(json.dumps(data))
     # Pseudocode of a hypothetical check
     not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
     return not_normal
@@ -330,8 +336,8 @@ import internals
 internals._is_data_object(data)
 ```
 
-We tend to prefer the first option, as it makes the code a bit cleaner
-and clearer about what exactly is being used in the script.
+We tend to prefer the first option, as explicitly stating the function
+used makes it easier to know what the script is using from internals.
 
 ## Writing code documentation
 
@@ -370,15 +376,16 @@ docstrings.
 :::
 
 ::: content-hidden
-Need to use `{{python}}` in example below because Quarto seems to interpret that
-as a code block. It renders fine though.
+Need to use `{{python}}` in example below because Quarto seems to
+interpret that as a code block. It renders fine though.
 :::
+
 ```` {.python filename="src/health_data_checks/check_heart_rate.py"}
-def check_heart_rate(data: dict) -> bool:
+def check_heart_rate(data: dict[str, Any]) -> bool:
     """Check if the heart rate is within a normal range.
 
     Args:
-        data (dict): The data object containing the
+        data: The data object as a dict containing the
             "heart_rate" variable.
 
     Returns:
@@ -387,12 +394,12 @@ def check_heart_rate(data: dict) -> bool:
 
     Example:
         ```{{python}}
-        # Fake data
-        data = {
-            "heart_rate": 30,
-        }
-        print(check_heart_rate(data))
-        ```
+# Fake data
+data = {
+    "heart_rate": 30,
+}
+print(check_heart_rate(data))
+```
     """
     # Pseudocode of a hypothetical check
     not_normal = data["heart_rate"] < 30 or data["heart_rate"] > 180
