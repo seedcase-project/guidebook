@@ -43,7 +43,7 @@ just format-python
 ```
 
 Will run Ruff and format your Python code. Then, to check if your code
-needs manually fixes using Ruff and mypy, you can check the code with:
+needs manual fixes using Ruff and mypy, you can check the code with:
 
 ``` {.bash filename="Terminal"}
 just check-python
@@ -70,7 +70,7 @@ code you want to write and specifically what code your user(s) will use.
 An effective software design principle is to have few public-facing
 functions, methods, and classes in a package, but internally have many
 more functions, methods, and classes. This internal code is used to keep
-the code written inside of the public-facing functionality to be smaller
+the code for the public-facing functionality smaller
 and clearer in intent and purpose.
 
 Unfortunately, Python does not have any process for making functionality
@@ -91,9 +91,9 @@ standardised way of writing code.
 We've found these following guidelines to help keep things organised and
 consistent:
 
-1.  An individual public-facing functionality has it's own Python file.
+1.  An individual public-facing functionality has its own Python file.
     Usually this means that each public function or class has its own
-    file, but if the functionality is similar enough to others, it could
+    file, but if the functionality is similar enough to others, they could
     be grouped together in a single file.
 2.  If some internal functionality is only used by public-facing
     functionality that is only in one file, then you should write it in
@@ -102,13 +102,12 @@ consistent:
     functionalities, then you should write it in a separate file in a
     folder called `internal/`.
 4.  If internal functionality is kept in the `internal/` folder, then
-    group the internal functions by their common action into a single
-    file.
+    group the internal functions into files by their common action.
 
 Let's use an example to show how this works in practice. Let's say you
 have a package called `health_data_checks`. In this package there are
 two public functions called `check_blood_pressure()` and
-`check_heart_rate()`. Both of these functions has an internal function
+`check_heart_rate()`. Both of these functions have an internal function
 called `_is_data_object()`. The file structure might look like:
 
 ```
@@ -141,17 +140,17 @@ you write more effective and maintainable Python code.
 
 Code that is "magic" is code that does something unexpected or
 unpredictable. Usually this is because it has ["side
-effects"](#side-effects) or conditionally changes it's action in
+effects"](#side-effects) or conditionally changes its action in
 fundamental ways that are not always obvious when using the code.
 
 The way you avoid magic is by writing code that is simple, predictable,
 and consistent. This also means that writing code in a more [functional
 programming](https://en.wikipedia.org/wiki/Functional_programming) style
-tends to produce more maintainable and more predictable code. The way
-you write more functional code include:
+tends to produce more maintainable and more predictable code. Strategies
+for writing more functional code include:
 
--   Keeping functions or methods with clear input and one type of
-    output. There is more explanation on this in the [type
+-   Using clear inputs and one type of output in functions or
+    methods. There is more explanation on this in the [type
     hints](#type-hints) section below.
 -   Avoiding side effects by only outputting the result of the function
     or method. This includes not modifying the input data or variables
@@ -160,8 +159,8 @@ you write more functional code include:
     changeable).
 -   Minimizing internal conditional statements that change the action or
     behaviour of the code.
--   Prefer using functionals like `map()`, `filter()`, and `reduce()`
-    rather than using loops or list comprehensions, as they tend to be
+-   Preferring functionals like `map()`, `filter()`, and `reduce()`
+    over loops or list comprehensions, as they tend to be
     more predictable and easier to read and write.
 
 ::: callout-note
@@ -170,7 +169,7 @@ example, when you need to write to a file or database, this action is
 inherently a side effect. And that's why the most successful programming
 languages, like Python, are those that are flexible in the type of style
 you can use to write code. However, Python's functional programming
-capabilities are not as strong as some other languages, which can
+capabilities are not as strong as those of some other languages, which can
 sometimes make it quite difficult to write functional code.
 :::
 
@@ -196,15 +195,15 @@ def check_heart_rate(data: dict) -> bool:
 Where `data: dict` tells Python that the input to the function must be a
 [`dict`](https://realpython.com/python-dicts/) object and the `-> bool`
 tells Python that the output of the function has to be a boolean value
-(`True` or `False`). So if you were to look at the documentation for the
+(`True` or `False`). So if you look at the documentation for the
 function or method, you will be able to read what object types the code
 needs and what it outputs.
 
 ::: callout-note
 Since you're using mypy when using a project made from
 `template-python-package`, type hints are required. Otherwise mypy will
-give an error. Unlike other programming languages, Python does not
-enforce type hints when using the code as it is a [dynamically
+give an error. Unlike some other programming languages, Python does not
+enforce type hints when the code is run, as it is [dynamically
 typed](https://en.wikipedia.org/wiki/Python_(programming_language)).
 This means that you can use any type of object as input to the function,
 even if it is not the type you declared in the type hint. While this is
@@ -214,13 +213,13 @@ is predictable and consistent.
 
 ### Side effects {#side-effects}
 
-Side effects are when the code does something that isn't obvious, isn't
-clear from the name of the function or method, or if it does actions
-that don't result in a `return`.
+Side effects happen when the code does something that isn't obvious
+from the name of the function or method, or when it performs actions
+without returning a value.
 
 Some side effects are intentional and can't be avoided, like writing to
 a file or database, which are inherently side effects. But in general,
-you want to avoid side effects as that introduces unpredictability in
+you want to avoid side effects as they introduce unpredictability in
 your code.
 
 For example, if you use a function called `check_heart_rate()`, you
@@ -287,7 +286,7 @@ read. Instead, you create smaller, well-defined internal functions,
 methods, or classes that do very specific actions and use them to build
 up the larger public-facing functionality.
 
-As already described above in the [where to write
+As already described above in [where to write
 code](#where-to-write-code), when more than one public-facing function
 or method uses the same internal functionality, keep that internal
 functionality in the `internals/` folder.
@@ -312,7 +311,7 @@ __all__ = [
 ]
 ```
 
-That way, when you import the internal functionality in other scripts,
+This way, when you import the internal functionality in other scripts,
 you can use either:
 
 ``` python
@@ -337,11 +336,11 @@ and clearer about what exactly is being used in the script.
 ## Writing code documentation
 
 Documentation is one of the most important parts of writing code.
-Without good documentation, code is near to unusable or at the least
+Without good documentation, code is nearly unusable or at least
 extremely difficult to use. Documenting at the code level is done with
 ["docstrings"](https://peps.python.org/pep-0257/) in Python.
 
-At the least, you should write a docstring for every public-facing
+At the very least, you should write a docstring for every public-facing
 function, method, and class. This is to help the user understand what
 the code does, what it needs as input, and what it outputs. For internal
 code, docstrings are not strictly required, but we still recommend
