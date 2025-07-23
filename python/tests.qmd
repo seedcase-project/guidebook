@@ -1,0 +1,201 @@
+---
+title: "Tests"
+description: "Creating and writing tests for Python packages"
+---
+
+Creating tests for your Python code is essential to ensure that it works
+as expected and to catch any bugs or issues early in the development
+process. This page will guide you through making tests for your Python
+package, including what to test, how to structure your tests, and how to
+use [pytest](https://docs.pytest.org/en/stable/) for testing.
+
+## When to write tests
+
+Writing tests is a powerful way for you to know what your code is doing
+and if it's doing what you expect. And while you are completely free
+(and encouraged) to write tests at any time for any functionality, the
+only tests you *must* write and commit to the Git repository are those
+for functionality that is public (exposed to users) and not for internal
+or private functionality.
+
+::: callout-note
+The generally
+[accepted](https://softwareengineering.stackexchange.com/questions/380287/why-is-unit-testing-private-methods-considered-as-bad-practice)
+"best practice" is to commit tests for public functionality only. We
+agree with this principle, as it helps keep the codebase smaller, more
+maintainable, and focused on what the package is designed to do. In
+particular, it allows you as the developer to relatively easily refactor
+internal code without having to also update tests for the internal
+functionality that you are modifying.
+:::
+
+For every public function, class, or method that is part of the public
+API of your package, you should write tests that cover at least the
+following:
+
+-   Every possible input (including optional arguments) and output for
+    functions and methods.
+-   Every possible error within a function or method.
+-   Every possible use of a class, such as initiating it and accessing
+    its attributes.
+
+## Where to write tests
+
+Pytest strongly recommends keeping the tests
+[outside](https://docs.pytest.org/en/stable/explanation/goodpractices.html#tests-outside-application-code)
+the package code found in `src/`. The name of the test folder can be
+anything, but the common name is `tests/`. If you've used the
+[`template-python-package`](https://github.com/seedcase-project/template-python-package)
+to create your package, then this `tests/` folder will already exist and
+be set up for you. Otherwise, you can make the `tests/` folder yourself
+manually or via the terminal with `mkdir tests`.
+
+It should look like:
+
+```
+package-name/
+├── src/
+└── tests/
+```
+
+Where `package-name/` is the name of your package, and `src/` is the
+folder that contains your package's code. By default, pytest will look
+for tests in any file that starts with `test_` and will run any tests
+(as functions) that start with `test_` in those files.
+
+You should generally create a matching test file for each Python script
+that contains public functionality in the `src/` folder. So each test
+file should be named `test_<name>.py`, where `<name>` is the name of the
+Python script with the public functionality. Following this naming
+convention makes it easier to do a cycle of writing and testing when
+using IDEs like [VS Code](https://code.visualstudio.com/), as their
+testing tools will be better able to find and run only the tests for the
+file you are working on.
+
+::: callout-tip
+For example, let's say you have a package called `math` with a script
+called `src/math/adding.py`. The test file for that script would be
+called `tests/test_adding.py`. So it would look like this:
+
+```
+math/
+├── src/
+│   └── math/
+│       └── adding.py
+└── tests/
+    └── test_adding.py
+```
+:::
+
+## How to write tests
+
+Now that you know when and where to write tests, let's look at how to
+write them. The tests should be written in Python as functions.
+
+When writing the name for the test, use this general pattern:
+
+-   `test_<function-name>()`, for example `test_adding()`. Use this if
+    you only need one test for the function.
+-   `test_<action>_<condition>()` or `test_<action>_<object>()`, for
+    example `test_add_twos()` or `test_error_non_numbers()`. Use this to
+    test specific actions and conditions/objects if the function has
+    multiple different actions or conditions.
+
+Tests are structured as functions that use the `assert` statement to
+check the output of the function being tested. The `assert` statement
+checks if the condition is `True`, and if it is not it outputs an error,
+which pytest will report on. Use the following general structure for
+tests, called **given, when, then**:
+
+1.  Given: Set up the test data and any other necessary conditions. This
+    step isn't always required. This might be where you create the
+    `expected` output that you want to check against.
+2.  When: Call the function or method being tested. This would return
+    the `actual` output.
+3.  Then: Check that the output of the function or method (`actual`) is
+    as expected (the `expected` output). This is where you use the
+    `assert` statement to check that the output is what you expect it to
+    be.
+
+This is sometimes called ["arrange, act,
+assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
+
+::: callout-tip
+In our example of a `math` package and an `adding.py` script, the
+function might look like:
+
+``` {.python filename="src/math/adding.py"}
+def add(a, b):
+    """Add two numbers together."""
+    return a + b
+```
+
+And a test for this function might look like:
+
+``` {.python filename="tests/test_adding.py"}
+import pytest
+from math.adding import add
+
+def test_add_two_numbers():
+    """Test adding two numbers."""
+    # Given
+    expected = 7
+    # When
+    actual = add(2, 5)
+    # Then
+    assert actual == expected
+```
+:::
+
+If the tests are short and very simple, you don't have to use these
+sections explicitly, meaning you don't necessarily have to include the
+comments `# Given`, `# When`, and `# Then`. But as tests get longer and
+more complex, it can be helpful---for reviewers and your future
+self---to include them. The reasoning for using docstrings in test
+functions is the same. It can help explain what the test is doing and
+why it is important.
+
+In general, it's best to keep the tests as simple as possible and only
+test one thing at a time. If you need to test multiple things, write
+multiple tests.
+
+::: callout-tip
+We won't cover it in this guide, but you can avoid repeating yourself in
+tests by using [parameterized
+tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to test
+multiple inputs and outputs with the same test function.
+:::
+
+## Running the tests
+
+The
+[`template-python-package`](https://github.com/seedcase-project/template-python-package)
+includes a file called [`justfile`](https://just.systems/man/en/). This
+file contains "recipes" (commands) for many build and testing tasks. It
+includes a recipe for running the tests with pytest. You can see a list
+of the recipes, including the testing recipe, by running this command in
+the terminal:
+
+``` {.bash filename="Terminal"}
+just
+```
+
+You can also run the tests directly with pytest (via
+[uv](https://docs.astral.sh/uv/)) by running this command:
+
+``` {.bash filename="Terminal"}
+# If pytest is installed in the virtual environment
+uv run pytest
+# Or if pytest is installed globally
+uvx pytest
+```
+
+::: callout-note
+Because the package is structured with the `src/` folder, you would
+normally need to tell pytest that the package is a "src" package by
+using the `--import-mode=importlib` option when running pytest or by
+setting the option in the `pytest.ini` configuration file. However, the
+[`template-python-package`](https://github.com/seedcase-project/template-python-package)
+already has this option set in the `pytest.ini` file, so you don't need
+to do anything different when running the tests with the commands above.
+:::
