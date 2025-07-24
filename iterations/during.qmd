@@ -11,7 +11,7 @@ After the iteration planning meeting, you as the team lead need to set a
 priority for each issue in the iteration. The priority is determined by
 how important or urgent the task is to the iteration aim. Keep the
 distribution of priorities as even as possible. If all items are high
-priority, then no item is high priority. And that isn't helpful for the
+priority, then no item is high priority. And that won't guide the
 team to know what to work on next.
 
 While issues themselves are given a priority, your individual priorities
@@ -60,7 +60,7 @@ to be done, create issues as needed.
 ## Tasks unrelated to the iteration's aim
 
 In general, tasks you work on during the iteration should support the
-overall iteration goal. However, there are several cases when you might
+overall iteration goal. However, there are times when you might
 need to work on tasks unrelated to the goal of the current iteration.
 For example:
 
@@ -98,3 +98,4 @@ meetings during the iteration:
     request, they will need to do a bit of preparation beforehand for
     the meeting so that it runs smoothly and is an effective use of
     time.
+- Be mindful that not all team members are automatically relevant for all meetings. Think about who might benefit/contribute before sending an invitation to the entire team.
