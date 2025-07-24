@@ -3,7 +3,9 @@
 During an iteration, there is a variety of tasks related to the
 management and completion of the iteration that you and everyone else on
 the team can or should do. This document describes what those might be
-and how to do them.
+and how to do them. Most of this document is relevant to all members
+of a team, but some are specific to the team lead. These specific sections
+will be indicated with a comment like "if you are the team lead".
 
 ## Task priority order
 
