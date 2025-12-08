@@ -4,15 +4,23 @@ project:
 
 book:
   title: "Guidebook to doing research software engineering in a team-setting"
-  subtitle: "A living document for how we work in the Seedcase project"
+  subtitle: "A living document for how we work and build things in the Seedcase project"
   search:
     type: textbox
   favicon: _extensions/seedcase-project/seedcase-theme/favicon/favicon.ico
   author:
-    - "Luke W. Johnston"
-    - "Signe Kirk Brødbæk"
-    - "Kristiane Beicher"
-    - "Marton Vago"
+    - name: "Luke W. Johnston"
+      affiliation: "Steno Diabetes Center Aarhus"
+      orcid: "https://orcid.org/0000-0003-4169-2616"
+    - name: "Signe Kirk Brødbæk"
+      affiliation: "Steno Diabetes Center Aarhus"
+      orcid: "https://orcid.org/0009-0000-2208-7088"
+    - name: "Kristiane Beicher"
+      affiliation: "Steno Diabetes Center Aarhus"
+      orcid: "https://orcid.org/0000-0001-7556-9566"
+    - name: "Marton Vago"
+      affiliation: "Steno Diabetes Center Aarhus"
+      orcid: "https://orcid.org/0009-0007-4628-655X"
   date: last-modified
   repo-url: "https://github.com/seedcase-project/guidebook"
   site-url: "https://guidebook.seedcase-project.org/"

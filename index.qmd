@@ -1,5 +1,7 @@
 # Welcome!
 
+{{< include /includes/_badges.qmd >}}
+
 Guidebook is about...
 
 ## Who you are as the reader
@@ -11,3 +13,17 @@ think will read the documents:
 -   **Research software/data engineers**: ...
 -   **Managers or leaders**: ...
 -   **Research or development operations personnel**: ...
+
+## Contributing
+
+Check out our [contributing document](CONTRIBUTING.md) for information
+on how to contribute to the project.
+
+### Contributors
+
+{{< include /includes/_contributors.qmd >}}
+
+## Changes
+
+Check out our [changelog](CHANGELOG.md) for information on what has
+changed in each version of the guidebook.
