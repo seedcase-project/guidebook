@@ -2,6 +2,7 @@
 _ignore
 bin/
 dev/
+_temp/
 
 # Temporary files
 *.tmp
@@ -15,6 +16,7 @@ dev/
 # Quarto
 /.quarto/
 docs/.quarto/
+**/*.quarto_ipynb
 
 # Website generation
 _site

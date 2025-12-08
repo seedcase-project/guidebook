@@ -5,14 +5,17 @@ These documents are very much a work in progress and very much
 incomplete. We work on it slowly and when we can.
 :::
 
-This guidebook walks you through how we, in the [Seedcase Project](https://seedcase-project.org/), develop and release research
+{{< include /includes/_badges.qmd >}}
+
+This guidebook walks you through how we, in the [Seedcase
+Project](https://seedcase-project.org/), develop and release research
 software, build data infrastructures, create content on websites, and
 work together as a team. We've written this to collect best practices
 and lessons learned as we've built products as a team.
 
-We cover topics that range from our contribution workflow,
-how we write code, how we ensure our products are secure and
-reliable, how we collaborate and manage our work, and more.
+We cover topics that range from our contribution workflow, how we write
+code, how we ensure our products are secure and reliable, how we
+collaborate and manage our work, and more.
 
 ## Who you are as the reader
 
@@ -36,3 +39,17 @@ think will read the documents:
     a research organisation, these documents can provide insights into
     best practices for managing and deploying research software and data
     systems in an effective way that hopefully reduces your workload.
+
+## Contributing
+
+Check out our [contributing document](CONTRIBUTING.md) for information
+on how to contribute to the project.
+
+### Contributors
+
+{{< include /includes/_contributors.qmd >}}
+
+## Changes
+
+Check out our [changelog](CHANGELOG.md) for information on what has
+changed in each version of the guidebook.
