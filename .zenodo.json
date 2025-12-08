@@ -1,0 +1,46 @@
+{
+  "creators": [
+    {
+      "name": "Johnston, Luke",
+      "affiliation": "Steno Diabetes Center Aarhus",
+      "orcid": "https://orcid.org/0000-0003-4169-2616"
+    },
+    {
+      "name": "Brødbæk, Signe Kirk",
+      "affiliation": "Steno Diabetes Center Aarhus",
+      "orcid": "https://orcid.org/0009-0000-2208-7088"
+    },
+    {
+      "name": "Beicher, Kristiane",
+      "affiliation": "Steno Diabetes Center Aarhus",
+      "orcid": "https://orcid.org/0000-0001-7556-9566"
+    },
+    {
+      "name": "Vago, Marton",
+      "affiliation": "Steno Diabetes Center Aarhus",
+      "orcid": "https://orcid.org/0009-0007-4628-655X"
+    }
+  ],
+  "title": "Guidebook to doing research software engineering in a team-setting",
+  "description": "This repository documents the practices, guidelines, and conventions that we've learned and applied that help us develop and release research software more effectively as solo developers and as a team. See our website at https://guidebook.seedcase-project.org/ for more details.",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/seedcase-project/guidebook",
+      "relation": "isIdenticalTo",
+      "resource_type": "other"
+    }
+  ],
+  "keywords": [
+    "quarto website",
+    "guidebook",
+    "research software engineering",
+    "teamwork",
+    "best practices",
+    "collaboration"
+  ],
+  "license": "cc-by-4.0",
+  "upload_type": "publication",
+  "publication_type": "other",
+  "language": "eng"
+}
