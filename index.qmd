@@ -1,18 +1,44 @@
-# Welcome!
+# Welcome! {.unnumbered}
+
+::: callout-caution
+These documents are very much a work in progress and very much
+incomplete. We work on it slowly and when we can.
+:::
 
 {{< include /includes/_badges.qmd >}}
 
-Guidebook is about...
+This guidebook walks you through how we, in the [Seedcase
+Project](https://seedcase-project.org/), develop and release research
+software, build data infrastructures, create content on websites, and
+work together as a team. We've written this to collect best practices
+and lessons learned as we've built products as a team.
+
+We cover topics that range from our contribution workflow, how we write
+code, how we ensure our products are secure and reliable, how we
+collaborate and manage our work, and more.
 
 ## Who you are as the reader
 
 We've written these documents considering a few people in mind who we
 think will read the documents:
 
--   **New contributors/team members**: ...
--   **Research software/data engineers**: ...
--   **Managers or leaders**: ...
--   **Research or development operations personnel**: ...
+-   **New contributors/team members**: This is who we are primarily
+    writing for. If you are new to working with us on the Seedcase
+    Project, these documents are designed with you in mind.
+-   **Research software/data engineers**: If you work in another
+    organization or group, we write these documents to share our
+    practices with you. You can use this either as a guide or as a
+    reference to help you improve and learn how we work.
+-   **Managers or leaders**: If you are in a position where you have
+    control or power to influence how work is done and organised, these
+    documents can serve as inspiration for how to structure teams,
+    workflows, and practices to build products more effectively,
+    reliably, and securely.
+-   **Research or development operations personnel**: For those who are
+    responsible for maintaining infrastructure or operational aspects of
+    a research organisation, these documents can provide insights into
+    best practices for managing and deploying research software and data
+    systems in an effective way that hopefully reduces your workload.
 
 ## Contributing
 
