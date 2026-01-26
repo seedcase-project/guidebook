@@ -7,7 +7,7 @@ book:
   subtitle: "A living document for how we work and build things in the Seedcase project"
   search:
     type: textbox
-  favicon: _extensions/seedcase-project/seedcase-theme/favicon/favicon.ico
+  favicon: _extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg
   author:
     - name: "Luke W. Johnston"
       affiliation: "Steno Diabetes Center Aarhus"
