@@ -30,8 +30,8 @@ assumptions as possible.
 Once you have the clear purpose, now you can get into designing
 something! Like the step above, this step involves a substantial amount
 of listening, asking probing questions, digging deeper into the problem
-domain, and communication. And one of the best tools to use for this
-step is plain sticky notes, pencils/pens, whiteboards, and paper.
+domain, and communication. Among the best tools to use for this
+step are plain sticky notes, pencils/pens, whiteboards, and paper.
 
 Domain-driven design starts having at least one, though usually more,
 brainstorming/workshop-like sessions. Participants of these sessions
@@ -73,7 +73,7 @@ rounds:
 
 Once you've gotten through this process, now is the time to organise it
 into a coherent narrative and structure. A good starting point is to
-make a diagram, such as making a [C4 Model
+make a diagram, such as a [C4 Model
 diagram](https://c4model.com/) or even a simple flowchart will do, to
 visually represent the overall architecture and flow of the system, such
 as how events and actions connect to each other. From there, convert all
@@ -102,8 +102,8 @@ other part of the software.
 
 In our Seedcase Project case, the problem domain would be the research
 data management, organisation, processing, storing, and sharing domain.
-So some of the "nouns" or events would be things like "downloaded data
+So some of the "nouns" or events would be "downloaded data
 from API", "filled in high-level metadata", "verified data integrity",
 and "created a data subset for a collaborator". And some of the "verbs"
-or actions would be things like "call web API to get data", "run
+or actions would be "call web API to get data", "run
 verification checks" and "fill in metadata fields".
