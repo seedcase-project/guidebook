@@ -144,10 +144,11 @@ sequence of rounds:
     sub-actions. This is where asking questions and "why" or "how" can
     help immensely. A good way to think about this is the ["5
     Whys"](https://en.wikipedia.org/wiki/Five_whys) (ask why five times)
-    or the "explain like I'm five" (ELI5) technique. Don't assume
-    things, ask simple questions (even if you may think you know the
-    answer). You'll be surprised how often you find out new things this
-    way.
+    or the ["explain like I'm
+    five"](https://ell.stackexchange.com/questions/79280/what-is-explain-like-im-five)
+    (ELI5) technique. Don't assume things, ask simple questions (even if
+    you may think you know the answer). You'll be surprised how often
+    you find out new things this way.
 4.  For any area that is unclear or uncertain, make a note of it to come
     back to it and investigate it further later.
 5.  Keep repeating this process until everyone agrees with what's been
