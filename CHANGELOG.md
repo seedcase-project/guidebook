@@ -15,6 +15,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.4.0 (2026-02-09)
+
+### Feat
+
+- :sparkles: visual overview of software development workflow (#92)
+
 ## 0.3.0 (2025-12-09)
 
 ### Feat
