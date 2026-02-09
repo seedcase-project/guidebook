@@ -15,7 +15,7 @@ retrospectives). Within a given product, the workflow includes:
 -   [Continuous
     integration](https://en.wikipedia.org/wiki/Continuous_integration)
     (that includes automated testing and checking) through trunk-based
-    development (with short-lived branches, e.g. [GitHub
+    development (with short-lived branches following the [GitHub
     Flow](https://decisions.seedcase-project.org/why-github-flow/))
 -   [Continuous
     delivery/deployment](https://en.wikipedia.org/wiki/Continuous_delivery)
