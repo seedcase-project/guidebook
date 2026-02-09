@@ -109,8 +109,7 @@ assumptions as possible.
 Once you have the clear purpose, you can get into designing the
 software! Like the step above, this involves a substantial amount of
 listening, asking probing questions, and digging deeper into the problem
-domain. Among the best tools to use for this step are plain sticky
-notes, pencils/pens, whiteboards, and paper.
+domain.
 
 Domain-driven design starts with having at least one, though usually
 more, brainstorming/workshop-like sessions. Participants of these
@@ -127,15 +126,20 @@ brainstorming and questioning, and examine any given area until you feel
 like you've fully explored it.
 
 How this might look in practice depends a lot on the specific problem
-domain and context. But in general you might follow this sequence of
-rounds:
+domain and context. Among the best tools and practices are to have a
+synchronised (virtual or in-person) brainstorming or event storming
+session, using plain sticky notes, pencils/pens, whiteboards, and paper
+(or their digital equivalents). In general you might follow this
+sequence of rounds:
 
 1.  Start with the beginning and the end of the problem area. What are
     the inputs, and what are the final outputs?
-2.  Working from either end, start identifying all major events (the
-    "nouns") and the actions (the "verbs") that happen in between the
-    start and end. Focus on events and actions that people actually have
-    to do or take, including any manual, non-computer tasks.
+2.  Working from either end, start identifying all major events or
+    objects/output (the "nouns" or "nouns" with past-tense actions
+    connected to them) and the actions (the "verbs") that happen in
+    between the start and end. Focus on events and actions that people
+    actually have to do or take, including any manual, non-computer
+    tasks.
 3.  For each event and action, dig in deeper and identify sub-events and
     sub-actions. This is where asking questions and "why" or "how" can
     help immensely. A good way to think about this is the ["5
@@ -156,17 +160,19 @@ coherent narrative and structure. A good starting point is to make a
 diagram, such as a [C4 Model diagram](https://c4model.com/) or even a
 simple flowchart to visually represent the overall architecture and flow
 of the system, such as how events and actions connect to each other.
-From there, convert all the "nouns" into objects or data structures, as
-appropriate for the programming language you're using, and "verbs" into
-functions or methods (noting their signature). For example, create
-Python classes that map to the events you identified earlier and
-functions that map to the actions.
+From there, convert all the "nouns" or events into objects or data
+structures, as appropriate for the programming language you're using,
+and "verbs" into functions or methods (noting their signature). For
+example, create Python classes that map to the events you identified
+earlier and functions that map to the actions.
 
 Usually, but not always, a "noun" has an "verb" before or after it. For
-example, a "noun" or event might be created by an action or "verb". The
-reverse can also happen, where a "noun" is used by a "verb" to create
-another "noun". But sometimes, "nouns" may not have a preceding or
-following "verb", and the same is true for "verbs".
+example, a "noun" might be created by an action or "verb". The reverse
+can also happen, where a "noun" is used by a "verb" to create another
+"noun". But sometimes, "nouns" may not have a preceding or following
+"verb", and the same is true for "verbs". For events, they usually have
+a preceding past-tense "verb" attached to them, examples of which are
+shown later below.
 
 The output of these sessions, and the ultimate output of the
 domain-driven design process, should be some type of design document
@@ -179,6 +185,15 @@ product, not as a separate thing. This design document should be
 included as part of the software product's documentation, so treat it
 with the same level of care, attention, and quality as you would any
 other part of the software.
+
+::: callout-note
+The design document should be an evolving and living document that gets
+updated as the design evolves, as you learn more about the problem
+domain, and as you get feedback during the implementation and from users
+(or actually using it in practice). This is where the "iterative and
+incremental development" approach comes in, which is described in more
+detail in @sec-iterations.
+:::
 
 In the case of the Seedcase Project, the problem domain would be the
 research data management, organisation, processing, storing, and sharing
