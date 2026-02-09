@@ -53,7 +53,7 @@ cover each part in more detail in the following sections.
 
 ```{mermaid}
 %%| label: fig-software-development-workflow
-%%| fig-cap: "Software development workflow that combines domain-driven design, documentation-driven development, and test-driven development."
+%%| fig-cap: "Software development workflow that combines domain-driven design, documentation-driven development, and test-driven development. Rounded boxes represent stages and methods of development, while indented rectangled boxes represent the output of those stages as documentation types. Rectangle boxes represent generic activities that integrate many stages together."
 %%| fig-alt: "A flowchart showing arrows going between different stages of the software development workflow, such as domain-driven design, documentation-driven development, and test-driven development, as well as different documentation types used for those stages."
 flowchart TB
     Aim([Purpose and need<br>for software]) --> DDDesign([Domain-driven design])
