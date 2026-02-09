@@ -32,15 +32,16 @@ book:
     :::
   chapters:
     - index.qmd
+    - part: "Workflows"
+      chapters:
+        - workflows/software.qmd
+        - workflows/commits.qmd
     - part: "Iterations"
       chapters:
         - iterations/index.qmd
         - iterations/start.qmd
         - iterations/during.qmd
         - iterations/end.qmd
-    - part: "Workflows"
-      chapters:
-        - workflows/commits.qmd
     - part: "Python"
       chapters:
         - python/code.qmd
