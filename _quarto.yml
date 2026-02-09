@@ -7,7 +7,7 @@ book:
   subtitle: "A living document for how we work and build things in the Seedcase project"
   search:
     type: textbox
-  favicon: _extensions/seedcase-project/seedcase-theme/favicon/favicon.ico
+  favicon: _extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg
   author:
     - name: "Luke W. Johnston"
       affiliation: "Steno Diabetes Center Aarhus"
@@ -32,15 +32,16 @@ book:
     :::
   chapters:
     - index.qmd
+    - part: "Workflows"
+      chapters:
+        - workflows/software.qmd
+        - workflows/commits.qmd
     - part: "Iterations"
       chapters:
         - iterations/index.qmd
         - iterations/start.qmd
         - iterations/during.qmd
         - iterations/end.qmd
-    - part: "Workflows"
-      chapters:
-        - workflows/commits.qmd
     - part: "Python"
       chapters:
         - python/code.qmd
