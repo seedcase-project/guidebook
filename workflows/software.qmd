@@ -7,8 +7,9 @@ issues over time. It combines and mixes several development methods and
 best practices, starting from a high-level by following an [iterative
 and incremental
 development](https://decisions.seedcase-project.org/why-kanban-and-iid)
-approach with aspects of Kanban for project planning and management, including regular update and reflection meetings (called retrospectives).
-Within a given product, the workflow includes:
+approach with aspects of Kanban for project planning and management,
+including regular update and reflection meetings (called
+retrospectives). Within a given product, the workflow includes:
 <!-- TODO: Eventually replace with links to decision posts -->
 
 -   [Continuous
@@ -47,9 +48,9 @@ That's what this section is all about! :tada:
 
 ## Visual overview
 
-The following diagram gives a visual overview of the stages of development
-and how they connect. We'll
-cover each part in more detail in the following sections.
+The following diagram gives a visual overview of the stages of
+development and how they connect. We'll cover each part in more detail
+in the following sections.
 
 ```{mermaid}
 %%| label: fig-software-development-workflow
