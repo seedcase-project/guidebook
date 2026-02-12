@@ -167,9 +167,9 @@ and "verbs" into functions or methods (noting their signature). For
 example, create Python classes that map to the events you identified
 earlier and functions that map to the actions.
 
-Usually, but not always, a "noun" has an "verb" before or after it. For
-example, a "noun" might be created by an action or "verb". The reverse
-can also happen, where a "noun" is used by a "verb" to create another
+Usually, but not always, a "noun" has a "verb" before or after it, such
+as the case when an action or "verb" creates a "noun". The reverse can
+also happen, where a "noun" is used by a "verb" to create another
 "noun". But sometimes, "nouns" may not have a preceding or following
 "verb", and the same is true for "verbs". For events, they usually have
 a preceding past-tense "verb" attached to them, examples of which are
