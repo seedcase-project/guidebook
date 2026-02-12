@@ -75,3 +75,131 @@ Underlying all of this is an iterative and incremental development
 approach (described in more detail in @sec-iterations), continuously
 integrating the changes, and continuously deploying the software and
 associated documentation (as a website).
+
+## Development steps
+
+### Identifying the purpose and need
+
+Before even getting into the development workflow, the very first thing
+you need to do is clearly define the purpose of the software and the
+need that it meets. The purpose doesn't have to be very detailed or
+specific at this point, but there needs to be one. At the least, there
+needs to be a clear need or a specific problem to be solved by software.
+This helps to recognise and define the scope of the software.
+
+If you don't have this clear purpose, everything later will be much
+harder. In general, don't continue to the next steps until you have
+defined the purpose. Though it doesn't have to be final, defining the
+purpose helps guide the direction of the subsequent steps. It's better
+to not waste time on building something that doesn't actually solve any
+problems or needs. There are more than enough real problems in the world
+to actually spend time on. Defining the purpose and need that the
+software meets can help mitigate this risk.
+
+The purpose can come from you, your team, your organisation, or from
+users or clients. Either way, it takes a bit of time and effort to dig
+into what the actual purpose and need are. It's difficult to describe
+how you can go about this process as it involves a lot of human
+communication, discussion, clarification, and understanding. In general,
+ask lots of questions and listen with as little judgement and as few
+assumptions as possible.
+
+### Using domain-driven design
+
+Once you have the clear purpose, you can get into designing the
+software! Like the step above, this involves a substantial amount of
+listening, asking probing questions, and digging deeper into the problem
+domain.
+
+Domain-driven design starts with having at least one, though usually
+more, brainstorming/workshop-like sessions. Participants of these
+sessions include domain experts (those actually working in the problem
+area), relevant stakeholders, developers, and users. The goal of these
+sessions is to identify, decompose, record, and sketch out all the
+different events, actions, processes, workflows, and tasks that are
+involved in the problem domain. Think of these as the "nouns" and
+"verbs" of the problem area.
+
+You rarely identify everything in a given area of the problem the first
+time you focus on it. So within each session, have multiple rounds of
+brainstorming and questioning, and examine any given area until you feel
+like you've fully explored it.
+
+How this might look in practice depends a lot on the specific problem
+domain and context. Among the best tools and practices are to have a
+synchronised (virtual or in-person) brainstorming or event storming
+session, using plain sticky notes, pencils/pens, whiteboards, and paper
+(or their digital equivalents). In general you might follow this
+sequence of rounds:
+
+1.  Start with the beginning and the end of the problem area. What are
+    the inputs, and what are the final outputs?
+2.  Working from either end, start identifying all major events or
+    objects/output (the "nouns" or "nouns" with past-tense actions
+    connected to them) and the actions (the "verbs") that happen in
+    between the start and end. Focus on events and actions that people
+    actually have to do or take, including any manual, non-computer
+    tasks.
+3.  For each event and action, dig in deeper and identify sub-events and
+    sub-actions. This is where asking questions and "why" or "how" can
+    help immensely. A good way to think about this is the ["5
+    Whys"](https://en.wikipedia.org/wiki/Five_whys) (ask why five times)
+    or the ["explain like I'm
+    five"](https://ell.stackexchange.com/questions/79280/what-is-explain-like-im-five)
+    (ELI5) technique. Don't assume things, ask simple questions (even if
+    you may think you know the answer). You'll be surprised how often
+    you find out new things this way.
+4.  For any area that is unclear or uncertain, make a note of it to come
+    back to it and investigate it further later.
+5.  Keep repeating this process until everyone agrees with what's been
+    (un)covered and there are no major gaps or missing pieces. In
+    reality, as you continue this design stage, there will be areas
+    missing that weren't identified during these sessions.
+
+Once you've gotten through this process, it's time to organise it into a
+coherent narrative and structure. A good starting point is to make a
+diagram, such as a [C4 Model diagram](https://c4model.com/) or even a
+simple flowchart to visually represent the overall architecture and flow
+of the system, such as how events and actions connect to each other.
+From there, convert all the "nouns" or events into objects or data
+structures, as appropriate for the programming language you're using,
+and "verbs" into functions or methods (noting their signature). For
+example, create Python classes that map to the events you identified
+earlier and functions that map to the actions.
+
+Usually, but not always, a "noun" has a "verb" before or after it, such
+as the case when an action or "verb" creates a "noun". The reverse can
+also happen, where a "noun" is used by a "verb" to create another
+"noun". But sometimes, "nouns" may not have a preceding or following
+"verb", and the same is true for "verbs". For events, they usually have
+a preceding past-tense "verb" attached to them, examples of which are
+shown later below.
+
+The output of these sessions, and the ultimate output of the
+domain-driven design process, should be some type of design document
+that you and your team (or collaborators) can refer to later. For this,
+you can use the [explanation document
+type](https://diataxis.fr/explanation) from
+[Diataxis](https://decisions.seedcase-project.org/why-diataxis/). As
+much as possible, think of every stage of development as part of the
+product, not as a separate thing. This design document should be
+included as part of the software product's documentation, so treat it
+with the same level of care, attention, and quality as you would any
+other part of the software.
+
+::: callout-note
+The design document should be an evolving and living document that gets
+updated as the design evolves, as you learn more about the problem
+domain, and as you get feedback during the implementation and from users
+(or actually using it in practice). This is where the "iterative and
+incremental development" approach comes in, which is described in more
+detail in @sec-iterations.
+:::
+
+In the case of the Seedcase Project, the problem domain would be the
+research data management, organisation, processing, storing, and sharing
+domain. So some of the "nouns" or events would be "downloaded data from
+API", "filled in high-level metadata", "verified data integrity", and
+"created a data subset for a collaborator". And some of the "verbs" or
+actions would be "call web API to get data", "run verification checks"
+and "fill in metadata fields".
