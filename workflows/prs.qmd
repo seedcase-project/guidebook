@@ -1,0 +1,198 @@
+# Pull requests
+
+Pull requests (PRs) are how we propose, review, and discuss changes
+before they become part of a project on GitHub. This section covers the
+practices we follow for creating and reviewing pull requests.
+
+## What is a pull request?
+
+To understand pull requests, it helps to first understand *branches*.
+When you work on a project in Git, there is a default branch (usually
+called `main`) that holds the current, stable version of the project.
+Instead of making changes directly to `main`, you create a *branch* —
+think of it like making a copy of a document so you can draft changes
+without touching the original. You work on your branch independently,
+and when you are happy with your changes, you propose merging them back
+into `main`. That proposal is called a **pull request** (PR).
+
+A PR gives your collaborators the opportunity to review your changes,
+ask questions, and suggest improvements before the changes become part
+of the project. This review process helps catch mistakes, maintain
+quality, and keep your collaborators informed about what is changing and
+why.
+
+The diagram below shows this in practice. A person creates a branch
+called `docs/add-pr-guide` to work on their changes. The dots represent
+[commits](commits.qmd) — saved snapshots of their work. When ready, they
+open a PR. After review and approval, their changes are merged back into
+the `main` branch of the project.
+
+```{mermaid}
+---
+config:
+  theme: 'forest'
+  gitGraph:
+    showCommitLabel: false
+---
+gitGraph
+    commit
+    commit
+    branch docs/add-pr-guide
+    checkout docs/add-pr-guide
+    commit
+    commit
+    commit tag:"Make PR"
+    checkout main
+    merge docs/add-pr-guide
+    commit
+```
+
+Generally, the PR process follows these steps:
+
+-   Create a branch for your changes.
+-   Make your changes and commit them to the branch.
+-   Open a pull request on GitHub to propose merging your changes into
+    `main`.
+-   Review and discuss the changes with your collaborators.
+-   If the changes are approved, merge the PR into `main`. If not, make
+    further changes, update the PR, and request another review.
+
+## Creating a pull request
+
+### When to create a PR
+
+Create a pull request when you have a set of changes that are ready for
+someone else to review. This usually means after you have completed the
+work on an issue or task, and the changes are in a state where they can
+be tested and reviewed.
+
+### Keep PRs small
+
+Each pull request should represent a single, focused change. This makes
+it easier for reviewers to understand the changes and provide meaningful
+feedback. A small (*atomic*) PR might be:
+
+-   Adding a new section to a document.
+-   Fixing a bug or typo.
+-   Refactoring a specific component or function.
+-   Adding or updating a single feature.
+
+Avoid combining unrelated changes into a single PR. If you find yourself
+writing "and" in your PR description to connect two separate ideas,
+consider splitting them into separate PRs. Smaller, focused PRs are
+quicker to review, easier to test, and simpler to revert if something
+goes wrong.
+
+### Branch naming conventions
+
+Branch names should be lowercase, use hyphens between words, and follow
+the format `{type}/{short-description}`. The `type` is based on the
+[Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
+`docs`, `fix`, `feat`, `refactor`). For example:
+
+-   `docs/add-pr-workflow-guide`
+-   `fix/broken-link-in-readme`
+-   `refactor/update-template-structure`
+
+### Writing a good PR description
+
+A good PR description helps reviewers understand the context and purpose
+of the changes. Our repositories include a [pull request
+template](https://github.com/seedcase-project/guidebook/blob/main/.github/pull_request_template.md)
+to make it easy to fill out the description when creating a PR. In the
+description field, aim to cover:
+
+-   **What** was changed: Briefly describe the changes you made.
+-   **Why** it was changed: Explain the motivation or reasoning behind
+    the changes.
+-   **How** it was changed: If the changes are not straightforward,
+    describe the approach you took.
+
+If the PR addresses an existing issue, reference it by writing
+`Closes #<issue-number>` in the description. This automatically links
+the PR to the issue and closes the issue when the PR is merged.
+
+Try to keep the description **concise but informative**. A few sentences
+that give enough context for someone unfamiliar with the work to
+understand what you did and why is a good target. The easier it is for a
+reviewer to understand the PR, the faster and more focused their
+feedback will be.
+
+::: callout-tip
+Indicate in the description whether the PR needs a quick or thorough
+review. A quick review might be suitable for small changes like typos,
+while a thorough review is better for larger or more complex changes.
+:::
+
+### Assigning assignees and reviewers
+
+When you create a PR, you should assign an assignee and request
+reviewers using the options in the sidebar on the right side of the PR
+page on GitHub:
+
+-   **Assignees**: Assign yourself to the PR. This tells others that you
+    are the person responsible for the changes and for addressing any
+    feedback.
+-   **Reviewers**: Request a review from one or more collaborators. This
+    notifies them that the PR is ready for their feedback.
+
+Setting both ensures that it is clear who owns the PR and who needs to
+look at it.
+
+## Reviewing a pull request
+
+Reviewing pull requests is a key part of a collaborative workflow. As
+outlined in our [task priority order](../iterations/during.qmd), both
+responding to reviewer comments on your own PRs and reviewing others'
+PRs are high priority tasks. Timely reviews keep the work moving and
+prevent bottlenecks.
+
+### Making suggestions
+
+When reviewing a PR, focus on providing constructive and actionable
+feedback. Use GitHub's suggestion feature to propose specific changes
+directly in the code or text. This makes it easy for the author to
+accept your changes with a single click.
+
+To make a suggestion, go to the "Files changed" tab and click the `+`
+icon next to a line. Then, either add a comment or make a suggestion. If
+you want to make a specific suggestion, click the "Add a suggestion"
+button (a document icon with `+` and `-`). This inserts the suggestion
+syntax into the comment box, where you can write your proposed change.
+The syntax looks like this:
+
+```` text
+```suggestion
+the corrected or improved text here
+```
+````
+
+When leaving comments, be specific about what you think should change
+and why. Avoid vague feedback like "this doesn't look right" and instead
+explain what the issue is and how it could be improved.
+
+### Comment, request changes, or approve
+
+When you finish your review, GitHub gives you three options for
+submitting it:
+
+-   **Comment**: General feedback or questions that don't block merging.
+    Good for minor suggestions the author can choose to address.
+-   **Request changes**: Issues that must be resolved before merging.
+    This signals that further work is needed and prevents accidental
+    merging.
+-   **Approve**: The changes are approved and ready to be merged.
+
+If a reviewer requests changes, address the feedback, update the PR, and
+re-request a review, by clicking the "Re-request review" button in the
+right sidebar of the PR page. This continues until the PR is approved
+and ready to merge.
+
+## Merging a pull request
+
+Once a PR is approved, it can be merged into `main`. GitHub offers
+several merge strategies (e.g., "Merge commit", "Squash and merge",
+"Rebase and merge"). We typically use **"Squash and merge"**, which
+combines all the commits in the PR into a single commit on `main`. This
+keeps the commit history clean and focused on the overall change rather
+than individual commits.
