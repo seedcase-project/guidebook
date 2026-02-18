@@ -1,15 +1,35 @@
 # Pull requests
 
 Pull requests (PRs) are how we propose, review, and discuss changes
-before they become part of a project on GitHub. This section covers the
-practices we follow for creating and reviewing pull requests.
+before they become part of a project on GitHub. In fact, we **require**
+that all changes to a repository on GitHub go through a pull request. We
+use pull requests for several reasons:
+
+1. Helps to maintain the code and text quality and minimise the risk of
+   errors, typos, or other issues.
+2. Enables effective collaboration by allowing changes to be reviewed
+   and discussed.
+3. Provides a structured process for integrating new developments into a
+   project.
+
+As the American software developer (and founder of Stack Exchange) Jeff Atwood [wrote](https://blog.codinghorror.com/code-reviews-just-do-it/):
+
+> "**Peer code reviews are the single biggest thing you can do to improve your
+code**. If you're not doing code reviews right now with another
+developer, you're missing a lot of bugs in your code and cheating
+yourself out of some key professional development opportunities. As far
+as I'm concerned,
+**my code isn't done until I've gone over it with a fellow developer**."
+
+This section covers the practices we follow for creating and reviewing
+pull requests.
 
 ## What is a pull request?
 
 To understand pull requests, it helps to first understand *branches*.
 When you work on a project in Git, there is a default branch (usually
 called `main`) that holds the current, stable version of the project.
-Instead of making changes directly to `main`, you create a *branch* —
+Instead of making changes directly to `main`, you create a *branch* ---
 think of it like making a copy of a document so you can draft changes
 without touching the original. You work on your branch independently,
 and when you are happy with your changes, you propose merging them back
@@ -23,9 +43,9 @@ why.
 
 The diagram below shows this in practice. A person creates a branch
 called `docs/add-pr-guide` to work on their changes. The dots represent
-[commits](commits.qmd) — saved snapshots of their work. When ready, they
-open a PR. After review and approval, their changes are merged back into
-the `main` branch of the project.
+[commits](commits.qmd), which are saved snapshots of their work. When
+ready, they open a PR. After review and approval, their changes are
+merged back into the `main` branch of the project.
 
 ```{mermaid}
 ---
@@ -57,7 +77,32 @@ Generally, the PR process follows these steps:
 - If the changes are approved, merge the PR into `main`. If not, make
   further changes, update the PR, and request another review.
 
+This workflow is called the
+[GitHub Flow](https://decisions.seedcase-project.org/why-github-flow/)
+and it is a widely used and effective collaboration strategy for
+projects of all sizes.
+
 ## Creating a pull request
+
+### How to create a PR
+
+There are a few ways to make a PR. We use two ways: through VS Code and
+through the GitHub website. Using the GitHub website is a fairly
+straightforward way of making a PR, as you can do it through the pull
+request tab of the repository by clicking the "New pull request" button
+and following the instructions there.
+
+Doing it through VS Code, however, is a faster way, though it requires
+some setting up and practice using it. To be able to create pull
+requests to GitHub from within VS Code, you need to install the
+extension
+[GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github).
+You can find and install this extension by going to the `Extension` view
+in the left sidebar of VS Code and search for it. Once you have
+installed it, VS Code will prompt you to link to your GitHub account by
+signing in and giving access.
+
+Now, you can use the command palette (Ctrl+Shift+P or Cmd+Shift+P) and search for "GitHub: Create Pull Request" to create a pull request from the current branch you are working on. This will open a new pull request form in the sidebar where you can fill out the title, description, and other details of your PR before submitting it.
 
 ### When to create a PR
 
@@ -132,9 +177,16 @@ page on GitHub:
 
 - **Assignees**: Assign yourself to the PR. This tells others that you
   are the person responsible for the changes and for addressing any
-  feedback.
+  feedback. If you use any of our templates, like
+  [`template-website`](https://template-website.seedcase-project.org/),
+  you will automatically be assigned to the PR when you create it.
 - **Reviewers**: Request a review from one or more collaborators. This
-  notifies them that the PR is ready for their feedback.
+  notifies them that the PR is ready for their feedback. If you use our
+  [`template-website`](https://template-website.seedcase-project.org/),
+  it will automatically request a review from the team or people listed
+  in the
+  [`.github/CODEOWNERS`](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
+  file when you create the PR.
 
 Setting both ensures that it is clear who owns the PR and who needs to
 look at it.
@@ -142,10 +194,10 @@ look at it.
 ## Reviewing a pull request
 
 Reviewing pull requests is a key part of a collaborative workflow. As
-outlined in our [task priority order](../iterations/during.qmd), both
+outlined in our [task priority order](/iterations/during.qmd), both
 responding to reviewer comments on your own PRs and reviewing others'
-PRs are high priority tasks. Timely reviews keep the work moving and
-prevent bottlenecks.
+PRs are the highest priority tasks. Timely reviews keep the work moving
+and prevent bottlenecks.
 
 ### Making suggestions
 
@@ -182,10 +234,31 @@ submitting it:
   signals that further work is needed and prevents accidental merging.
 - **Approve**: The changes are approved and ready to be merged.
 
-If a reviewer requests changes, address the feedback, update the PR, and
-re-request a review, by clicking the "Re-request review" button in the
-right sidebar of the PR page. This continues until the PR is approved
-and ready to merge.
+If a reviewer requests changes, then you will need to address the
+feedback, update the PR, and re-request a review by clicking the
+"Re-request review" button in the right sidebar of the PR page. This
+continues until the PR is approved and ready to merge.
+
+### Dealing with merge conflicts
+
+Sometimes, someone else may have made changes to the same files or lines
+as the changes you've made. This will lead to *merge conflicts* as Git
+can't determine what to do with the conflicting changes. Dealing with
+merge conflicts requires manual editing and resolving to continue.
+
+There are two main ways to resolve merge conflicts:
+
+- Use the GitHub interface to resolve the conflicts directly on the
+  website. This is the easiest way for simple conflicts. However, GitHub
+  can't handle more complicated conflicts, so you need to resolve it on
+  your computer and push the resolved changes to GitHub.
+- Pull any changes from the remote repository to your local repository
+  by using either `git` (e.g. `git pull origin main`) or through VS
+  Code's Git features. You can use the command palette and search for
+  `Git: Pull from` and then pull from `origin/main`. Then you can
+  resolve the conflicts with the help of VS Code and with manual
+  editing. After you've resolved the conflicts, you can push the changes
+  to GitHub to update the PR.
 
 ## Merging a pull request
 
