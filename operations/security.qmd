@@ -15,47 +15,47 @@ risks.
 
 You can make a GitHub App to create a token following these steps:
 
-1.  Go to the organization's settings and click the "GitHub Apps"
-    link under "Developer Settings" at the bottom of the settings
-    sidebar, e.g.
-    [`seedcase-project`](https://github.com/organizations/seedcase-project/settings/apps).
-2.  Click "New GitHub App" to create a new app.
-    -   Fill in the app name with a descriptive name, e.g.
-        "generate-auto-release-token".
-    -   Fill in the description on what the app does.
-    -   For the homepage URL, use the format:
-        `https://github.com/apps/APP-NAME`, e.g.
-        <https://github.com/apps/generate-auto-release-token>.
-    -   Uncheck all the checkboxes in the other sections.
-    -   Select the permissions you want the app to have under
-        "Permissions".
-    -   Select "Only on this account" under "Where can this GitHub App
-        be installed?".
-    -   Click "Create GitHub App" to create the app.
-3.  In the newly created app, scroll to the bottom and click "Generate a
-    private key" to create a private key for the app.
-    -   Save the private key to your computer, as it will be used to
-        generate the token.
-4.  On the sidebar, click the "Install App" link and in the new page,
-    click "Install" on the organisation you want it in.
-    -   Give it access to the repositories you want it to have access to
-        by clicking "All repositories" or "Only select repositories" and
-        selecting the repositories you want it to have access to.
-5.  Go to the organisation's settings under "Security" and "Secrets and
-    variables", click the "Actions" link.
-6.  Click the "Variables" tab and then "Create new organisation
-    variable" (or edit an existing one).
-    -   Write a new name for the variable, being descriptive enough to
-        know what it is for.
-    -   Paste the "App ID" of the app you created, which is found in the
-        app's settings page at the top.
-7.  Click the "Secrets" tab and then "New organisation secret" (or edit
-    an existing one).
-    -   Write a new name for the secret, being descriptive enough to
-        know what it is for.
-    -   Go to your computer and using a text editor, open the private
-        key you saved earlier. Copy the contents of the file and paste
-        it into the secret's value field.
+1. Go to the organization's settings and click the "GitHub Apps" link
+   under "Developer Settings" at the bottom of the settings sidebar,
+   e.g.
+   [`seedcase-project`](https://github.com/organizations/seedcase-project/settings/apps).
+2. Click "New GitHub App" to create a new app.
+   - Fill in the app name with a descriptive name, e.g.
+     "generate-auto-release-token".
+   - Fill in the description on what the app does.
+   - For the homepage URL, use the format:
+     `https://github.com/apps/APP-NAME`, e.g.
+     <https://github.com/apps/generate-auto-release-token>.
+   - Uncheck all the checkboxes in the other sections.
+   - Select the permissions you want the app to have under
+     "Permissions".
+   - Select "Only on this account" under "Where can this GitHub App be
+     installed?".
+   - Click "Create GitHub App" to create the app.
+3. In the newly created app, scroll to the bottom and click "Generate a
+   private key" to create a private key for the app.
+   - Save the private key to your computer, as it will be used to
+     generate the token.
+4. On the sidebar, click the "Install App" link and in the new page,
+   click "Install" on the organisation you want it in.
+   - Give it access to the repositories you want it to have access to by
+     clicking "All repositories" or "Only select repositories" and
+     selecting the repositories you want it to have access to.
+5. Go to the organisation's settings under "Security" and "Secrets and
+   variables", click the "Actions" link.
+6. Click the "Variables" tab and then "Create new organisation variable"
+   (or edit an existing one).
+   - Write a new name for the variable, being descriptive enough to know
+     what it is for.
+   - Paste the "App ID" of the app you created, which is found in the
+     app's settings page at the top.
+7. Click the "Secrets" tab and then "New organisation secret" (or edit
+   an existing one).
+   - Write a new name for the secret, being descriptive enough to know
+     what it is for.
+   - Go to your computer and using a text editor, open the private key
+     you saved earlier. Copy the contents of the file and paste it into
+     the secret's value field.
 
 To make use of the app and it's generated token in workflows, you can
 use the

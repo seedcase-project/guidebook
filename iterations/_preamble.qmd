@@ -1,12 +1,13 @@
 ::: callout-important
-We track our iterations' progress and tasks on GitHub with [this project
-board](https://github.com/orgs/seedcase-project/projects/18/).
+We track our iterations' progress and tasks on GitHub with
+[this project board](https://github.com/orgs/seedcase-project/projects/18/).
 :::
 
 ::: callout-tip
--   It's good practice to assign a timekeeper to keep us on track and so
-    we avoid spending too long on any one topic.
--   While this guide can apply to all members of the team, several parts
-    of it are specific to the team lead. Those parts will be explicitly
-    marked to indicate that they are only for the team lead.
+- It's good practice to assign a timekeeper to keep us on track and so
+  we avoid spending too long on any one topic.
+- While this guide can apply to all members of the team, several parts
+  of it are specific to the team lead. Those parts will be explicitly
+  marked to indicate that they are only for the team lead.
+
 :::
