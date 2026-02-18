@@ -62,6 +62,8 @@ software more effectively as solo developers and as a team.
 - `_quarto.yml`: Quarto configuration file for the website, including
   settings for the website, such as the theme, navigation, and other
   options.
+- `.rumdl.toml`: [rumdl](https://rumdl.dev) configuration file for
+  formatting Markdown files in the project.
 
 ## Contributing
 

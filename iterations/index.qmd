@@ -9,8 +9,8 @@ generally use it.
 ## Iterative development in research settings
 
 The way we've designed our work to follow a workflow that is inspired
-from some aspects of [Agile Software
-Development](https://agilemanifesto.org/) and
+from some aspects of
+[Agile Software Development](https://agilemanifesto.org/) and
 [Scrum](https://www.scrum.org/resources/what-scrum-module), especially
 this idea of time-boxed periods ("iterations") of work that follow a
 specific pattern and process for incrementally building or improving a
@@ -18,26 +18,26 @@ project or product. On their own, Agile or Scrum workflows don't
 generally fit well in more academic and research environments. Certain
 Agile frameworks like Scrum often assume that:
 
--   You and the team are in a more traditional "business" environment
-    with customers, which isn't always true in or comparable to research
-    and academic settings.
--   Everyone on the team is working only on the project full-time during
-    the iteration (e.g. with the use of "daily standups"). In research
-    settings, projects are a bit more fluid and people may not work on
-    them full-time or consistently, because they are often involved in
-    many projects at the same time.
--   Everyone on the team is highly technically skilled and knowledgeable
-    in software development practices, for instance with the
-    "self-organizing" principle in the [Agile
-    Manifesto](https://agilemanifesto.org/principles.html). Skill and
-    knowledge level is highly variable in research settings, and
-    substantial time may be needed to train people, which impacts how
-    well these practices can be realistically applied and followed.
--   You have the resources to have dedicated personnel for managing the
-    iteration and planning the product (e.g. with "Scrum Master" and
-    "Product Owner"). In research, the biggest constraint is often funds
-    so you likely have fewer people who have to do a wider variety of
-    tasks and don't have dedicated personnel for specific roles.
+- You and the team are in a more traditional "business" environment with
+  customers, which isn't always true in or comparable to research and
+  academic settings.
+- Everyone on the team is working only on the project full-time during
+  the iteration (e.g. with the use of "daily standups"). In research
+  settings, projects are a bit more fluid and people may not work on
+  them full-time or consistently, because they are often involved in
+  many projects at the same time.
+- Everyone on the team is highly technically skilled and knowledgeable
+  in software development practices, for instance with the
+  "self-organizing" principle in the
+  [Agile Manifesto](https://agilemanifesto.org/principles.html). Skill
+  and knowledge level is highly variable in research settings, and
+  substantial time may be needed to train people, which impacts how well
+  these practices can be realistically applied and followed.
+- You have the resources to have dedicated personnel for managing the
+  iteration and planning the product (e.g. with "Scrum Master" and
+  "Product Owner"). In research, the biggest constraint is often funds
+  so you likely have fewer people who have to do a wider variety of
+  tasks and don't have dedicated personnel for specific roles.
 
 All of these assumptions inherent to Scrum, Agile, or any other common
 industry workflow can't be directly applied to research and academic
@@ -61,15 +61,15 @@ If you are the team lead, you should (ideally) have a general plan or
 goal for what the team will do in the next two or three iterations and
 will:
 
--   Create an iteration within the main iteration planning board (for
-    the Seedcase Project, they are all listed
-    [here](https://github.com/orgs/seedcase-project/projects/)). You
-    create an iteration by going into the project board's settings.
--   Write the title of the iteration as the aim for it, while keeping
-    the goal focused, small, achievable, and considerate of the time the
-    team has available for that iteration. Ideally, you should write a
-    sub-aim for each person in the team for that iteration.
--   Add tasks to the board that are needed to achieve the iteration aim.
+- Create an iteration within the main iteration planning board (for the
+  Seedcase Project, they are all listed
+  [here](https://github.com/orgs/seedcase-project/projects/)). You
+  create an iteration by going into the project board's settings.
+- Write the title of the iteration as the aim for it, while keeping the
+  goal focused, small, achievable, and considerate of the time the team
+  has available for that iteration. Ideally, you should write a sub-aim
+  for each person in the team for that iteration.
+- Add tasks to the board that are needed to achieve the iteration aim.
 
 Having one iteration be one calendar month makes them easier to plan and
 organise. That way, a year can be divided into 12 iterations, and you

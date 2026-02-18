@@ -3,8 +3,8 @@
 During an iteration, there is a variety of tasks related to the
 management and completion of the iteration that you and everyone else on
 the team can or should do. This document describes what those might be
-and how to do them. Most of this document is relevant to all members
-of a team, but some are specific to the team lead. These specific sections
+and how to do them. Most of this document is relevant to all members of
+a team, but some are specific to the team lead. These specific sections
 will be indicated with a comment like "if you are the team lead".
 
 ## Task priority order
@@ -20,13 +20,13 @@ While issues themselves are given a priority, there is also a priority
 in overall tasks (not issues) you and the rest of the team should focus
 on:
 
-1.  Respond to reviewer comments on your own pull requests.
-2.  Respond to issues where you are tagged/mentioned (`@`).
-3.  Review pull requests from others.
-4.  Work on your assigned highest priority issues.
-5.  Respond to comments and questions in issues, unless it is a
-    discussion issue, where the assigned team member will seek out and
-    request your comments.
+1. Respond to reviewer comments on your own pull requests.
+2. Respond to issues where you are tagged/mentioned (`@`).
+3. Review pull requests from others.
+4. Work on your assigned highest priority issues.
+5. Respond to comments and questions in issues, unless it is a
+   discussion issue, where the assigned team member will seek out and
+   request your comments.
 
 ## Assigning issues
 
@@ -35,29 +35,28 @@ during the planning stage and many will be unassigned. Throughout the
 iteration, you should self-assign the unassigned issues that you would
 like to work on. Here are some guidelines for self-assignment:
 
--   Only one person (in general) should be assigned per issue, so that
-    the project board can be kept organized and so that each issue has
-    someone who is responsible for it. However, anyone can help with the
-    issue.
-    -   If a given issue might need input or help from another team
-        member, coordinate with them if need be by `@` mentioning them
-        in the issue instead of assigning them.
--   When assigning yourself issues, keep in mind your own availability
-    and time constraints, including days/hours required for other
-    projects or events and any upcoming days off.
--   Issues are given priority labels and, in general, try to self-assign
-    higher priority tasks first.
+- Only one person (in general) should be assigned per issue, so that the
+  project board can be kept organized and so that each issue has someone
+  who is responsible for it. However, anyone can help with the issue.
+  - If a given issue might need input or help from another team member,
+    coordinate with them if need be by `@` mentioning them in the issue
+    instead of assigning them.
+- When assigning yourself issues, keep in mind your own availability and
+  time constraints, including days/hours required for other projects or
+  events and any upcoming days off.
+- Issues are given priority labels and, in general, try to self-assign
+  higher priority tasks first.
 
 Aside from assigning yourself to issues, if you see that something needs
 to be done, create issues as needed.
 
--   If the issue is relevant to the current iteration, then add it to
-    the *current iteration* project board and others can self-assign as
-    desired.
--   If the issue isn't relevant to the current iteration, don't add it
-    to the *current iteration* project board but instead to the *issue
-    list/backlog* board, and we will save it for future iterations to
-    work on.
+- If the issue is relevant to the current iteration, then add it to the
+  *current iteration* project board and others can self-assign as
+  desired.
+- If the issue isn't relevant to the current iteration, don't add it to
+  the *current iteration* project board but instead to the
+  *issue list/backlog* board, and we will save it for future iterations
+  to work on.
 
 ## Tasks unrelated to the iteration's aim
 
@@ -66,14 +65,14 @@ overall iteration goal. However, there are times when you might need to
 work on tasks unrelated to the goal of the current iteration. For
 example:
 
--   Whenever a decision is made, create a decision post about it as near
-    to the time of decision as possible (or before making the decision).
--   Whenever a team member learns something and feels like it would be
-    useful to share with the team, create a learning post about it as
-    near to the time of learning as possible.
--   If tasks from the previous iteration are "In Progress" or "In
-    Review" at the beginning of a new iteration, finish them during the
-    next iteration.
+- Whenever a decision is made, create a decision post about it as near
+  to the time of decision as possible (or before making the decision).
+- Whenever a team member learns something and feels like it would be
+  useful to share with the team, create a learning post about it as near
+  to the time of learning as possible.
+- If tasks from the previous iteration are "In Progress" or "In Review"
+  at the beginning of a new iteration, finish them during the next
+  iteration.
 
 ## Meetings
 
@@ -86,19 +85,18 @@ possible, limit the amount and time spent on meetings, and use them for
 what they are most effective for. Here are some guidelines for having
 meetings during the iteration:
 
--   Have brief but regular update meetings to discuss progress, next
-    steps, and any struggles or barriers (with the work or the
-    iteration/process), as well as to potentially present a demo of the
-    progress made within the iteration.
--   Schedule multi-person impromptu meetings as necessary and as
-    relevant for a given task or issue, for instance a code review
-    meeting or a discussion meeting.
--   Plan meetings on knowledge sharing or for code reviewing when, for
-    instance, a new and more technically complicated feature is added or
-    a new tool is used in a pull request. For the author of the pull
-    request, they will need to do a bit of preparation beforehand for
-    the meeting so that it runs smoothly and is an effective use of
-    time.
--   Be mindful that not all team members are automatically relevant for
-    all meetings. Think about who might benefit or contribute before
-    sending an invitation to the entire team.
+- Have brief but regular update meetings to discuss progress, next
+  steps, and any struggles or barriers (with the work or the
+  iteration/process), as well as to potentially present a demo of the
+  progress made within the iteration.
+- Schedule multi-person impromptu meetings as necessary and as relevant
+  for a given task or issue, for instance a code review meeting or a
+  discussion meeting.
+- Plan meetings on knowledge sharing or for code reviewing when, for
+  instance, a new and more technically complicated feature is added or a
+  new tool is used in a pull request. For the author of the pull
+  request, they will need to do a bit of preparation beforehand for the
+  meeting so that it runs smoothly and is an effective use of time.
+- Be mindful that not all team members are automatically relevant for
+  all meetings. Think about who might benefit or contribute before
+  sending an invitation to the entire team.
