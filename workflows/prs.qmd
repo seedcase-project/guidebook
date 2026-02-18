@@ -49,13 +49,13 @@ gitGraph
 
 Generally, the PR process follows these steps:
 
--   Create a branch for your changes.
--   Make your changes and commit them to the branch.
--   Open a pull request on GitHub to propose merging your changes into
-    `main`.
--   Review and discuss the changes with your collaborators.
--   If the changes are approved, merge the PR into `main`. If not, make
-    further changes, update the PR, and request another review.
+- Create a branch for your changes.
+- Make your changes and commit them to the branch.
+- Open a pull request on GitHub to propose merging your changes into
+  `main`.
+- Review and discuss the changes with your collaborators.
+- If the changes are approved, merge the PR into `main`. If not, make
+  further changes, update the PR, and request another review.
 
 ## Creating a pull request
 
@@ -72,10 +72,10 @@ Each pull request should represent a single, focused change. This makes
 it easier for reviewers to understand the changes and provide meaningful
 feedback. A small (*atomic*) PR might be:
 
--   Adding a new section to a document.
--   Fixing a bug or typo.
--   Refactoring a specific component or function.
--   Adding or updating a single feature.
+- Adding a new section to a document.
+- Fixing a bug or typo.
+- Refactoring a specific component or function.
+- Adding or updating a single feature.
 
 Avoid combining unrelated changes into a single PR. If you find yourself
 writing "and" in your PR description to connect two separate ideas,
@@ -90,23 +90,23 @@ the format `{type}/{short-description}`. The `type` is based on the
 [Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
 `docs`, `fix`, `feat`, `refactor`). For example:
 
--   `docs/add-pr-workflow-guide`
--   `fix/broken-link-in-readme`
--   `refactor/update-template-structure`
+- `docs/add-pr-workflow-guide`
+- `fix/broken-link-in-readme`
+- `refactor/update-template-structure`
 
 ### Writing a good PR description
 
 A good PR description helps reviewers understand the context and purpose
-of the changes. Our repositories include a [pull request
-template](https://github.com/seedcase-project/guidebook/blob/main/.github/pull_request_template.md)
+of the changes. Our repositories include a
+[pull request template](https://github.com/seedcase-project/guidebook/blob/main/.github/pull_request_template.md)
 to make it easy to fill out the description when creating a PR. In the
 description field, aim to cover:
 
--   **What** was changed: Briefly describe the changes you made.
--   **Why** it was changed: Explain the motivation or reasoning behind
-    the changes.
--   **How** it was changed: If the changes are not straightforward,
-    describe the approach you took.
+- **What** was changed: Briefly describe the changes you made.
+- **Why** it was changed: Explain the motivation or reasoning behind the
+  changes.
+- **How** it was changed: If the changes are not straightforward,
+  describe the approach you took.
 
 If the PR addresses an existing issue, reference it by writing
 `Closes #<issue-number>` in the description. This automatically links
@@ -130,11 +130,11 @@ When you create a PR, you should assign an assignee and request
 reviewers using the options in the sidebar on the right side of the PR
 page on GitHub:
 
--   **Assignees**: Assign yourself to the PR. This tells others that you
-    are the person responsible for the changes and for addressing any
-    feedback.
--   **Reviewers**: Request a review from one or more collaborators. This
-    notifies them that the PR is ready for their feedback.
+- **Assignees**: Assign yourself to the PR. This tells others that you
+  are the person responsible for the changes and for addressing any
+  feedback.
+- **Reviewers**: Request a review from one or more collaborators. This
+  notifies them that the PR is ready for their feedback.
 
 Setting both ensures that it is clear who owns the PR and who needs to
 look at it.
@@ -176,12 +176,11 @@ explain what the issue is and how it could be improved.
 When you finish your review, GitHub gives you three options for
 submitting it:
 
--   **Comment**: General feedback or questions that don't block merging.
-    Good for minor suggestions the author can choose to address.
--   **Request changes**: Issues that must be resolved before merging.
-    This signals that further work is needed and prevents accidental
-    merging.
--   **Approve**: The changes are approved and ready to be merged.
+- **Comment**: General feedback or questions that don't block merging.
+  Good for minor suggestions the author can choose to address.
+- **Request changes**: Issues that must be resolved before merging. This
+  signals that further work is needed and prevents accidental merging.
+- **Approve**: The changes are approved and ready to be merged.
 
 If a reviewer requests changes, address the feedback, update the PR, and
 re-request a review, by clicking the "Re-request review" button in the
