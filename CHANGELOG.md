@@ -1,7 +1,7 @@
 # Changelog
 
-Since we follow [Conventional
-Commits](https://decisions.seedcase-project.org/why-conventional-commits),
+Since we follow
+[Conventional Commits](https://decisions.seedcase-project.org/why-conventional-commits),
 we're able to automatically create formal "releases" of the website
 based on our commit messages. Releases in the context of websites are
 simply snapshots in time of the website content. We use
@@ -14,6 +14,12 @@ created quite often---sometimes several times in a day. This also means
 that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
+
+## 0.6.0 (2026-02-18)
+
+### Feat
+
+- :wrench: add CONTRIBUTING and CHANGELOG to sidebar (#104)
 
 ## 0.5.0 (2026-02-12)
 
@@ -37,7 +43,7 @@ within each release.
 
 ### Feat
 
-- ✨  add commit guidelines (#58)
+- ✨ add commit guidelines (#58)
 - :sparkles: add "writing Python" guide section (#48)
 - :sparkles: guide on tasks to do during iteration (#33)
 - :sparkles: iteration chapter with description of it (#31)
@@ -53,5 +59,6 @@ within each release.
 
 ### Refactor
 
-- :recycle: move review of longer-term roadmap up in iteration start agenda (#63)
+- :recycle: move review of longer-term roadmap up in iteration start
+  agenda (#63)
 - ♻️ minor changes to Tests section (#51)

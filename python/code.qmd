@@ -21,10 +21,10 @@ style of Python code.
 
 However, it doesn't cover everything. For additional style guidelines,
 there are several other guides you can refer to. The one we recommend
-and use is the [Google Style
-Guide](https://google.github.io/styleguide/pyguide.html). This is the
-second resource you should use to learn about how to write effective and
-well-styled Python code.
+and use is the
+[Google Style Guide](https://google.github.io/styleguide/pyguide.html).
+This is the second resource you should use to learn about how to write
+effective and well-styled Python code.
 
 Thankfully, there are many aspects of both PEP 8 and the Google Style
 Guide that can be automatically checked and fixed. The tools we use and
@@ -100,18 +100,18 @@ standardised way of writing code.
 We've found these following guidelines to help keep things organised and
 consistent:
 
-1.  An individual public-facing functionality has its own Python file.
-    Usually this means that each public function or class has its own
-    file, but if the functionality is similar enough, multiple functions
-    or classes could be grouped together in a single file.
-2.  If some internal functionality is only used by public-facing
-    functionality located in a single file, keep the internal
-    functionality in that same file.
-3.  If some internal functionality is used by multiple public-facing
-    functionalities, then you should write it in a separate file in a
-    folder called `internals/`.
-4.  If internal functionality is kept in the `internals/` folder, then
-    group the internal functions into files by their common action.
+1. An individual public-facing functionality has its own Python file.
+   Usually this means that each public function or class has its own
+   file, but if the functionality is similar enough, multiple functions
+   or classes could be grouped together in a single file.
+2. If some internal functionality is only used by public-facing
+   functionality located in a single file, keep the internal
+   functionality in that same file.
+3. If some internal functionality is used by multiple public-facing
+   functionalities, then you should write it in a separate file in a
+   folder called `internals/`.
+4. If internal functionality is kept in the `internals/` folder, then
+   group the internal functions into files by their common action.
 
 Let's look at an example of how this works in practice. Let's say you
 have a package called `health_data_checks`. In this package there are
@@ -121,7 +121,7 @@ called `_is_data_object()` while only `check_blood_pressure()` uses a
 function `_has_two_measures()` (since blood pressure is often measured
 twice). The file structure might look like:
 
-```
+```text
 health-data-checks/
 └── src/
     └── health_data_checks/
@@ -159,28 +159,28 @@ this is because it has ["side effects"](#side-effects) or conditionally
 changes its action in fundamental ways that are not always obvious.
 
 The way you avoid magic is by writing code that is simple, predictable,
-and consistent. This means that writing code in a more [functional
-programming](https://en.wikipedia.org/wiki/Functional_programming) style
-tends to produce more maintainable and more predictable code. Strategies
-for writing more functional code include:
+and consistent. This means that writing code in a more
+[functional programming](https://en.wikipedia.org/wiki/Functional_programming)
+style tends to produce more maintainable and more predictable code.
+Strategies for writing more functional code include:
 
--   Using clear inputs and one type of output for functions and methods.
-    There is more explanation on this in the [type hints](#type-hints)
-    section below.
--   Avoiding [side effects](#side-effects)---described more below---by
-    only outputting the result of the function or method. This includes
-    not modifying the input data or variables by treating them as
-    [immutable](https://en.wikipedia.org/wiki/Immutable_object) (not
-    changeable).
--   Minimizing internal conditional statements that change the action or
-    behaviour of the code.
--   Preferring functionals, also called [higher-order
-    functions](https://en.wikipedia.org/wiki/Higher-order_function),
-    like `map()`, `filter()`, and `reduce()` over loops or list
-    comprehensions, as they tend to be more predictable and easier to
-    read and write. A major benefit to writing more functional code is
-    that it is much easier to create unit [tests](tests.qmd) for it and
-    it is easier for the user to understand what the code does.
+- Using clear inputs and one type of output for functions and methods.
+  There is more explanation on this in the [type hints](#type-hints)
+  section below.
+- Avoiding [side effects](#side-effects)---described more below---by
+  only outputting the result of the function or method. This includes
+  not modifying the input data or variables by treating them as
+  [immutable](https://en.wikipedia.org/wiki/Immutable_object) (not
+  changeable).
+- Minimizing internal conditional statements that change the action or
+  behaviour of the code.
+- Preferring functionals, also called
+  [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function),
+  like `map()`, `filter()`, and `reduce()` over loops or list
+  comprehensions, as they tend to be more predictable and easier to read
+  and write. A major benefit to writing more functional code is that it
+  is much easier to create unit [tests](tests.qmd) for it and it is
+  easier for the user to understand what the code does.
 
 ::: callout-note
 Sometimes it's impossible to write in a purely functional style. For
@@ -220,8 +220,8 @@ If you've used our
 [`template-python-package`](https://github.com/seedcase-project/template-python-package),
 then mypy will be setup and type hints will be required. Otherwise mypy
 will give an error. Unlike some other programming languages, Python does
-not enforce type hints when the code is run, as it is [dynamically
-type-checked](https://en.wikipedia.org/wiki/Python_(programming_language)).
+not enforce type hints when the code is run, as it is
+[dynamically type-checked](https://en.wikipedia.org/wiki/Python_(programming_language)).
 This means that you can use any type of object as input to the function,
 even if it is not the type you declared in the type hint. While this is
 a feature of Python, it does make it more difficult to write code that
@@ -308,8 +308,8 @@ How you write this internal functionality is basically no different from
 writing public-facing functionality. The only difference is that the
 name of internal objects should start with an underscore (`_`) and if
 shared by multiple public-facing functions or methods, they should go in
-the `internals/` folder (as described in [file and folder
-structure](#file-structure) above).
+the `internals/` folder (as described in
+[file and folder structure](#file-structure) above).
 
 To easily export and use the functions in the `internals` module, create
 an `internals/__init__.py` file and add the function or method to it by
@@ -370,25 +370,25 @@ below about this).
 
 As with writing code, you should follow a style guide for writing
 docstrings. The most common style guides for writing docstrings are the
-[PEP 257](https://peps.python.org/pep-0257/) and [Google
-style](https://google.github.io/styleguide/pyguide.html#s3.8.1-comments-in-doc-strings)
+[PEP 257](https://peps.python.org/pep-0257/) and
+[Google style](https://google.github.io/styleguide/pyguide.html#s3.8.1-comments-in-doc-strings)
 guides. We use and recommend the Google style guide, as it is more
 comprehensive. In addition to the Google style guide, other guidelines
 you should follow are:
 
--   Use the `"""` triple quotes for docstrings.
--   Use sentence case for describing things and end with a full stop. So
-    use `path: The path to the file.` rather than
-    `path: the path to the file`.
--   Include example code in the Quarto code chunk format.
--   Write simple one-line docstrings for:
-    -   Very small functions or methods (for example, \<5 lines)
-    -   Functions or methods with \<2 arguments
-    -   Functions or methods with simple and clear input and output
--   Write longer and more detailed docstrings for:
-    -   Larger and/or more complicated internal functions, classes, or
-        methods, such as those with non-standard input or output
-    -   User-facing functions, classes, or methods
+- Use the `"""` triple quotes for docstrings.
+- Use sentence case for describing things and end with a full stop. So
+  use `path: The path to the file.` rather than
+  `path: the path to the file`.
+- Include example code in the Quarto code chunk format.
+- Write simple one-line docstrings for:
+  - Very small functions or methods (for example, \<5 lines)
+  - Functions or methods with \<2 arguments
+  - Functions or methods with simple and clear input and output
+- Write longer and more detailed docstrings for:
+  - Larger and/or more complicated internal functions, classes, or
+    methods, such as those with non-standard input or output
+  - User-facing functions, classes, or methods
 
 ::: callout-tip
 When using VS Code and adding docstrings, you can use the
@@ -397,8 +397,8 @@ VS Code extension to automatically generate a skeleton structure for the
 docstrings.
 :::
 
-Following the [Google
-style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods)
+Following the
+[Google style](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods)
 for functions or methods, the docstring for the `check_heart_rate()`
 function looks like this:
 

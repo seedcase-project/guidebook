@@ -50,6 +50,9 @@ book:
     - part: "Operations"
       chapters:
         - operations/security.qmd
+  appendices:
+    - CONTRIBUTING.md
+    - CHANGELOG.md
   page-footer:
     center:
       - text: "License: CC BY 4.0 {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}}"
@@ -59,8 +62,3 @@ format:
   seedcase-theme-html:
     include-before-body:
       - "includes/site-counter.html"
-
-editor:
-  markdown:
-    wrap: 72
-    canonical: true

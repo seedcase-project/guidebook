@@ -17,29 +17,28 @@ for an effective meeting.
 ::: callout-note
 A basic agenda could be:
 
--   Review the longer-term roadmap
--   Review and agree on the iteration aims and end date.
--   Review the list of tasks on the project board for this iteration.
--   Brainstorm and add any other issues as needed.
-:::
+- Review the longer-term roadmap
+- Review and agree on the iteration aims and end date.
+- Review the list of tasks on the project board for this iteration.
+- Brainstorm and add any other issues as needed.
+  :::
 
-### Before meeting
+## Before meeting
 
 In general, if you are not the team lead, you don't really need to
 prepare for this meeting. If you are the team lead though, you do need
 to prepare. So if you are the team lead:
 
--   Before the planning meeting you need to refine (or create) the
-    iteration aim(s) and move any existing tasks (GitHub Issues) into
-    the iteration that are relevant to the aim(s) of the iteration. An
-    iteration aim (or aims) should be something that is achievable
-    within the iteration timeframe. The iteration should ideally have
-    only a few main, larger aims, but can include a few more smaller
-    aims.
+- Before the planning meeting you need to refine (or create) the
+  iteration aim(s) and move any existing tasks (GitHub Issues) into the
+  iteration that are relevant to the aim(s) of the iteration. An
+  iteration aim (or aims) should be something that is achievable within
+  the iteration timeframe. The iteration should ideally have only a few
+  main, larger aims, but can include a few more smaller aims.
 
--   create any issues that are missing from the current list of issues.
-    While making issues, keep them as small as is reasonable and as
-    descriptive and targeted as possible.
+- Create any issues that are missing from the current list of issues.
+  While making issues, keep them as small as is reasonable and as
+  descriptive and targeted as possible.
 
 If you are not the team lead, you can optionally review the aim(s) and
 output of the iteration board, review the list of issues already listed,

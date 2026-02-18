@@ -4,43 +4,33 @@ This chapter describes an approach to developing software that we've
 found to be effective at helping us build higher-quality, more reliable,
 and maintainable software products that get built faster and have less
 issues over time. It combines and mixes several development methods and
-best practices, starting from a high-level by following an [iterative
-and incremental
-development](https://decisions.seedcase-project.org/why-kanban-and-iid)
+best practices, starting from a high-level by following an
+[iterative and incremental development](https://decisions.seedcase-project.org/why-kanban-and-iid)
 approach with aspects of Kanban for project planning and management,
 including regular update and reflection meetings (called
 retrospectives). Within a given product, the workflow includes:
 <!-- TODO: Eventually replace with links to decision posts -->
 
--   [Continuous
-    integration](https://en.wikipedia.org/wiki/Continuous_integration)
-    (that includes automated testing and checking) through trunk-based
-    development (with short-lived branches following the [GitHub
-    Flow](https://decisions.seedcase-project.org/why-github-flow/))
--   [Continuous
-    delivery/deployment](https://en.wikipedia.org/wiki/Continuous_delivery)
--   [Test-driven
-    development](https://en.wikipedia.org/wiki/Test-driven_development)
--   [Domain-driven
-    design](https://en.wikipedia.org/wiki/Domain-driven_design)
--   [Documentation-driven
-    development](https://gist.github.com/zsup/9434452) (using
-    [Diataxis](https://decisions.seedcase-project.org/why-diataxis)
-    framework to structure the documentation)
+- [Continuous integration](https://en.wikipedia.org/wiki/Continuous_integration)
+  (that includes automated testing and checking) through trunk-based
+  development (with short-lived branches following the
+  [GitHub Flow](https://decisions.seedcase-project.org/why-github-flow/))
+- [Continuous delivery/deployment](https://en.wikipedia.org/wiki/Continuous_delivery)
+- [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design)
+- [Documentation-driven development](https://gist.github.com/zsup/9434452)
+  (using [Diataxis](https://decisions.seedcase-project.org/why-diataxis)
+  framework to structure the documentation)
 
 ::: callout-tip
 These practices and workflows are also described in many software
 development books and resources, such as:
 
--   [Philosophy of Software
-    Design](https://books.google.dk/books/about/A_Philosophy_of_Software_Design.html?id=hkfEzgEACAAJ&redir_esc=y)
--   [Domain Modeling Made Functional: Tackle Software Complexity with
-    Domain-Driven Design and
-    F#](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
--   [Accelerate: The Science of Lean Software and DevOps: Building and
-    Scaling High Performing Technology
-    Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339)
--   [Team Topologies](https://teamtopologies.com/)
+- [Philosophy of Software Design](https://books.google.dk/books/about/A_Philosophy_of_Software_Design.html?id=hkfEzgEACAAJ&redir_esc=y)
+- [Domain Modeling Made Functional: Tackle Software Complexity with Domain-Driven Design and F#](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
+- [Accelerate: The Science of Lean Software and DevOps: Building and Scaling High Performing Technology Organizations](https://www.amazon.com/Accelerate-Software-Performing-Technology-Organizations/dp/1942788339)
+- [Team Topologies](https://teamtopologies.com/)
+
 :::
 
 So, how do you integrate all of these together when developing software?
@@ -132,29 +122,29 @@ session, using plain sticky notes, pencils/pens, whiteboards, and paper
 (or their digital equivalents). In general you might follow this
 sequence of rounds:
 
-1.  Start with the beginning and the end of the problem area. What are
-    the inputs, and what are the final outputs?
-2.  Working from either end, start identifying all major events or
-    objects/output (the "nouns" or "nouns" with past-tense actions
-    connected to them) and the actions (the "verbs") that happen in
-    between the start and end. Focus on events and actions that people
-    actually have to do or take, including any manual, non-computer
-    tasks.
-3.  For each event and action, dig in deeper and identify sub-events and
-    sub-actions. This is where asking questions and "why" or "how" can
-    help immensely. A good way to think about this is the ["5
-    Whys"](https://en.wikipedia.org/wiki/Five_whys) (ask why five times)
-    or the ["explain like I'm
-    five"](https://ell.stackexchange.com/questions/79280/what-is-explain-like-im-five)
-    (ELI5) technique. Don't assume things, ask simple questions (even if
-    you may think you know the answer). You'll be surprised how often
-    you find out new things this way.
-4.  For any area that is unclear or uncertain, make a note of it to come
-    back to it and investigate it further later.
-5.  Keep repeating this process until everyone agrees with what's been
-    (un)covered and there are no major gaps or missing pieces. In
-    reality, as you continue this design stage, there will be areas
-    missing that weren't identified during these sessions.
+1. Start with the beginning and the end of the problem area. What are
+   the inputs, and what are the final outputs?
+2. Working from either end, start identifying all major events or
+   objects/output (the "nouns" or "nouns" with past-tense actions
+   connected to them) and the actions (the "verbs") that happen in
+   between the start and end. Focus on events and actions that people
+   actually have to do or take, including any manual, non-computer
+   tasks.
+3. For each event and action, dig in deeper and identify sub-events and
+   sub-actions. This is where asking questions and "why" or "how" can
+   help immensely. A good way to think about this is the
+   ["5 Whys"](https://en.wikipedia.org/wiki/Five_whys) (ask why five
+   times) or the
+   ["explain like I'm five"](https://ell.stackexchange.com/questions/79280/what-is-explain-like-im-five)
+   (ELI5) technique. Don't assume things, ask simple questions (even if
+   you may think you know the answer). You'll be surprised how often you
+   find out new things this way.
+4. For any area that is unclear or uncertain, make a note of it to come
+   back to it and investigate it further later.
+5. Keep repeating this process until everyone agrees with what's been
+   (un)covered and there are no major gaps or missing pieces. In
+   reality, as you continue this design stage, there will be areas
+   missing that weren't identified during these sessions.
 
 Once you've gotten through this process, it's time to organise it into a
 coherent narrative and structure. A good starting point is to make a
@@ -178,8 +168,8 @@ shown later below.
 The output of these sessions, and the ultimate output of the
 domain-driven design process, should be some type of design document
 that you and your team (or collaborators) can refer to later. For this,
-you can use the [explanation document
-type](https://diataxis.fr/explanation) from
+you can use the
+[explanation document type](https://diataxis.fr/explanation) from
 [Diataxis](https://decisions.seedcase-project.org/why-diataxis/). As
 much as possible, think of every stage of development as part of the
 product, not as a separate thing. This design document should be

@@ -12,16 +12,17 @@ for the iteration, unless a team member will do a demo.
 ::: callout-note
 A basic agenda is:
 
--   Demo (internally or externally) the progress of the iteration (or
-    some other form of progress).
--   Evaluate the iteration aim and review how you all did and what
-    you've all (briefly) accomplished.
--   Do a retrospective reflecting on what each of you think everyone
-    should keep doing and what you all should stop doing or improve on,
-    as well as how you felt you all did and what struggles or challenges
-    you faced.
--   Group the notes into topics and add action items (if any) to each of
-    the topics.
+- Demo (internally or externally) the progress of the iteration (or some
+  other form of progress).
+- Evaluate the iteration aim and review how you all did and what you've
+  all (briefly) accomplished.
+- Do a retrospective reflecting on what each of you think everyone
+  should keep doing and what you all should stop doing or improve on, as
+  well as how you felt you all did and what struggles or challenges you
+  faced.
+- Group the notes into topics and add action items (if any) to each of
+  the topics.
+
 :::
 
 During the debrief and retrospective meeting, it's helpful and often

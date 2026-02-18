@@ -33,11 +33,11 @@ For every public function, class, or method that is part of the public
 API of your package, you should write tests that cover at least the
 following:
 
--   Every possible input (including optional arguments) and output for
-    functions and methods.
--   Every possible error within a function or method.
--   Every possible use of a class, such as initiating it and accessing
-    its attributes.
+- Every possible input (including optional arguments) and output for
+  functions and methods.
+- Every possible error within a function or method.
+- Every possible use of a class, such as initiating it and accessing its
+  attributes.
 
 ## Where to write tests
 
@@ -52,7 +52,7 @@ manually or via the terminal with `mkdir tests`.
 
 It should look like:
 
-```
+```text
 package-name/
 ├── src/
 └── tests/
@@ -77,7 +77,7 @@ For example, let's say you have a package called `math` with a script
 called `src/math/adding.py`. The test file for that script would be
 called `tests/test_adding.py`. So it would look like this:
 
-```
+```text
 math/
 ├── src/
 │   └── math/
@@ -94,9 +94,9 @@ write them. The tests should be written in Python as functions.
 
 When writing the name for the test, use this general pattern:
 
--   `test_<function-name>()`, for example `test_adding()`. Use this if
+- `test_<function-name>()`, for example `test_adding()`. Use this if
     you only need one test for the function.
--   `test_<action>_<condition>()` or `test_<action>_<object>()`, for
+- `test_<action>_<condition>()` or `test_<action>_<object>()`, for
     example `test_add_twos()` or `test_error_non_numbers()`. Use this to
     test specific actions and conditions/objects if the function has
     multiple different actions or conditions.
@@ -107,18 +107,18 @@ checks if the condition is `True`, and if it is not it outputs an error,
 which pytest will report on. Use the following general structure for
 tests, called **given, when, then**:
 
-1.  Given: Set up the test data and any other necessary conditions. This
+1. Given: Set up the test data and any other necessary conditions. This
     step isn't always required. This might be where you create the
     `expected` output that you want to check against.
-2.  When: Call the function or method being tested. This would return
+2. When: Call the function or method being tested. This would return
     the `actual` output.
-3.  Then: Check that the output of the function or method (`actual`) is
+3. Then: Check that the output of the function or method (`actual`) is
     as expected (the `expected` output). This is where you use the
     `assert` statement to check that the output is what you expect it to
     be.
 
-This is sometimes called ["arrange, act,
-assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
+This is sometimes called
+["arrange, act, assert"](https://docs.pytest.org/en/stable/explanation/anatomy.html).
 
 ::: callout-tip
 In our example of a `math` package and an `adding.py` script, the
@@ -161,9 +161,9 @@ multiple tests.
 
 ::: callout-tip
 We won't cover it in this guide, but you can avoid repeating yourself in
-tests by using [parameterized
-tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html) to test
-multiple inputs and outputs with the same test function.
+tests by using
+[parameterized tests](https://docs.pytest.org/en/7.1.x/how-to/parametrize.html)
+to test multiple inputs and outputs with the same test function.
 :::
 
 ## Running the tests
