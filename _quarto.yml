@@ -61,8 +61,3 @@ format:
   seedcase-theme-html:
     include-before-body:
       - "includes/site-counter.html"
-
-editor:
-  markdown:
-    wrap: 72
-    canonical: true
