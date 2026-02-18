@@ -32,12 +32,17 @@
     }
   ],
   "keywords": [
-    "quarto website",
     "guidebook",
     "research software engineering",
     "teamwork",
     "best practices",
-    "collaboration"
+    "collaboration",
+    "workflows"
+  ],
+  "communities": [
+    {
+      "identifier": "seedcase-project"
+    }
   ],
   "license": "cc-by-4.0",
   "upload_type": "publication",
