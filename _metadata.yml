@@ -1,3 +1,7 @@
 gh:
   repo: guidebook
   org: seedcase-project
+
+links:
+  github: "https://github.com/seedcase-project/guidebook"
+  site: "https://guidebook.seedcase-project.org"
