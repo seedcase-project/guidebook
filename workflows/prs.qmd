@@ -7,12 +7,13 @@ use pull requests for several reasons. They:
 
 1. Help to maintain the code and text quality and minimise the risk of
    errors, typos, or other issues.
-2. Enable effective collaboration by allowing changes to be reviewed
-   and discussed.
+2. Enable effective collaboration by allowing changes to be reviewed and
+   discussed.
 3. Provide a structured process for integrating new developments into a
    project.
 
-As the American software developer (and founder of Stack Exchange) Jeff Atwood [wrote](https://blog.codinghorror.com/code-reviews-just-do-it/):
+As the American software developer (and founder of Stack Exchange) Jeff
+Atwood [wrote](https://blog.codinghorror.com/code-reviews-just-do-it/):
 
 > "**Peer code reviews are the single biggest thing you can do to improve your
 code**. If you're not doing code reviews right now with another
@@ -92,8 +93,8 @@ straightforward way of making a PR, as you can do it through the pull
 request tab of the repository by clicking the "New pull request" button
 and following the instructions there.
 
-Creating a PR through VS Code, however, is usually faster, though it requires
-some setting up and practice. To be able to create pull
+Creating a PR through VS Code, however, is usually faster, though it
+requires some setting up and practice. To be able to create pull
 requests to GitHub from within VS Code, you need to install the
 extension
 [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github).
@@ -102,7 +103,13 @@ in the left sidebar of VS Code and search for it. Once you have
 installed it, VS Code will prompt you to link to your GitHub account by
 signing in and giving access.
 
-Now, you can use the command palette (Ctrl+Shift+P or Cmd+Shift+P) and search for "GitHub: Create Pull Request" to create a pull request from the current branch you are working on. This will open a new pull request form in the sidebar where you can fill out the title, description, and other details of your PR before submitting it. If you're comfortable with the Terminal, you can also use that from within VS Code to push your changes to GitHub.
+Now, you can use the command palette (Ctrl+Shift+P or Cmd+Shift+P) and
+search for "GitHub: Create Pull Request" to create a pull request from
+the current branch you are working on. This will open a new pull request
+form in the sidebar where you can fill out the title, description, and
+other details of your PR before submitting it. If you're comfortable
+with the Terminal, you can also use that from within VS Code to push
+your changes to GitHub.
 
 ### When to create a PR
 
@@ -196,8 +203,8 @@ look at it.
 Reviewing pull requests is a key part of a collaborative workflow. As
 outlined in our [task priority order](/iterations/during.qmd), both
 responding to reviewer comments on your own PRs and reviewing others'
-PRs are tasks of the highest priority. Timely reviews keep the work moving
-and prevent bottlenecks.
+PRs are tasks of the highest priority. Timely reviews keep the work
+moving and prevent bottlenecks.
 
 ### Making suggestions
 
@@ -236,8 +243,8 @@ submitting it:
 
 If a reviewer requests changes, then you will need to address the
 feedback, update the PR, and re-request a review by clicking the
-"Re-request review" button in the right sidebar of the PR page. This back and forth
-continues until the PR is approved and ready to merge.
+"Re-request review" button in the right sidebar of the PR page. This
+back and forth continues until the PR is approved and ready to merge.
 
 ### Dealing with merge conflicts
 
@@ -250,8 +257,9 @@ There are two main ways to resolve merge conflicts:
 
 - Use the GitHub interface to resolve the conflicts directly on the
   website. This is the easiest way for simple conflicts. However, GitHub
-  can't handle more complicated conflicts, so sometimes you'll need to resolve merge conflicts on
-  your computer and push the resolved changes to GitHub.
+  can't handle more complicated conflicts, so sometimes you'll need to
+  resolve merge conflicts on your computer and push the resolved changes
+  to GitHub.
 - Pull any changes from the remote repository to your local repository
   by using either `git` (e.g. `git pull origin main`) or through VS
   Code's Git features. You can use the command palette and search for
