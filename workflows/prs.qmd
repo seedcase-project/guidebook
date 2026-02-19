@@ -256,17 +256,18 @@ merge conflicts requires manual editing and resolving.
 There are two main ways to resolve merge conflicts:
 
 - Use the GitHub interface to resolve the conflicts directly on the
-  website. This is the easiest way for simple conflicts. However, GitHub
-  can't handle more complicated conflicts, so sometimes you'll need to
-  resolve merge conflicts on your computer and push the resolved changes
-  to GitHub.
-- Pull any changes from the remote repository to your local repository
-  by using either `git` (e.g. `git pull origin main`) or through VS
-  Code's Git features. You can use the command palette and search for
-  `Git: Pull from` and then pull from `origin/main`. Then you can
-  resolve the conflicts with the help of VS Code and with manual
-  editing. After you've resolved the conflicts, you can push the changes
-  to GitHub to update the PR.
+  website. This is the easiest way for simple conflicts.
+- Resolve the merge conflicts locally. GitHub can't handle more
+  complicated conflicts, so you sometimes need to resolve it on your
+  computer and push the resolved changes to GitHub.
+
+To handle a merge conflict locally, pull any changes from the remote
+repository to your local repository by using either `git` (e.g.
+`git pull origin main`) or through VS Code's Git features. You can use
+the command palette and search for `Git: Pull from` and then pull from
+`origin/main`. Then, you can resolve the conflicts with the help of VS
+Code and with manual editing. After you've resolved the conflicts, you
+can push the changes to GitHub to update the PR.
 
 ## Merging a pull request
 
