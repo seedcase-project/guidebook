@@ -42,13 +42,20 @@ of the project. This review process helps catch mistakes, maintain
 quality, and keep your collaborators informed about what is changing and
 why.
 
-The diagram below shows this in practice. A person creates a branch
-called `docs/add-pr-guide` to work on their changes. The dots represent
-[commits](commits.qmd), which are saved snapshots of their work. When
-ready, they open a PR. After review and approval, their changes are
-merged back into the `main` branch of the project.
+The diagram below @fig-branch-pr-workflow shows this in practice. A
+person creates a branch called `docs/add-pr-guide` to work on their
+changes. The dots represent [commits](commits.qmd), which are saved
+snapshots of their work. When ready, they open a PR. After review and
+approval, their changes are merged back into the `main` branch of the
+project.
 
 ```{mermaid}
+%%| label: fig-branch-pr-workflow
+%%| fig-cap: "Creating a branch, making commits, and merging back into
+%%| `main` via a pull request."
+%%| fig-alt: "A gitgraph with a `docs/add-pr-guide` branch created from
+%%| `main`, three commits added (the last labelled 'Make PR'), then
+%%| merged back into `main`."
 ---
 config:
   theme: 'forest'
