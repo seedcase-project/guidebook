@@ -15,8 +15,8 @@ use pull requests for several reasons. They:
 As the American software developer (and founder of Stack Exchange) Jeff
 Atwood [wrote](https://blog.codinghorror.com/code-reviews-just-do-it/):
 
-> "**Peer code reviews are the single biggest thing you can do to improve your
-code**. If you're not doing code reviews right now with another
+> "**Peer code reviews are the single biggest thing you can do to improve
+your code**. If you're not doing code reviews right now with another
 developer, you're missing a lot of bugs in your code and cheating
 yourself out of some key professional development opportunities. As far
 as I'm concerned,
@@ -30,11 +30,12 @@ pull requests.
 To understand pull requests, it helps to first understand *branches*.
 When you work on a project in Git, there is a default branch (usually
 called `main`) that holds the current, stable version of the project.
-Instead of making changes directly to `main`, you create a *branch*---think
-of it like making a copy of a document so you can draft changes
-without touching the original. A branch allows you to work on your changes independently,
-and, when you are happy with your changes, you propose merging (or adding) them
-into the project's `main` branch. That proposal is called a **pull request** (PR).
+Instead of making changes directly to `main`, you create a
+*branch*---think of it like making a copy of a document so you can draft
+changes without touching the original. A branch allows you to work on
+your changes independently, and, when you are happy with your changes,
+you propose merging (or adding) them into the project's `main` branch.
+That proposal is called a **pull request** (PR).
 
 A PR gives your collaborators the opportunity to review your changes,
 ask questions, and suggest improvements before the changes become part
@@ -87,18 +88,30 @@ Generally, the PR process follows these steps:
 
 This workflow is called the
 [GitHub flow](https://decisions.seedcase-project.org/why-github-flow/)
-and is a widely used and effective collaboration strategy for
-projects of all sizes.
+and is a widely used and effective collaboration strategy for projects
+of all sizes.
 
 ## Creating a pull request
 
+### Branch naming conventions
+
+Before making a PR, you should create a branch to make your changes on.
+Branch names should be lowercase, use hyphens between words, and follow
+the format `{type}/{short-description}`. The `type` is based on the
+[Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
+`docs`, `fix`, `feat`, `refactor`). For example:
+
+- `docs/add-pr-workflow-guide`
+- `fix/broken-link-in-readme`
+- `refactor/update-template-structure`
+
 ### How to create a PR
 
-When you've made your changes on a branch, there are a few ways to make a PR. We use two ways: through VS Code and
-through the GitHub website. Using the GitHub website is a fairly
-straightforward way of making a PR: You go to the pull
-request tab of the repository,  click the "New pull request" button
-and follow the instructions there.
+When you've made your changes on a branch, there are a few ways to make
+a PR. We use two ways: through VS Code and through the GitHub website.
+Using the GitHub website is a fairly straightforward way of making a PR:
+You go to the pull request tab of the repository, click the "New pull
+request" button and follow the instructions there.
 
 Creating a PR through VS Code, however, is usually faster, though it
 requires some setting up and practice. To be able to create pull
@@ -129,7 +142,9 @@ be tested and reviewed.
 
 Each pull request should represent a single, focused change. This makes
 it easier for reviewers to understand the changes and provide meaningful
-feedback. A small ([*atomic*](https://en.wikipedia.org/wiki/Atomicity_(database_systems))) PR might be:
+feedback. A small
+([*atomic*](https://en.wikipedia.org/wiki/Atomicity_(database_systems)))
+PR might be:
 
 - Adding a new section to a document.
 - Fixing a bug or typo.
@@ -142,17 +157,6 @@ consider splitting them into separate PRs. Smaller, focused PRs are
 quicker to review, easier to test, and simpler to revert if something
 goes wrong.
 
-### Branch naming conventions
-
-Before making a PR, you must create a branch to make your changes on. Branch names should be lowercase, use hyphens between words, and follow
-the format `{type}/{short-description}`. The `type` is based on the
-[Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
-`docs`, `fix`, `feat`, `refactor`). For example:
-
-- `docs/add-pr-workflow-guide`
-- `fix/broken-link-in-readme`
-- `refactor/update-template-structure`
-
 ### Writing a good PR description
 
 A good PR description helps reviewers understand the context and purpose
@@ -162,14 +166,14 @@ to make it easy to fill out the description when creating a PR. In the
 description field, aim to cover:
 
 - **What**: Briefly describe the changes you made.
-- **Why** : Explain the motivation or reasoning behind the
-  changes.
-- **How** : If the changes are not straightforward,
-  describe the approach you took.
+- **Why** : Explain the motivation or reasoning behind the changes.
+- **How**: If the changes are not straightforward, describe the approach
+  you took.
 
 If the PR addresses an existing issue, reference it by writing
-`Closes #<issue-number>`, e.g., `Closes #2` in the description. This automatically links
-the PR to the issue and closes the issue when the PR is merged.
+`Closes #<issue-number>`, e.g., `Closes #2` in the description. This
+automatically links the PR to the issue and closes the issue when the PR
+is merged.
 
 Try to keep the description **concise but informative**. A few sentences
 that give enough context for someone unfamiliar with the work to
@@ -256,9 +260,10 @@ back and forth continues until the PR is approved and ready to merge.
 ### Dealing with merge conflicts
 
 Sometimes someone else may have made changes to the same files or lines
-as the changes you've made and merged them to `main`. This will lead to *merge conflicts* as Git
-can't determine what to do with the conflicting changes. Dealing with
-merge conflicts requires manual editing and resolving.
+as the changes you've made and merged them to `main`. This will lead to
+*merge conflicts* as Git can't determine what to do with the conflicting
+changes. Dealing with merge conflicts requires manual editing and
+resolving.
 
 There are two main ways to resolve merge conflicts:
 
@@ -278,9 +283,10 @@ can push the changes to GitHub to update the PR.
 
 ## Merging a pull request
 
-Once a PR is approved, it can be merged into `main`. Merging is the responsibility of the PR assignee, which is usually the PR author. GitHub offers
-several merge strategies (e.g., "Merge commit", "Squash and merge",
-"Rebase and merge"). We typically use **"Squash and merge"**, which
-combines all the commits in the PR into a single commit on `main`. This
-keeps the commit history clean and focused on the overall change rather
-than individual commits.
+Once a PR is approved, it can be merged into `main`. Merging is the
+responsibility of the PR assignee, which is usually the PR author.
+GitHub offers several merge strategies (e.g., "Merge commit", "Squash
+and merge", "Rebase and merge"). We typically use
+**"Squash and merge"**, which combines all the commits in the PR into a
+single commit on `main`. This keeps the commit history clean and focused
+on the overall change rather than individual commits.
