@@ -21,7 +21,8 @@ A basic agenda could be:
 - Review and agree on the iteration aims and end date.
 - Review the list of tasks on the project board for this iteration.
 - Brainstorm and add any other issues as needed.
-  :::
+
+:::
 
 ## Before meeting
 
