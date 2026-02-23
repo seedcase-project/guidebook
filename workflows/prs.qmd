@@ -207,7 +207,8 @@ page on GitHub:
   file when you create the PR.
 
 Setting both ensures that it is clear who owns the PR and who needs to
-look at it.
+look at it. We've set it up so this is done automatically (see our
+[template](https://template-website.seedcase-project.org/) for how).
 
 ## Reviewing a pull request
 
