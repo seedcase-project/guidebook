@@ -193,3 +193,66 @@ API", "filled in high-level metadata", "verified data integrity", and
 "created a data subset for a collaborator". And some of the "verbs" or
 actions would be "call web API to get data", "run verification checks"
 and "fill in metadata fields".
+
+### Using documentation-driven development
+
+While you are technically writing documentation during the design stage,
+this stage is more about writing the documentation on how to use the
+software or on the API of the software itself. These are called
+["reference"](https://diataxis.fr/reference) and
+["how-to"](https://diataxis.fr/how-to-guides/) documentation in the
+Diataxis framework.
+
+The reason to start writing documentation before writing code is that
+often the desire to write documentation drops substantially once coding
+starts or once specific features have been implemented. So to reduce
+this risk, use documentation-driven development to write out the
+documentation *before writing any code*. This approach helps with
+finding any issues with the design. As you write the docs from the
+perspective and needs of the user (who might also be you), you will very
+likely encounter issues or gaps in the design. Then you can go back and
+adjust the design to resolve these issues. It also helps clarify to
+yourself and any contributors or team members how the software is
+supposed to work and how to use it, which can help guide the
+implementation and development process.
+
+For those who enjoy coding, this stage as well as the previous design
+stage can feel a bit tedious and less fun. But it's important to
+remember that documentation is much easier to fix and change than
+writing code. While the final software product can be considered as an
+asset, the code itself is a liability. So you really want to be careful
+with writing code before you are fairly certain of the design. Once you
+have had several rounds of discussing and brainstorming and refining the
+design and documentation, then you can be more confident that the design
+is solid and that the code will be less of a liability. After all, you
+want to *engineer* software, not just *code* it. A useful quote to keep
+in mind when viewing the design and planning stages is:
+
+> ["Weeks of coding can save you hours of planning"](https://www.youtube.com/watch?v=y9UGxyCyQbQ)
+
+So, to start, you can write out the below docs in this order, though any
+order will work:
+
+1. Interface level docs, such as the docstrings for functions or classes
+   in Python. Write out a description of the function or class, its
+   parameters or attributes, and its outputs. This is the "reference"
+   documentation in the Diataxis framework.
+
+2. Implementation comments within the functions and classes that
+   describe what the flow of code might actually be, including some
+   pseudocode. While not technically part of the Diataxis framework,
+   these comments can be helpful in guiding the interface-level and
+   how-to documentation, as well as provide documentation to developers
+   to know how the code should approximately work.
+
+3. How-to guides for the software, written in Markdown files and in the
+   same repository to keep docs and code close together. These are the
+   "how-to guides" in the Diataxis framework. These guides should be
+   written from the perspective of the user, and they should describe
+   how to use the software to achieve specific goals or tasks. They
+   shouldn't try to explain the software or the reasons for things,
+   unless it is necessary to understand the task. Keep them focused on
+   the "how" and focused on specific goals.
+
+These documents alongside the design documents will make it much easier
+to implement the software.
