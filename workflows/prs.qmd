@@ -285,7 +285,7 @@ can push the changes to GitHub to update the PR.
 ## Merging a pull request
 
 Once a PR is approved, it can be merged into `main`. Merging is the
-responsibility of the PR assignee, which is usually the PR author.
+responsibility of those who have write access to the `main` branch.
 GitHub offers several merge strategies (e.g., "Merge commit", "Squash
 and merge", "Rebase and merge"). We typically use
 **"Squash and merge"**, which combines all the commits in the PR into a
