@@ -36,6 +36,7 @@ book:
       chapters:
         - workflows/software.qmd
         - workflows/commits.qmd
+        - workflows/prs.qmd
     - part: "Iterations"
       chapters:
         - iterations/index.qmd
