@@ -51,11 +51,12 @@ flowchart TB
     DDDesign --> Design>"Explanation docs<br>(for design)"]
     DDDesign --> DDDev
     DDDev([Documentation-driven<br>development]) --> Guide>How-to guides]
+    DDDev([Documentation-driven<br>development]) --> CodeDocs>How-to guides]
     Guide <--> Test
     Guide <--> Develop[Develop<br>implementation]
     Design --> Test([Test-driven development])
     Test <--> Develop
-    Develop --> CodeDocs>"Reference docs<br>(for code)"]
+    CodeDocs>"Reference docs<br>(for code)"] <--> Develop
     Develop --> Tutorials>Tutorials]
     Guide --> Tutorials
     Guide & Develop <--> Examples[Example real<br>world usage]
