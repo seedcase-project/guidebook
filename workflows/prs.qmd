@@ -15,11 +15,11 @@ use pull requests for several reasons. They:
 As the American software developer (and founder of Stack Exchange) Jeff
 Atwood [wrote](https://blog.codinghorror.com/code-reviews-just-do-it/):
 
-> "**Peer code reviews are the single biggest thing you can do to improve
-your code**. If you're not doing code reviews right now with another
-developer, you're missing a lot of bugs in your code and cheating
-yourself out of some key professional development opportunities. As far
-as I'm concerned,
+> "**Peer code reviews are the single biggest thing you can do to
+improve your code**. If you're not doing code reviews right now with
+another developer, you're missing a lot of bugs in your code and
+cheating yourself out of some key professional development
+opportunities. As far as I'm concerned,
 **my code isn't done until I've gone over it with a fellow developer**."
 
 This section covers the practices we follow for creating and reviewing
