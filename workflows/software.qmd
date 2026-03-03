@@ -166,10 +166,12 @@ also happen, where a "noun" is used by a "verb" to create another
 a preceding past-tense "verb" attached to them, examples of which are
 shown later below.
 
-The output of these sessions, and the ultimate output of the
-domain-driven design process, should be some type of design document
-that you and your team (or collaborators) can refer to later. For this,
-you can use the
+Ideally, you want to do several event storming sessions with the
+(physical or virtual) stickies where everyone is in general agreement
+about what the design of the software is and what it does. Once you've
+completed these sessions, the ultimate output of the domain-driven
+design process should be some type of design document that you and your
+team (or collaborators) can refer to later. For this, you can use the
 [explanation document type](https://diataxis.fr/explanation/) from
 [Diataxis](https://decisions.seedcase-project.org/why-diataxis/). As
 much as possible, think of every stage of development as part of the
