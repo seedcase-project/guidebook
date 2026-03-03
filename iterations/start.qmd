@@ -46,6 +46,13 @@ output of the iteration board, review the list of issues already listed,
 and write out any potential issues as needed to complete the iteration
 aim.
 
+::: callout-note
+Any tasks from the previous iteration that are in progress but not yet
+completed should be moved to the next iteration. This way, you keep
+track of the work that is still ongoing and make sure it doesn't get
+lost or forgotten in the next iteration.
+:::
+
 ### During meeting
 
 During the meeting, someone will share their screen (if virtual) and the

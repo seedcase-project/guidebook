@@ -96,7 +96,6 @@ not capitalized, and without a period at the end.
 
 ### Optional: scope, body, and footer(s)
 
-
 Whenever you want to expand on the `<description>`, you can add an
 `[optional body]` that provides more context or details about the
 change. This might include the motivation for the change, how it was
