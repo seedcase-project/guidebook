@@ -23,9 +23,8 @@ You can make a GitHub App to create a token following these steps:
    - Fill in the app name with a descriptive name, e.g.
      "generate-auto-release-token".
    - Fill in the description on what the app does.
-   - For the homepage URL, use the format:
-     `https://github.com/apps/APP-NAME`, e.g.
-     <https://github.com/apps/generate-auto-release-token>.
+   - For the homepage URL, use the format: `github.com/apps/APP-NAME`,
+     e.g. <https://github.com/apps/generate-auto-release-token>.
    - Uncheck all the checkboxes in the other sections.
    - Select the permissions you want the app to have under
      "Permissions".

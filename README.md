@@ -53,7 +53,7 @@ software more effectively as solo developers and as a team.
 - `CONTRIBUTING.md`: Guidelines for contributing to the project.
 - `.github/`: Contains GitHub-specific files, such as issue and pull
   request templates, workflows,
-  [dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
+  [dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide)
   configuration, pull request templates, and a
   [CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners)
   file.

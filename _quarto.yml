@@ -5,6 +5,8 @@ project:
 book:
   title: "Guidebook to doing research software engineering in a team-setting"
   subtitle: "A living document for how we work and build things in the Seedcase project"
+  repo-branch: main
+  repo-actions: [issue, edit, source]
   search:
     type: textbox
   favicon: _extensions/seedcase-project/seedcase-theme/logos/seedcase/icon.svg
@@ -53,6 +55,13 @@ book:
   appendices:
     - CONTRIBUTING.md
     - CHANGELOG.md
+  tools:
+    - icon: github
+      href: "https://github.com/seedcase-project/guidebook"
+      aria-label: "GitHub icon: Source repository"
+    - icon: house
+      href: "https://seedcase-project.org"
+      aria-label: "House icon: Main website for the Seedcase Project"
   page-footer:
     center:
       - text: "License: CC BY 4.0 {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}}"
