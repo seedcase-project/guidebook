@@ -5,7 +5,7 @@ found to be effective at helping us build higher-quality, more reliable,
 and maintainable software products that get built faster and have less
 issues over time. It combines and mixes several development methods and
 best practices, starting from a high-level by following an
-[iterative and incremental development](https://decisions.seedcase-project.org/why-kanban-and-iid)
+[iterative and incremental development](https://decisions.seedcase-project.org/why-kanban-and-iid/)
 approach with aspects of Kanban for project planning and management,
 including regular update and reflection meetings (called
 retrospectives). Within a given product, the workflow includes:
@@ -19,7 +19,8 @@ retrospectives). Within a given product, the workflow includes:
 - [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
 - [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design)
 - [Documentation-driven development](https://gist.github.com/zsup/9434452)
-  (using [Diataxis](https://decisions.seedcase-project.org/why-diataxis)
+  (using
+  [Diataxis](https://decisions.seedcase-project.org/why-diataxis/)
   framework to structure the documentation)
 
 ::: callout-tip
@@ -170,7 +171,7 @@ The output of these sessions, and the ultimate output of the
 domain-driven design process, should be some type of design document
 that you and your team (or collaborators) can refer to later. For this,
 you can use the
-[explanation document type](https://diataxis.fr/explanation) from
+[explanation document type](https://diataxis.fr/explanation/) from
 [Diataxis](https://decisions.seedcase-project.org/why-diataxis/). As
 much as possible, think of every stage of development as part of the
 product, not as a separate thing. This design document should be
