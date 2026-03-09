@@ -12,8 +12,6 @@ for the iteration, unless a team member will do a demo.
 ::: callout-note
 A basic agenda is:
 
-- Demo (internally or externally) the progress of the iteration (or some
-  other form of progress).
 - Evaluate the iteration aim and review how you all did and what you've
   all (briefly) accomplished.
 - Do a retrospective reflecting on what each of you think everyone
@@ -35,8 +33,9 @@ at least, mentally prepared).
 
 For the retrospective, ideally the team uses some type of real-time
 collaborative note-taking system, such as
-[Figma](https://www.figma.com/). This just makes it easier to write down
-notes while also being able to see what everyone else has written too.
+[Figma](https://www.figma.com/) or [Miro](https://miro.com/). This just
+makes it easier to write down notes while also being able to see what
+everyone else has written too.
 
 During the retrospective, set a timer (for example 4 minutes) and write
 out all the things that you felt worked well or to keep doing and what
