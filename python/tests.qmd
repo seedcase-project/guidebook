@@ -1,7 +1,4 @@
----
-title: "Tests"
-description: "Creating and writing tests for Python packages"
----
+# Tests {#sec-python-tests}
 
 Creating tests for your Python code is essential to ensure that it works
 as expected and to catch any bugs or issues early in the development
