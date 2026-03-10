@@ -50,26 +50,56 @@ settings.
 ## Planning upcoming iterations
 
 The team who uses this workflow needs one person who is responsible for
-planning and curating the iterations. While this person could be anyone
-on the team, ideally the person is someone who has a strong
-understanding and big picture overview of what the team is working
-towards and the milestones needed to get to that final aim. This is
-usually the team lead, and so for the rest of the iteration
-documentation, we refer to this person as the "team lead".
+planning and curating the iterations, along with the tasks to do within
+the iteration. While this person could be anyone on the team, ideally
+the person is someone who has a strong understanding and big picture
+overview of what the team is working towards and the milestones needed
+to get to that final aim. This is usually the team lead, and so for the
+rest of the iteration documentation, we refer to this person as the
+"team lead".
 
 If you are the team lead, you should (ideally) have a general plan or
-goal for what the team will do in the next two or three iterations and
-will:
+goal for what the team will do in the next two or three iterations. A
+useful way of doing this is through the use of software that allows
+creating [Gantt charts](https://en.wikipedia.org/wiki/Gantt_chart).
+Gantt charts are visually ways of listing tasks or milestones, when
+those tasks or milestones should approximately start and end, and what
+the dependencies are between the tasks or milestones. GitHub Projects
+have
+["roadmap"](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
+type layout that act just like Gantt charts.
 
-- Create an iteration within the main iteration planning board (for the
-  Seedcase Project, they are all listed
-  [here](https://github.com/orgs/seedcase-project/projects/)). You
-  create an iteration by going into the project board's settings.
-- Write the title of the iteration as the aim for it, while keeping the
-  goal focused, small, achievable, and considerate of the time the team
-  has available for that iteration. Ideally, you should write a sub-aim
-  for each person in the team for that iteration.
-- Add tasks to the board that are needed to achieve the iteration aim.
+As the team lead, you can use this roadmap layout to list milestones for
+planned or in-development products to plan work that the team will do
+during future iterations. This roadmap can provide a high-level overview
+of what the team will work on over the upcoming months. However, a
+limitation of roadmap-style layouts is they aren't good at very
+lower-level details and specific tasks. That's why you use a different
+layout for tracking iteration-level aims and tasks, called a "board" in
+the GitHub Projects.
+
+- Use the GitHub Project
+  ["status updates" feature](https://docs.github.com/en/issues/planning-and-tracking-with-projects/sharing-project-updates)
+  to communicate what the purpose and aim of the iteration is. Within
+  the status update, explicitly describe what the tangible aim for the
+  iteration is, making sure to keep the goal focused, small, achievable,
+  and considerate of the time the team has available for that iteration.
+  Ideally, you should write a sub-aim for each person in the team for
+  that iteration.
+- Use the "board" layout following the typical
+  [Kanban](https://decisions.seedcase-project.org/why-kanban-and-iid/)
+  style "lanes" like "todo", "in-progress", or "in review" to list tasks
+  for the iteration. Add tasks to the board that are needed to achieve
+  the iteration aim.
+- Use "priority" labels for the Project board items to communicate which
+  items need to be completed first. This also helps organise content on
+  the board, as you can sort items by priority label.
+
+::: callout-tip
+Check out
+[all our GitHub Projects](https://github.com/orgs/seedcase-project/projects/)).
+for the Seedcase Project for inspiration.
+:::
 
 Having one iteration be one calendar month makes them easier to plan and
 organise. That way, a year can be divided into 12 iterations, and you

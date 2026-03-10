@@ -9,13 +9,6 @@ will be indicated with a comment like "if you are the team lead".
 
 ## Task priority order
 
-If you are the team lead, after the iteration planning meeting you need
-to set a priority for each issue in the iteration. The priority is
-determined by how important or urgent the task is to the iteration aim.
-Keep the distribution of priorities as even as possible. If all items
-are high priority, then no item is high priority. And that doesn't help
-guide the team to knowing what to work on next.
-
 While issues themselves are given a priority, there is also a priority
 in overall tasks (not issues) you and the rest of the team should focus
 on:
