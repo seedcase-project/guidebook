@@ -21,10 +21,10 @@ You can make a GitHub App to create a token following these steps:
    [`seedcase-project`](https://github.com/organizations/seedcase-project/settings/apps).
 2. Click "New GitHub App" to create a new app.
    - Fill in the app name with a descriptive name, e.g.
-     "generate-auto-release-token".
+     "auto-release-token".
    - Fill in the description on what the app does.
    - For the homepage URL, use the format: `github.com/apps/APP-NAME`,
-     e.g. <https://github.com/apps/generate-auto-release-token>.
+     e.g. <https://github.com/apps/auto-release-token>.
    - Uncheck all the checkboxes in the other sections.
    - Select the permissions you want the app to have under
      "Permissions".
