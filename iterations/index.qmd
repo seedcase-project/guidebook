@@ -1,4 +1,4 @@
-# Time-constrained iterative workflow {#sec-iterations}
+# Iterative and incremental workflow {#sec-iterations}
 
 This chapter describes how to follow a specific, but very effective,
 workflow for managing and completing work in teams, especially knowledge
@@ -6,7 +6,7 @@ work such as software development and research in general that we follow
 in the Seedcase Project. This chapter covers this workflow and how to
 generally use it.
 
-## Iterative development in research settings
+## Iterative and incremental development in research settings
 
 The way we've designed our work to follow a workflow that is inspired
 from some aspects of
@@ -43,9 +43,9 @@ All of these assumptions inherent to Scrum, Agile, or any other common
 industry workflow can't be directly applied to research and academic
 settings. So their effectiveness in those other settings might be very
 different from their effectiveness in these settings. So this guide to
-using iterative development in research settings is slightly modified to
-fit the needs and constraints typically found in research and academic
-settings.
+using iterative and incremental development in research settings is
+slightly modified to fit the needs and constraints typically found in
+research and academic settings.
 
 ## Planning upcoming iterations
 
