@@ -134,9 +134,13 @@ Some of the `<types>` are the same in documentation and other non-code
 projects as in software projects. The ones that are the same between
 code and non-code projects are `build`, `ci`, `style`, `chore`, and
 `revert`. The ones that are not relevant for non-code projects are
-`test`, `perf`, and `docs` (since documentation is often the main thing
-being changed). Instead, use other `<types>` that are more descriptive
-of the change being made, which are different from code projects:
+`test`, and `perf`. The tricky one is `docs`, since the documentation is
+the main thing being changed when the product is documentation (like
+this guidebook). However, we treat `docs` as changes to text files that
+aren't related to the product itself, but support development in some
+way. For example, changes to the `README.md` would fall under a `docs`
+commit type. The last three commit types are the ones that are most
+different from code-based projects.
 
 - `feat`: Changes that add new content.
 - `refactor`: Changes that modify or revise existing content, where the
