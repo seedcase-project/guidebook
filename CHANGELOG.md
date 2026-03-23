@@ -15,6 +15,18 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.8.3 (2026-03-17)
+
+### Refactor
+
+- :recycle: clarify it is incremental and iterative (#121)
+
+## 0.8.2 (2026-03-09)
+
+### Fix
+
+- :pencil2: correct link address to our GitHub App (#119)
+
 ## 0.8.1 (2026-03-03)
 
 ### Refactor
