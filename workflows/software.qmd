@@ -19,12 +19,14 @@ approach includes the following components:
   [GitHub Flow](https://decisions.seedcase-project.org/why-github-flow/)
 - [Continuous delivery/deployment](https://en.wikipedia.org/wiki/Continuous_delivery)
   - Of both the software and its associated documentation.
-- [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
 - [Domain-driven design](https://en.wikipedia.org/wiki/Domain-driven_design)
 - [Documentation-driven development](https://gist.github.com/zsup/9434452)
   - Using the
   [Diataxis](https://decisions.seedcase-project.org/why-diataxis/)
   framework structure.
+- [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
+
+<!-- TODO why not say anything about ci cd? -->
 
 ::: {.column-margin}
 Details about the workflow components can be found in existing software
@@ -40,11 +42,42 @@ development resources:
 So, how do you integrate all of these together when developing software?
 That's what this section is all about! :tada:
 
-## Visual overview
+## Workflow structure
 
-The following diagram gives a visual overview of the stages of
-development and how they connect. We'll cover each part in more detail
-in the following sections.
+A key motivation of this workflow structure is the separation of concepts into
+distinct phases. Each phase focuses on one concept: idea generation, design
+decisions, documentation for users, or implementation. This separation brings
+a few important benefits:
+
+1. **Discussions stay focused on a single conceptual level of detail.** When
+   brainstorming, you discuss ideas without getting bogged down in
+   implementation details. When designing, you formalize interfaces
+   without debating every line of code. When coding, you focus on
+   implementation details rather than questioning fundamental design
+   decisions.
+
+2. **Reviews are more effective.** Pull request reviews can become convoluted
+   when they span multiple conceptual levels, e.g. reviewing both the software
+   design and code implementation simultaneously, or trying to comment on
+   technical writing of documentation while also figuring out the purpose of
+   the software. Focusing reviews on one conceptual level at a time makes them
+   more focused and reduces the cognitive load of both the reviewer and author.
+
+2. **Changes are less expensive.** In general, changes are cheaper to make at
+   higher conceptual levels. For example, brainstorming promotes mental
+   nimbleness and there is little cost in trading one design idea for another.
+   If you instead already have spent a significant amount of time implementing
+   a certain design idea or writing detailed user-facing documentation, it
+   would be much more expensive to change to a new design as it involves
+   a significant amount of lost work.
+
+This staged approach doesn't mean stages are rigid; you can (and often should)
+go back to earlier stages when needed. If you discover a design is impossible
+to implement, return to designing. But this is the *exception*, not the norm.
+
+With this in mind, the following diagram gives a visual overview of the stages
+of development and how they connect. We'll cover the main parts in detail in
+the following sections.
 
 ```{mermaid}
 %%| label: fig-software-development-workflow
@@ -66,10 +99,6 @@ flowchart TB
     Guide & Develop <--> Examples[Example real<br>world usage]
 ```
 
-Underlying all of this is an iterative and incremental development
-approach (described in more detail in @sec-iterations), continuously
-integrating the changes, and continuously deploying the software and
-associated documentation (as a website).
 
 ## Development steps
 
