@@ -52,11 +52,12 @@ flowchart TB
     DDDesign --> Design>"Explanation docs<br>(for design)"]
     DDDesign --> DDDev
     DDDev([Documentation-driven<br>development]) --> Guide>How-to guides]
+    DDDev([Documentation-driven<br>development]) --> CodeDocs>How-to guides]
     Guide <--> Test
     Guide <--> Develop[Develop<br>implementation]
     Design --> Test([Test-driven development])
     Test <--> Develop
-    Develop --> CodeDocs>"Reference docs<br>(for code)"]
+    CodeDocs>"Reference docs<br>(for code)"] <--> Develop
     Develop --> Tutorials>Tutorials]
     Guide --> Tutorials
     Guide & Develop <--> Examples[Example real<br>world usage]
@@ -197,6 +198,93 @@ API", "filled in high-level metadata", "verified data integrity", and
 actions would be "call web API to get data", "run verification checks"
 and "fill in metadata fields".
 
+### Using documentation-driven development
+
+While you are technically writing documentation during the design stage,
+this stage is more about writing the documentation on how to use the
+software or on the API of the software itself. These are called
+["reference"](https://diataxis.fr/reference) and
+["how-to"](https://diataxis.fr/how-to-guides/) documentation in the
+Diataxis framework. They are aimed at the (future) users of the software
+and written for their needs and perspectives.
+
+During any given iteration you will likely include some designing,
+coding, and writing of docs. However, including an explicit focus on
+design and documentation early in developing a new product or when
+starting a major refactor of an existing product has many advantages.
+The biggest advantage is that it
+["brings the pain forward"](https://www.goodreads.com/work/quotes/13558958-continuous-delivery)
+and helps you address and resolve potential issues before you start
+coding. Code is a liability and is harder to change than documentation
+and design. Explicitly separating these stages and focusing on them
+before you code can help you avoid a lot of wasted time and effort
+later, when you've already written a lot of code and realize there are
+major issues.
+
+Another benefit to focusing on design and documentation earlier is that
+when you start the coding stage, reviews of pull requests because much
+easier. The reviewer can focus on the implementation details rather than
+questioning the entire design and direction of the software, which is
+what can happen if the design and documentation haven't been well
+thought out, explicitly described, and agreed on by the team. This can
+make the coding stage much more enjoyable and less stressful.
+
+Another reason to start writing documentation before writing code is
+that there is often less desire to write documentation once coding
+starts or once specific features have been implemented. So to reduce
+this risk, use documentation-driven development to write out the
+documentation *before writing any code*.
+
+This documentation-driven approach helps with finding any issues with
+the design. As you write the docs from the perspective and needs of the
+user (who might also be you), you will very likely encounter issues or
+gaps in the design. Then you can go back and adjust the design to
+resolve these issues. It also helps clarify to yourself and any
+contributors or team members how the software is supposed to work and
+how to use it, which can help guide the implementation and development
+process.
+
+For those who enjoy coding, this stage as well as the previous design
+stage can feel a bit tedious and less fun. But it's important to
+remember that documentation is much easier to fix and change than
+writing code. While the final software product can be considered as an
+asset, the code itself is a liability. So you really want to be careful
+with writing code before you are fairly certain of the design. Once you
+have had several rounds of discussing and brainstorming and refining the
+design and documentation, then you can be more confident that the design
+is solid and that the code will be less of a liability. After all, you
+want to *engineer* software, not just *code* it. A useful quote to keep
+in mind when viewing the design and planning stages is:
+
+> ["Weeks of coding can save you hours of planning"](https://www.youtube.com/watch?v=y9UGxyCyQbQ)
+
+So, to start, you can write out the below docs in this order, though any
+order will work:
+
+1. Interface level docs, such as the docstrings for functions or classes
+   in Python. Write out a description of the function or class, its
+   parameters or attributes, and its outputs. This is the "reference"
+   documentation in the Diataxis framework.
+
+2. Implementation comments within the functions and classes that
+   describe what the flow of code might actually be, including some
+   pseudocode. While not technically part of the Diataxis framework,
+   these comments can be helpful in guiding the interface-level and
+   how-to documentation, as well as provide documentation to developers
+   to know how the code should approximately work.
+
+3. How-to guides for the software, written in Markdown files and in the
+   same repository to keep docs and code close together. These are the
+   "how-to guides" in the Diataxis framework. These guides should be
+   written from the perspective of the user, and they should describe
+   how to use the software to achieve specific goals or tasks. They
+   shouldn't try to explain the software or the reasons for things,
+   unless it is necessary to understand the task. Keep them focused on
+   the "how" and focused on specific goals.
+
+These documents alongside the design documents will make it much easier
+to implement the software.
+
 ### Using test-driven development
 
 After you and your team has mostly agreed on the usage documentation and
@@ -213,21 +301,23 @@ it does.
 
 This is where test-driven development comes in. In general, test-driven
 development is an approach to coding where you *first* write the tests
-*and then* write code that will pass those tests. However, this doesn't
-always happen in exactly this order every time. It's also impossible to
-know whether someone followed this order of writing tests first and then
-code when receiving a pull request, unless you watched that person write
-the tests and code as they wrote it. That's why for us, test-driven
-development means that any pull request with changes to the codebase
-that adds new or modifies existing behaviour always includes
-comprehensive enough tests to show that the code actually has the
-intended behaviour.
+*and then* write code that will pass those tests, *in that order*.
+However, in practice, developers don't usually follow this exact order
+all the time. Often, tests are written after you write some code, at
+least when you locally develop code. It's also impossible to know
+whether someone followed this *exact* order of writing tests first and
+then code when receiving a pull request, unless you watched that person
+write the tests and code as they wrote it. That's why for us,
+test-driven development simply means that any pull request with changes
+to the codebase that adds new or modifies existing behaviour always
+includes comprehensive enough tests to show that the code actually has
+the intended behaviour.
 
-The only time when writing tests first is actually really effective is
-when trying to resolve a bug. Start by writing a test that reproduces
-the bug, so that you can more accurately identify what is needed to
-trigger the bug. Then you fix the code so that the test of the bug no
-longer fails.
+The only time when writing tests *literally first, before code* is
+actually an effective approach is when trying to resolve a bug. You
+start by writing a test that reproduces the bug, so that you can more
+accurately identify what is needed to trigger the bug. Then you fix the
+code so that the test for the bug no longer fails.
 
 For learning how to write tests when developing a Python package, check
 out @sec-python-tests.
