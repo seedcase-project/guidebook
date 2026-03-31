@@ -284,3 +284,40 @@ order will work:
 
 These documents alongside the design documents will make it much easier
 to implement the software.
+
+### Using test-driven development
+
+After you and your team has mostly agreed on the usage documentation and
+design, at least as a first draft, you can start implementing the
+design.
+
+Humans are not very good at logical thinking, especially computational
+thinking. Programming languages are also incredibly complex and
+difficult to learn and use correctly all the time. Humans don't have
+perfect knowledge, so we can't always know if what we code is actually
+doing what we think the code is doing. That's why code should always be
+accompanied with tests that explicitly show that it does what you think
+it does.
+
+This is where test-driven development comes in. In general, test-driven
+development is an approach to coding where you *first* write the tests
+*and then* write code that will pass those tests, *in that order*.
+However, in practice, developers don't usually follow this exact order
+all the time. Often, tests are written after you write some code, at
+least when you locally develop code. It's also impossible to know
+whether someone followed this *exact* order of writing tests first and
+then code when receiving a pull request, unless you watched that person
+write the tests and code as they wrote it. That's why for us,
+test-driven development simply means that any pull request with changes
+to the codebase that adds new or modifies existing behaviour always
+includes comprehensive enough tests to show that the code actually has
+the intended behaviour.
+
+The only time when writing tests *literally first, before code* is
+actually an effective approach is when trying to resolve a bug. You
+start by writing a test that reproduces the bug, so that you can more
+accurately identify what is needed to trigger the bug. Then you fix the
+code so that the test for the bug no longer fails.
+
+For learning how to write tests when developing a Python package, check
+out @sec-python-tests.
