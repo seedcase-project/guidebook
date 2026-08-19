@@ -41,7 +41,9 @@ A PR gives your collaborators the opportunity to review your changes,
 ask questions, and suggest improvements before the changes become part
 of the project. This review process helps catch mistakes, maintain
 quality, and keep your collaborators informed about what is changing and
-why.
+why. PRs also become durable project documentation: future contributors
+can use their descriptions and discussions to understand why a change
+was made.
 
 The diagram below @fig-branch-pr-workflow shows this in practice. A
 person creates a branch called `docs/add-pr-guide` to work on their
@@ -95,15 +97,43 @@ of all sizes.
 
 ### Branch naming conventions
 
-Before making a PR, you should create a branch to make your changes on.
+Before making changes, create a short-lived branch from an up-to-date
+`main` branch. Keep the branch focused on one issue or logical change so
+that its PR will also be focused.
+
 Branch names should be lowercase, use hyphens between words, and follow
-the format `{type}/{short-description}`. The `type` is based on the
+the
+[Conventional Branch](https://github.com/pshaddel/conventional-branch)
+format `{type}/{short-description}`. Write the description in the
+imperative. The `type` is based on the
 [Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
 `docs`, `fix`, `feat`, `refactor`). For example:
 
 - `docs/add-pr-workflow-guide`
 - `fix/broken-link-in-readme`
 - `refactor/update-template-structure`
+
+The
+[Conventional Branches VS Code extension](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch)
+can help create a correctly formatted branch name from the Command
+Palette.
+
+### Prepare the change
+
+Start with an issue before investing substantial time in an
+implementation. Use the issue to describe the problem, expected
+behaviour, and proposed direction. This allows the team to agree on the
+scope and approach before work begins.
+
+Before requesting a review:
+
+- Review the complete diff yourself, not only the most recent changes.
+- Remove accidental or unrelated changes.
+- Run the repository's automated formatting, linting, tests, and other
+  checks.
+- Check that code and text communicate their intent without relying on
+  the PR discussion.
+- Add or update tests and documentation when relevant.
 
 ### How to create a PR
 
@@ -133,10 +163,17 @@ your changes to GitHub.
 
 ### When to create a PR
 
-Create a pull request when you have a set of changes that are ready for
-someone else to review. This usually means after you have completed the
-work on an issue or task, and the changes are in a state where they can
-be tested and reviewed.
+You can create a PR as a draft once you have made meaningful changes and
+have a clear idea of the implementation. An early draft makes the work
+visible and lets you ask for early feedback if needed before committing
+too much time to a specific approach. Mark it as a
+[draft](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft)
+while it is incomplete, and state what feedback would be useful.
+
+Only mark the PR ready and request a full review after the work is
+complete, self-reviewed, and in a state that can be tested. Reviewers
+should not have to act as the author's formatter, linter, or first round
+of quality assurance.
 
 ### Keep PRs small
 
@@ -157,29 +194,52 @@ consider splitting them into separate PRs. Smaller, focused PRs are
 quicker to review, easier to test, and simpler to revert if something
 goes wrong.
 
+As a practical guide for code, aim for no more than a few hundred
+changed lines. Around 400 changed lines can be a useful signal to
+reconsider the scope, but it is not a hard limit: generated files and a
+logically indivisible change may justify a larger diff. Explain why a
+large PR cannot reasonably be split.
+
+Avoid stacked PRs, where one open PR targets the branch of another open
+PR, unless there is an exceptional reason to use them. Dependencies
+between PRs make review and merging harder. Prefer independent changes;
+otherwise, clearly identify the dependency and required merge order.
+
 ### Writing a good PR description
 
 A good PR description helps reviewers understand the context and purpose
 of the changes. Our repositories include a
 [pull request template](https://github.com/seedcase-project/guidebook/blob/main/.github/pull_request_template.md)
 to make it easy to fill out the description when creating a PR. In the
-description field, aim to cover:
+title, write a [Conventional Commit](commits.qmd#conventional-commits),
+for example `fix: prevent overwriting raw files`. Because we squash PRs,
+this title normally becomes the commit subject on `main`.
+
+In the description field, aim to cover:
 
 - **What**: Briefly describe the changes you made.
-- **Why** : Explain the motivation or reasoning behind the changes.
+- **Why**: Explain the motivation or reasoning behind the changes.
 - **How**: If the changes are not straightforward, describe the approach
   you took.
+- **Evidence**: Include tests, usage examples, or before-and-after
+  screenshots when they help demonstrate the changed behaviour.
 
 If the PR addresses an existing issue, reference it by writing
 `Closes #<issue-number>`, e.g., `Closes #2` in the description. This
 automatically links the PR to the issue and closes the issue when the PR
 is merged.
 
-Try to keep the description **concise but informative**. A few sentences
-that give enough context for someone unfamiliar with the work to
-understand what you did and why is a good target. The easier it is for a
-reviewer to understand the PR, the faster and more focused their
-feedback will be.
+Keep the description **concise but informative**, with detail
+proportional to the complexity of the change. A few sentences are often
+enough for a small PR. A deep or unusually complex change may need a
+longer explanation of constraints and design choices so that the
+reviewer does not have to reconstruct the author's reasoning from the
+diff.
+
+Do not duplicate a full bug report or design discussion from an issue.
+Link to it and summarise only the context needed to review the concrete
+implementation. Keep general questions and alternative future work in
+targeted issues rather than expanding the scope of the PR discussion.
 
 ::: callout-tip
 Indicate in the description whether the PR needs a quick or thorough
@@ -209,6 +269,26 @@ page on GitHub:
 Setting both ensures that it is clear who owns the PR and who needs to
 look at it. We've set it up so this is done automatically (see our
 [template](https://template-website.seedcase-project.org/) for how).
+After creating the PR, add it to the relevant GitHub Project so that the
+team can track the work.
+
+### Responding to reviews
+
+Treat review as a collaboration to improve the change, not as an
+obstacle to merging it. For each review comment:
+
+- Reply when you make the requested change; do not silently update the
+  code or text.
+- Ask for clarification rather than guessing when the request is
+  unclear.
+- Explain respectfully when you disagree and focus on the work rather
+  than the person.
+- Resolve a conversation only after the concern has been addressed or
+  everyone has agreed on the outcome.
+
+After addressing the feedback, check the full diff and automated checks
+again, then re-request a review. Be grateful when a review catches a
+problem before it reaches `main`.
 
 ## Reviewing a pull request
 
@@ -218,12 +298,28 @@ responding to reviewer comments on your own PRs and reviewing others'
 PRs are tasks of the highest priority. Timely reviews keep the work
 moving and prevent bottlenecks.
 
-### Making suggestions
+### Reviewing changes and making suggestions
 
-When reviewing a PR, focus on providing constructive and actionable
-feedback. Use GitHub's suggestion feature to propose specific changes
-directly in the code or text. This makes it easy for the author to
-accept your changes with a single click.
+Review promptly, ideally within one to three working days. A slow review
+causes the author and reviewer to lose context, increases the chance of
+merge conflicts, and delays the rest of the team. If you cannot review
+within that time, tell the author so that another reviewer can help.
+
+Start by reading the linked issue, PR description, and commit messages.
+Then review the complete diff. Focus on correctness, clarity,
+maintainability, tests, documentation, and whether the change stays
+within the agreed scope. Automated checks should handle routine
+formatting and syntax issues wherever possible, leaving people to focus
+on decisions that require judgement.
+
+For Markdown and Quarto files, use the "Display the rich diff" button in
+the "Files changed" tab to review the rendered content as well as the
+source.
+
+Provide constructive and actionable feedback. Explain both the concern
+and why it matters. Use GitHub's suggestion feature to propose specific
+changes directly in the code or text. This makes it easy for the author
+to accept your changes with a single click.
 
 To make a suggestion, go to the "Files changed" tab and click the `+`
 icon next to a line. Then, either add a comment or make a suggestion. If
@@ -242,6 +338,11 @@ When leaving comments, be specific about what you think should change
 and why. Avoid vague feedback like "this doesn't look right" and instead
 explain what the issue is and how it could be improved.
 
+Comment on the work, not the author, and remain open to the possibility
+that you have misunderstood the change. If code is hard to understand
+without a commit message or long discussion, suggest making the code
+clearer or adding a concise explanatory comment.
+
 ### Comment, request changes, or approve
 
 When you finish your review, GitHub gives you three options for
@@ -257,6 +358,12 @@ If a reviewer requests changes, then you will need to address the
 feedback, update the PR, and re-request a review by clicking the
 "Re-request review" button in the right sidebar of the PR page. This
 back and forth continues until the PR is approved and ready to merge.
+
+Keep this discussion sharply focused on the PR. If a small part prompts
+an extensive design discussion, create a targeted issue and continue the
+broader conversation there. More than about 50 comments or 25 commits is
+a useful signal that a PR may need to be split, although logical scope
+matters more than either number.
 
 ### Dealing with merge conflicts
 
@@ -291,3 +398,16 @@ and merge", "Rebase and merge"). We typically use
 **"Squash and merge"**, which combines all the commits in the PR into a
 single commit on `main`. This keeps the commit history clean and focused
 on the overall change rather than individual commits.
+
+Before merging:
+
+- Confirm that the required reviews are approved and automated checks
+  pass.
+- Confirm that the PR branch has no unresolved conflicts with `main`.
+- Check that the squash commit title follows Conventional Commits.
+- Edit the generated squash commit body into a durable explanation of
+  the final change, removing temporary review notes and template text.
+- Retain references to issues that should close when the PR is merged.
+
+Delete the feature branch after merging unless it is still needed for a
+specific reason.
