@@ -34,8 +34,9 @@ Instead of making changes directly to `main`, you create a
 *branch*---think of it like making a copy of a document so you can draft
 changes without touching the original. A branch allows you to work on
 your changes independently, and, when you are happy with your changes,
-you propose merging (or adding) them into the project's `main` branch.
-That proposal is called a **pull request** (PR).
+you *request* that the project *pulls* the changes from your branch into
+the project's `main` branch. That request is called a **pull request**
+(PR).
 
 A PR gives your collaborators the opportunity to review your changes,
 ask questions, and suggest improvements before the changes become part
@@ -95,11 +96,11 @@ of all sizes.
 
 ## Creating a pull request
 
-### Branch naming conventions
-
 Before making changes, create a short-lived branch from an up-to-date
 `main` branch. Keep the branch focused on one issue or logical change so
 that its PR will also be focused.
+
+### Branch naming conventions
 
 Branch names should be lowercase, use hyphens between words, and follow
 the
@@ -123,7 +124,8 @@ Palette.
 Start with an issue before investing substantial time in an
 implementation. Use the issue to describe the problem, expected
 behaviour, and proposed direction. This allows the team to agree on the
-scope and approach before work begins.
+scope and approach before work begins so that effort is not wasted on
+substantial re-writes or even PR rejection.
 
 Before requesting a review:
 
@@ -195,10 +197,11 @@ quicker to review, easier to test, and simpler to revert if something
 goes wrong.
 
 As a practical guide for code, aim for no more than a few hundred
-changed lines. Around 400 changed lines can be a useful signal to
-reconsider the scope, but it is not a hard limit: generated files and a
-logically indivisible change may justify a larger diff. Explain why a
-large PR cannot reasonably be split.
+changed lines. Around 400 changed lines can be a useful upper threshold
+of when to reconsider the scope, but it is not a hard limit: generated
+files and a logically indivisible change may justify a larger diff while
+logically separate ideas require splitting even if they change just a
+few lines of code. Explain why a large PR cannot reasonably be split.
 
 Avoid stacked PRs, where one open PR targets the branch of another open
 PR, unless there is an exceptional reason to use them. Dependencies
@@ -234,7 +237,8 @@ proportional to the complexity of the change. A few sentences are often
 enough for a small PR. A deep or unusually complex change may need a
 longer explanation of constraints and design choices so that the
 reviewer does not have to reconstruct the author's reasoning from the
-diff.
+diff. Writing informative commit messages will help the reviewer if they
+need additional detail about a specific change in the PR.
 
 Do not duplicate a full bug report or design discussion from an issue.
 Link to it and summarise only the context needed to review the concrete
@@ -279,16 +283,20 @@ obstacle to merging it. For each review comment:
 
 - Reply when you make the requested change; do not silently update the
   code or text.
-- Ask for clarification rather than guessing when the request is
-  unclear.
+- Ask for clarification rather than guessing when a comment is unclear.
 - Explain respectfully when you disagree and focus on the work rather
-  than the person.
+  than the person (avoid using "you" as much as possible).
+- Be patient with conversations. Your reviewer might be incorrect or you
+  might be misunderstanding something. The only way to find out is
+  through effective communication.
 - Resolve a conversation only after the concern has been addressed or
   everyone has agreed on the outcome.
 
 After addressing the feedback, check the full diff and automated checks
 again, then re-request a review. Be grateful when a review catches a
-problem before it reaches `main`.
+problem before it reaches `main`; an effective review can help you avoid
+all the headaches that would arise if one of your bugs made it into
+production.
 
 ## Reviewing a pull request
 
@@ -298,28 +306,43 @@ responding to reviewer comments on your own PRs and reviewing others'
 PRs are tasks of the highest priority. Timely reviews keep the work
 moving and prevent bottlenecks.
 
-### Reviewing changes and making suggestions
+### Reviewing changes
 
 Review promptly, ideally within one to three working days. A slow review
 causes the author and reviewer to lose context, increases the chance of
 merge conflicts, and delays the rest of the team. If you cannot review
 within that time, tell the author so that another reviewer can help.
 
-Start by reading the linked issue, PR description, and commit messages.
-Then review the complete diff. Focus on correctness, clarity,
+Start by reading the linked issue and PR description. Then review the
+complete diff and defer to individual commit messages to understand why
+a change was introduced. If it is hard to understand what the code does
+without reading the commit message, suggest that the code is rewritten
+or an explanatory comment is added. Focus on correctness, clarity,
 maintainability, tests, documentation, and whether the change stays
 within the agreed scope. Automated checks should handle routine
 formatting and syntax issues wherever possible, leaving people to focus
 on decisions that require judgement.
 
+When leaving comments, be specific about what you think should change
+and why. Avoid vague feedback like "this doesn't look right" and instead
+explain what the issue is and how it could be improved so that your
+feedback is both constructive and actionable. Explain both the concern
+and why it matters.
+
+Comment on the work, not the author, and remain open to the possibility
+that you have misunderstood the change. If code is hard to understand
+without a commit message or long discussion, suggest making the code
+clearer or adding a concise explanatory comment.
+
 For Markdown and Quarto files, use the "Display the rich diff" button in
 the "Files changed" tab to review the rendered content as well as the
 source.
 
-Provide constructive and actionable feedback. Explain both the concern
-and why it matters. Use GitHub's suggestion feature to propose specific
-changes directly in the code or text. This makes it easy for the author
-to accept your changes with a single click.
+### Making suggestions
+
+Use GitHub's suggestion feature to propose specific actionable changes
+directly in the code or text. This makes it easy for the author to
+accept your changes with a single click.
 
 To make a suggestion, go to the "Files changed" tab and click the `+`
 icon next to a line. Then, either add a comment or make a suggestion. If
@@ -328,20 +351,11 @@ button (a document icon with `+` and `-`). This inserts the suggestion
 syntax into the comment box, where you can write your proposed change.
 The syntax looks like this:
 
-```` text
+````{.text}
 ```suggestion
 the corrected or improved text here
 ```
 ````
-
-When leaving comments, be specific about what you think should change
-and why. Avoid vague feedback like "this doesn't look right" and instead
-explain what the issue is and how it could be improved.
-
-Comment on the work, not the author, and remain open to the possibility
-that you have misunderstood the change. If code is hard to understand
-without a commit message or long discussion, suggest making the code
-clearer or adding a concise explanatory comment.
 
 ### Comment, request changes, or approve
 
