@@ -148,12 +148,6 @@ messages so that reviewers can follow the work. However, the final
 squash commit is the commit that must provide the durable,
 release-relevant record.
 
-Before merging, make sure the PR title follows the Conventional Commits
-format because it becomes the subject of the squash commit. Review the
-generated commit message as well: keep enough of the PR description to
-explain the final change, remove template instructions and temporary
-review details, and retain relevant issue references.
-
 ## Conventional commits for non-code projects
 
 The Conventional Commit specification was created for software or

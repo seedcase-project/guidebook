@@ -195,17 +195,28 @@ consider splitting them into separate PRs. Smaller, focused PRs are
 quicker to review, easier to test, and simpler to revert if something
 goes wrong.
 
+There is no strict guideline for how big a single PR can be in terms of
+the lines of code changed; the most important is to keep logically
+connected changes together in the same PR. Generated files and a
+logically indivisible change may justify a larger diff while logically
+separate ideas require splitting even if they change just a few lines of
+code. Having that said, a practical recommendation is to start asking
+yourself whether the PR could be broken up into a few smaller PRs when
+you approach 100-150 lines of code. Keep in mind that your reviewer does
+not have the same context as you do, and they have not been seen the
+changes gradually progress as you have, so smaller PRs makes it easier
+for them to understand what is going on. If you think a large PR should
+not be split, explain why.
+
 As a practical guide for code, aim for no more than a few hundred
 changed lines. Around 400 changed lines can be a useful upper threshold
-of when to reconsider the scope of the PR, but it is not a hard limit: generated
-files and a logically indivisible change may justify a larger diff while
-logically separate ideas require splitting even if they change just a
-few lines of code. Explain why a large PR cannot reasonably be split.
+of when to reconsider the scope of the PR, but it is not a hard limit:
 
 Avoid stacked PRs, where one open PR targets the branch of another open
 PR, unless there is an exceptional reason to use them. Dependencies
-between PRs make review and merging harder. We prefer independent changes;
-otherwise, clearly identify the dependency and required merge order.
+between PRs make review and merging harder. We prefer independent
+changes; otherwise, clearly identify the dependency and required merge
+order.
 
 ### Writing a good PR description
 
@@ -225,6 +236,10 @@ In the description field, aim to cover:
   you took.
 - **Evidence**: Include tests, usage examples, or before-and-after
   screenshots when they help demonstrate the changed behaviour.
+- **Considerations**: Describe why alternative approaches were rejected,
+  try to address concerns/confusions you might foresee, raise
+  outstanding questions to clearly define what is yet to be decided on,
+  etc.
 
 If the PR addresses an existing issue, reference it by writing
 `Closes #<issue-number>`, e.g., `Closes #2` in the description. This
