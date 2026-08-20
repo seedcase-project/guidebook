@@ -1,10 +1,10 @@
 # Commits
 
 This guide covers how we in the Seedcase Project commit changes to our
-repositories. Following these guidelines makes changes easier and faster to review
-and creates a clear and consistent history. It also allows us to
-automatically generate changelogs and increase the version number of a
-project.
+repositories. Following these guidelines makes changes easier and faster
+to review and creates a clear and consistent history. It also allows us
+to automatically generate changelogs and increase the version number of
+a project.
 
 This page describes when and what to commit, the Conventional Commits
 specification, and how to apply it to both code and non-code projects.
