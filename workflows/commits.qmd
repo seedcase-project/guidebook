@@ -80,20 +80,6 @@ Where:
 - `[optional footer(s)]` includes breaking changes or references to
   issues/tasks.
 
-The `<description>` section is a short summary of the change. Write it
-in the imperative, present tense (i.e., "change" not "changed" nor
-"changes") without a period at the end. Be specific enough that another
-person can distinguish the commit from others without reading the diff.
-Add a body when a future reader would need context that cannot be
-understood from the change itself, such as the motivation, constraints,
-or reason for choosing one approach over another. Focus the body on
-**why** the change was needed; the diff usually shows **what** changed.
-
-::: callout-tip
-In the Seedcase Project, we tend not to use `[optional scope]` too
-often.
-:::
-
 ### Required: type and description
 
 The `<type>` in Conventional Commits is inspired by
@@ -114,22 +100,30 @@ and is used to categorise the changes made in the commit:
 - `revert`: Reverts a previous commit.
 - `chore`: Other changes that don't modify source or test files.
 
+The `<description>` section is a short summary of the change. Write it
+in the imperative, present tense (i.e., "change" not "changed" nor
+"changes") without a period at the end. Be specific enough that another
+person can distinguish the commit from others without reading the diff.
+
 ::: callout-tip
 It can be difficult to remember the available types and what they
 represent. If you use VS Code, you can install the extension
 [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
-to help write messages ahdering to the conventional commit format. This
-extension also includes the emojis from Gitmoji. Adding emojis is a nice
-way of making the messages more expressive and visually appealing.
+to help write messages adhering to the conventional commit format. This
+extension also includes the emojis from Gitmoji. Adding emojis is a way
+of making the messages more colorful.
 :::
 
-### Optional: body and footer(s)
+### Optional: scope, body, and footer(s)
 
-When the `<description>` is not enough, add an `[optional body]` that
-provides the motivation and other context needed to understand the
-change. It should be separated from the `<description>` with a blank line. This might
-include the motivation for the change, why it was implemented this way, or any
-other relevant information that didn't fit in the `<description>`.
+In the Seedcase Project, we don't use `[optional scope]`.
+
+Add an `[optional body]` when a future reader would need context that
+cannot be understood from the diff and `<description>` alone, such as
+the motivation, constraints, or reason for choosing one approach over
+another. Focus the body on **why** the change was needed; the diff
+usually shows **what** changed. It should be separated from the
+`<description>` with a blank line.
 
 The `[optional footer(s)]` is used for various purposes, such as
 indicating breaking changes or referencing issues. The main use for this
