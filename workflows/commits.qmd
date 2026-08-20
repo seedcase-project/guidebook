@@ -1,7 +1,7 @@
 # Commits
 
 This guide covers how we in the Seedcase Project commit changes to our
-repositories. Following these guidelines makes changes easier to review
+repositories. Following these guidelines makes changes easier and faster to review
 and creates a clear and consistent history. It also allows us to
 automatically generate changelogs and increase the version number of a
 project.
@@ -20,13 +20,13 @@ understand. In general, aim to:
 - **Commit often**: Make commits frequently enough to capture meaningful
   progress and create useful points to return to.
 - **Write meaningful messages**: Summarise what changed and, when it is
-  not obvious, explain why. Follow the
+  not obvious, explain why it was changed. Follow the
   [Conventional Commits](#conventional-commits) specification.
 
 Atomic does not necessarily mean changing only one file or a few lines.
 A commit can include several files when all their changes are necessary
 for the same purpose. Conversely, unrelated changes in one file should
-usually be separate commits.
+be committed separately.
 
 ### Review and stage changes
 
@@ -132,7 +132,7 @@ and is used to categorise the changes made in the commit:
 
 ::: callout-tip
 It can be difficult to remember the available types and what they
-represents. If you use VS Code, you can install the extension
+represent. If you use VS Code, you can install the extension
 [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 to help write messages ahdering to the conventional commit format. This
 extension also includes the emojis from Gitmoji. Adding emojis is a nice
@@ -143,9 +143,9 @@ way of making the messages more expressive and visually appealing.
 
 When the `<description>` is not enough, add an `[optional body]` that
 provides the motivation and other context needed to understand the
-change. Separate it from the subject with a blank line. This might
-include the motivation for the change, how it was -implemented, or any
-other relevant information that didn't fit in the -description.
+change. It should be separated from the `<description>` with a blank line. This might
+include the motivation for the change, why it was implemented this way, or any
+other relevant information that didn't fit in the `<description>`.
 
 The `[optional footer(s)]` is used for various purposes, such as
 indicating breaking changes or referencing issues. The main use for this
