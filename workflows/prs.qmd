@@ -103,8 +103,7 @@ that its PR will also be focused.
 ### Branch naming conventions
 
 Branch names should be lowercase, use hyphens between words, and follow
-the
-format `{type}/{short-description}`. Write the description in the
+the format `{type}/{short-description}`. Write the description in the
 imperative. The `type` is based on the
 [Conventional Commits](commits.qmd#conventional-commits) types (e.g.,
 `docs`, `fix`, `feat`, `refactor`). For example:
@@ -116,15 +115,18 @@ imperative. The `type` is based on the
 The
 [Conventional Branches VS Code extension](https://marketplace.visualstudio.com/items?itemName=pshaddel.conventional-branch)
 can help create a correctly formatted branch name from the Command
-Palette. In our templates, e.g., [`template-python-package`](https://template-python-package.seedcase-project.org/), we've added the VS Code settings for the extension to follow the format described above.
+Palette. In our templates, e.g.,
+[`template-python-package`](https://template-python-package.seedcase-project.org/),
+we've added the VS Code settings for the extension to follow the format
+described above.
 
 ### Prepare the change
 
-Start with creating an issue (or comment on an existing one) before investing substantial time on an
-implementation. Use the issue to describe the problem, expected
-behaviour, and proposed direction. This allows the team to agree on the
-scope and approach before work begins so that effort is not wasted on
-substantial re-writes or even PR rejection.
+Start with creating an issue (or comment on an existing one) before
+investing substantial time on an implementation. Use the issue to
+describe the problem, expected behaviour, and proposed direction. This
+allows the team to agree on the scope and approach before work begins so
+that effort is not wasted on substantial re-writes or even PR rejection.
 
 Before creating a PR:
 
@@ -169,12 +171,13 @@ have a clear idea of the implementation. An early draft makes the work
 visible and lets you ask for early feedback if needed before committing
 too much time to a specific approach. Mark it as a
 [draft](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft)
-while it is incomplete, and add to the PR description what feedback would be useful.
+while it is incomplete, and add to the PR description what feedback
+would be useful.
 
-Only mark the PR ready and request a review after the work is
-complete, self-reviewed, and in a state that can be tested. Reviewers
-should not have to act as the author's formatter, linter, or first round
-of quality assurance.
+Only mark the PR ready and request a review after the work is complete,
+self-reviewed, and in a state that can be tested. Reviewers should not
+have to act as the author's formatter, linter, or first round of quality
+assurance.
 
 ### Keep PRs small
 
@@ -223,10 +226,14 @@ order.
 A good PR description helps reviewers understand the context and purpose
 of the changes. Our repositories include a
 [pull request template](https://github.com/seedcase-project/guidebook/blob/main/.github/pull_request_template.md)
-to make it easier to follow the same description structure when creating a PR. In the
-title, follow the [Conventional Commit](commits.qmd#conventional-commits) convention,
-for example `fix: prevent overwriting raw files`. Because we squash PRs,
-this title becomes the commit subject on `main`. Therefore, it's important that you ensure, before you merge a PR, that the title follow the conventional commits convention. Otherwise, the changelog and potential version update won't be auto-generated.
+to make it easier to follow the same description structure when creating
+a PR. In the title, follow the
+[Conventional Commit](commits.qmd#conventional-commits) convention, for
+example `fix: prevent overwriting raw files`. Because we squash PRs,
+this title becomes the commit subject on `main`. Therefore, it's
+important that you ensure, before you merge a PR, that the title follow
+the conventional commits convention. Otherwise, the changelog and
+potential version update won't be auto-generated.
 
 In the description field, aim to cover:
 
@@ -288,7 +295,9 @@ Setting both ensures that it is clear who owns the PR and who needs to
 look at it. We've set it up so this is done automatically (see our
 [template](https://template-website.seedcase-project.org/) for how).
 After creating the PR, add it to the relevant GitHub Project so that the
-team can track the work. If you're still working on it, set it as "In progress". Once it's ready for review, set it to "In review", so it's clearly communicated to the team.
+team can track the work. If you're still working on it, set it as "In
+progress". Once it's ready for review, set it to "In review", so it's
+clearly communicated to the team.
 
 ### Responding to reviews
 
@@ -300,9 +309,10 @@ obstacle to merging it. For each review comment:
 - Ask for clarification rather than guessing when a comment is unclear.
 - Explain respectfully when you disagree and focus on the work rather
   than the person (avoid using "you" as much as possible).
-- Be patient with conversations. You or your reviewer might be incorrect, or you
-  might be misunderstanding each other. The only way to find out is
-  through communication. Remember that you're working towards the same goal.
+- Be patient with conversations. You or your reviewer might be
+  incorrect, or you might be misunderstanding each other. The only way
+  to find out is through communication. Remember that you're working
+  towards the same goal.
 - Resolve a conversation only after the concern has been addressed or
   everyone has agreed on the outcome.
 
@@ -322,10 +332,12 @@ moving and prevent bottlenecks.
 
 ### Reviewing changes
 
-Review as promptly as possible, ideally within one to three working days. A slow review process
-causes the author and reviewer to lose context, increases the chance of
-merge conflicts, and might delay the rest of the team. If you cannot review
-within that time, let the author know (preferable in a PR comment or, alternatively, at an update meeting) so another reviewer can help.
+Review as promptly as possible, ideally within one to three working
+days. A slow review process causes the author and reviewer to lose
+context, increases the chance of merge conflicts, and might delay the
+rest of the team. If you cannot review within that time, let the author
+know (preferable in a PR comment or, alternatively, at an update
+meeting) so another reviewer can help.
 
 Start by reading the linked issue and PR description. Then, review the
 complete diff and defer to individual commit messages to understand why
@@ -346,9 +358,8 @@ and why it matters.
 Comment on the work, not the author, and remain open to the possibility
 that you have misunderstood the change.
 
-For Markdown and Quarto files, use the "Display the rich diff" button in
-the "Files changed" tab to review the rendered content as well as the
-source.
+For Markdown files, use the "Display the rich diff" button in the "Files
+changed" tab to review the rendered content as well as the source.
 
 ### Making suggestions
 
@@ -388,8 +399,8 @@ back and forth continues until the PR is approved and ready to merge.
 Keep the discussion sharply focused on the PR. If a small part prompts
 an extensive design discussion, create a targeted issue and continue the
 broader conversation there. More than about 50 comments or 25 commits is
-a useful signal that a PR may need to be split, although the logical scope
-matters more than either number.
+a useful signal that a PR may need to be split, although the logical
+scope matters more than either number.
 
 ### Dealing with merge conflicts
 
