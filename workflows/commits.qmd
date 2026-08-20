@@ -42,26 +42,6 @@ review from the Source Control view in VS Code. This helps keep
 individual commits scoped to one logical change, rather than adding
 entire files which might contain several unrelated changes.
 
-### Decide how much detail to include
-
-Use the subject line for a concise summary. Add a body when a future
-reader would need context that cannot be understood from the change
-itself, such as the motivation, constraints, or reason for choosing one
-approach over another. Focus the body on **why** the change was needed;
-the diff usually shows **what** changed.
-
-Avoid putting the full history of a task in every commit. In our
-pull-request workflow, information has different purposes:
-
-- The issue describes the problem and discusses the proposed direction.
-- The pull request describes the completed solution and gives reviewers
-  the context they need.
-- Commits describe the logical steps used to build that solution.
-- The final squash commit records the completed change on `main`.
-
-The [pull request guide](prs.qmd#writing-a-good-pr-description) explains
-what to include in a PR description.
-
 ## Conventional commits {#conventional-commits}
 
 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
@@ -104,6 +84,10 @@ The `<description>` section is a short summary of the change. Write it
 in the imperative, present tense (i.e., "change" not "changed" nor
 "changes") without a period at the end. Be specific enough that another
 person can distinguish the commit from others without reading the diff.
+Add a body when a future reader would need context that cannot be
+understood from the change itself, such as the motivation, constraints,
+or reason for choosing one approach over another. Focus the body on
+**why** the change was needed; the diff usually shows **what** changed.
 
 ::: callout-tip
 In the Seedcase Project, we tend not to use `[optional scope]` too
