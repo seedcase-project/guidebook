@@ -209,7 +209,7 @@ you approach 100-150 lines of code. Keep in mind that your reviewer does
 not have the same context as you do, and they have not been seen the
 changes gradually progress as you have, so smaller PRs makes it easier
 for them to understand what is going on. If you think a large PR should
-not be split, explain why.
+not be split, explain why in the PR description, so this is clear to the reviewer.
 
 As a practical guide for code, aim for no more than a few hundred
 changed lines. Around 400 changed lines can be a useful upper threshold
