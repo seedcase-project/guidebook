@@ -60,9 +60,13 @@ check-commits:
     echo "On 'main' or current branch doesn't have any commits."
   fi
 
-# Build the website using Quarto
+# Build the website
 build-website:
   quarto render
+
+# Preview the website
+preview-website:
+  quarto preview
 
 # Re-build the README file from the Quarto version
 build-readme:
