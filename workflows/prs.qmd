@@ -209,11 +209,10 @@ you approach 100-150 lines of code. Keep in mind that your reviewer does
 not have the same context as you do, and they have not been seen the
 changes gradually progress as you have, so smaller PRs makes it easier
 for them to understand what is going on. If you think a large PR should
-not be split, explain why in the PR description, so this is clear to the reviewer.
-
-As a practical guide for code, aim for no more than a few hundred
-changed lines. Around 400 changed lines can be a useful upper threshold
-of when to reconsider the scope of the PR, but it is not a hard limit:
+not be split, explain why in the PR description, so this is clear to the
+reviewer. More guidelines on how to write small PRs could be found in
+e.g.
+[Google's engineering pracitces](https://google.github.io/eng-practices/review/developer/small-cls.html).
 
 Avoid stacked PRs, where one open PR targets the branch of another open
 PR, unless there is an exceptional reason to use them. Dependencies
