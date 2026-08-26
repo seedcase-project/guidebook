@@ -307,7 +307,13 @@ obstacle to merging it. For each review comment:
   code or text.
 - Ask for clarification rather than guessing when a comment is unclear.
 - Explain respectfully when you disagree and focus on the work rather
-  than the person (avoid using "you" as much as possible).
+  than the person. A practical tip here is to avoid using "you" in
+  comments when it can create distance between yourself and the
+  reviewer; either replacing it with "we" for a more collaborative tone
+  or describing the issue more objectively without a personal pronoun
+  altogether (this doesn't mean it's never good to write "you", use your
+  best judgment and think about how a reviewer might interpret your
+  comment differently from your own interpretation).
 - Be patient with conversations. You or your reviewer might be
   incorrect, or you might be misunderstanding each other. The only way
   to find out is through communication. Remember that you're working
