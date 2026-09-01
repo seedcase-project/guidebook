@@ -304,7 +304,7 @@ clearly communicated to the team.
 Treat review as a collaboration to improve the change, not as an
 obstacle to merging it. For each review comment:
 
-- When you make the requested change, click the "resolve" button on the comment 
+- When you make the requested change, click the "resolve" button on the comment
   to indicate you addressed it.
 - Ask for clarification rather than guessing when a comment is unclear.
 - Explain respectfully when you disagree and focus on the work rather
