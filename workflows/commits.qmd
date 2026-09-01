@@ -2,8 +2,8 @@
 
 This guide covers how we in the Seedcase Project commit changes to our
 repositories. Following these guidelines makes changes easier and faster
-to review and creates a clear and consistent history. It also allows us
-to automatically generate changelogs and increase the version number of
+to review and creates a clear and consistent history. It also allows for
+automatic changelog generation and version bumps in
 a project.
 
 This page describes when and what to commit, the Conventional Commits
@@ -101,29 +101,41 @@ and is used to categorise the changes made in the commit:
 - `chore`: Other changes that don't modify source or test files.
 
 The `<description>` section is a short summary of the change. Write it
-in the imperative, present tense (i.e., "change" not "changed" nor
+in the imperative, present tense (i.e., "change" not "changed" or
 "changes") without a period at the end. Be specific enough that another
-person can distinguish the commit from others without reading the diff.
+person can distinguish the commit from others without reading the commit diff.
 
 ::: callout-tip
 It can be difficult to remember the available types and what they
 represent. If you use VS Code, you can install the extension
 [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
-to help write messages adhering to the conventional commit format. This
+to help write messages adhering to the Conventional Commit format. This
 extension also includes the emojis from Gitmoji. Adding emojis is a way
 of making the messages more colorful.
 :::
 
 ### Optional: scope, body, and footer(s)
 
-In the Seedcase Project, we don't use `[optional scope]`.
+::: callout-tip
+In Seedcase, we haven't found a use for using `scope` in our work. For
+larger, more complex repositories (e.g. monoliths) using `scope` is a good
+way to communicate the change, but because we make smaller packages,
+`scope` hasn't been very useful for us. When we initially tried using it, we
+didn't end up having many `scope` tags and often used the same one or two.
+So it just added redundant text to the commit message.
+:::
 
 Add an `[optional body]` when a future reader would need context that
-cannot be understood from the diff and `<description>` alone, such as
+cannot be understood from the commit diff and `<description>` alone, such as
 the motivation, constraints, or reason for choosing one approach over
-another. Focus the body on **why** the change was needed; the diff
+another. Focus the body on **why** the change was needed; the commit diff
 usually shows **what** changed. It should be separated from the
 `<description>` with a blank line.
+
+::: callout-tip
+Because we advocate and use a trunk-based development (every pull request is atomic and we regularly make pull requests) where each pull request is [squashed](prs.qmd#merging-a-pull-request) (more on that below), the `[optional body]` of commit messages isn't kept during 
+the squash. For that reason, we also don't use `[optional body]` often.
+:::
 
 The `[optional footer(s)]` is used for various purposes, such as
 indicating breaking changes or referencing issues. The main use for this
@@ -142,10 +154,10 @@ works, so it is not backward compatible.
 ### Commits in a squash-merge workflow
 
 We normally use [squash and merge](prs.qmd#merging-a-pull-request),
-which turns all commits from a PR into one commit on `main`. The
+which turns all commits from a pull request into one commit on `main`. The
 individual branch commits should still be atomic and have meaningful
 messages so that reviewers can follow the work. However, the final
-squash commit is the commit that must provide the durable,
+squash commit is the commit that must provide the Conventional Commit-compliant, durable,
 release-relevant record.
 
 ## Conventional commits for non-code projects
