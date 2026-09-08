@@ -15,6 +15,12 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.11.0 (2026-09-08)
+
+### Feat
+
+- ✨ move commits and PRs content from elsewhere (#157)
+
 ## 0.10.0 (2026-03-31)
 
 ### Feat
