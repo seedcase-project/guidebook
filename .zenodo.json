@@ -1,9 +1,9 @@
 {
   "creators": [
     {
-      "name": "Johnston, Luke",
+      "name": "Beicher, Kristiane",
       "affiliation": "Steno Diabetes Center Aarhus",
-      "orcid": "https://orcid.org/0000-0003-4169-2616"
+      "orcid": "https://orcid.org/0000-0001-7556-9566"
     },
     {
       "name": "Brødbæk, Signe Kirk",
@@ -11,9 +11,13 @@
       "orcid": "https://orcid.org/0009-0000-2208-7088"
     },
     {
-      "name": "Beicher, Kristiane",
+      "name": "Johnston, Luke",
       "affiliation": "Steno Diabetes Center Aarhus",
-      "orcid": "https://orcid.org/0000-0001-7556-9566"
+      "orcid": "https://orcid.org/0000-0003-4169-2616"
+    },
+    {
+      "name": "Ostblom, Joel",
+      "orcid": "https://orcid.org/0000-0003-0051-3239"
     },
     {
       "name": "Vago, Fruzsina",
