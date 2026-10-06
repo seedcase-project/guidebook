@@ -2,37 +2,51 @@
 
 ## On crates.io
 
-To publish in a secure way, you can use the
-[Trusted Publishing](https://crates.io/docs/trusted-publishing) process.
-To set it up, you first need to manually publish your first version of
-your package to crates.io. After that the GitHub `release.yml` (or
-similarly named) workflow can upload a release to crates.io. So, to
-start, open a terminal in the root of your Rust package, and use `cargo`
+To publish in a secure way, you can use the [Trusted
+Publishing](https://crates.io/docs/trusted-publishing) process. To set it up,
+you first need to manually publish your first version of your package to
+crates.io. After that the GitHub `release.yml` (or similarly named) workflow can
+automatically publish a release to crates.io.
+
+::: callout-important
+Supply chain attacks are a real and growing threat for software and software
+distribution. Creating a contained environment on GitHub is a way to mitigate
+that risk of attack. Through the Trusted Publishing, a package can only be
+published if it happens from a specific environment (e.g. `"crates-io"`) for a
+specific workflow file (e.g. `release.yml`) in a specific repository. So these
+steps are critical to help improve the security of your release process.
+:::
+
+So, to start, open a terminal in the root of your Rust package, and use `cargo`
 to log in and authenticate yourself.
 
 ```bash {filename="Terminal"}
 cargo login
 ```
 
-Paste your API token in the prompt. The instructions include a link to
-generate a new one if you don't have one already. Next, test out if the
-package can be published by doing a dry-run first.
+Paste your API token in the prompt. The instructions include a link to generate
+a new one if you don't have one already. Next, test out if the package can be
+published by doing a dry-run first.
 
 ```bash {filename="Terminal"}
 cargo publish --dry-run
 ```
 
-You'll also want to make sure that the correct files are being bundled
-into the package (`--allow-dirty` to run even if there are changes in
-the Git working directory):
+This will do a basic check that it can be published. For instance, it will fail
+if there are any changes in the directory. Otherwise, the output is minimal
+while still informative, for example, informing you that the package has been
+built, verified, compiled, and "uploaded" (only a test). You'll also want to
+make sure that the correct files are being bundled into the package
+(`--allow-dirty` to run even if there are changes in the Git working directory):
 
 ```bash {filename="Terminal"}
 cargo package --list --allow-dirty
 ```
 
-If there are any files, like `.github/*` files or config files, you can
-remove them by excluding them in the `Cargo.toml` file. You can also
-include only the files you want if you have a lot of extraneous files:
+If there are any files, like `.github/*` files or config files, you can remove
+them by excluding them in the `Cargo.toml` file. You can also include only the
+files you want if you have a lot of extraneous files. Though you can't do both
+`include` and `exclude`.
 
 ```toml {filename="Cargo.toml"}
 [package]
@@ -45,9 +59,8 @@ include = [
 ]
 ```
 
-If you use our
-[template](https://template-data-package.seedcase-project.org), the
-`include` is already filled in.
+If you use our [template](https://template-data-package.seedcase-project.org),
+the `include` is already filled in.
 
 When ready to publish, run:
 
@@ -55,25 +68,16 @@ When ready to publish, run:
 cargo publish
 ```
 
-This will publish the package onto crates.io. Now you can set up Trusted
-Publishing. Go to the newly created package on crates.io and set up the
-Trusted Publishing in the package's settings page. The
-[crates.io docs](https://crates.io/docs/trusted-publishing) walk through
-the steps. Essentially, you have to list the repository, workflow file
-(e.g. `release.yml`), and environment (e.g. `crates-io`) in order for
-the connection to crates.io to be established. Once done, anytime you
-create a version release on GitHub, it also gets uploaded to crates.io.
-The `.github/workflows/release.yml` is already included in our
+This will publish the package onto crates.io, with the output informing you of
+the build steps (similar to `--dry-run`), with a final note stating the package
+has been published to crates.io. Now you can set up Trusted Publishing. Go to
+the newly created package on crates.io and set up the Trusted Publishing in the
+package's settings page. The [crates.io
+docs](https://crates.io/docs/trusted-publishing) walk through the steps.
+Essentially, you have to list the repository, workflow file (e.g.
+`release.yml`), and environment (e.g. `crates-io`) in order for the connection
+to crates.io to be established. Once done, anytime you create a version release
+on GitHub, it also gets uploaded to crates.io. The
+`.github/workflows/release.yml` is already included in our
 [template](https://template-data-package.seedcase-project.org) and the
-`crates-io` environment will be automatically created from that
-workflow.
-
-::: callout-important
-Supply chain attacks are a real and growing threat for software and
-software distribution. Creating a contained environment on GitHub is a
-way to mitigate that risk of attack. Through the Trusted Publishing, a
-package can only be published if it happens from a specific environment
-(e.g. `"crates-io"`) for a specific workflow file (e.g. `release.yml`)
-in a specific repository. So these steps are critical to help improve
-the security of your release process.
-:::
+`crates-io` environment will be automatically created from that workflow.
