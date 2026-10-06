@@ -2,13 +2,14 @@
 
 ## On crates.io
 
-To publish in a secure way, you can use the
+To publish a Rust package in a secure way, you can use the
 [Trusted Publishing](https://crates.io/docs/trusted-publishing) process.
-To set it up, you first need to manually publish your first version of
-your package to crates.io. After that the GitHub `release.yml` (or
-similarly named) workflow can upload a release to crates.io. So, to
-start, open a terminal in the root of your Rust package, and use `cargo`
-to log in and authenticate yourself.
+To set it up, you first need to manually publish the first version of
+your package to crates.io. After that, the GitHub `release.yml` (or
+similarly named) workflow can upload a release to crates.io. 
+
+So, to start, open a terminal in the root of your Rust package, and use `cargo`
+to log in and authenticate yourself:
 
 ```bash {filename="Terminal"}
 cargo login
@@ -45,9 +46,11 @@ include = [
 ]
 ```
 
+::: callout-tip
 If you use our
 [template](https://template-data-package.seedcase-project.org), the
 `include` is already filled in.
+:::
 
 When ready to publish, run:
 
@@ -55,8 +58,10 @@ When ready to publish, run:
 cargo publish
 ```
 
-This will publish the package onto crates.io. Now you can set up Trusted
-Publishing. Go to the newly created package on crates.io and set up the
+This will publish the package onto crates.io. 
+
+Now, to set up Trusted
+Publishing,  go to the newly created package on crates.io and set up
 Trusted Publishing in the package's settings page. The
 [crates.io docs](https://crates.io/docs/trusted-publishing) walk through
 the steps. Essentially, you have to list the repository, workflow file
@@ -71,7 +76,7 @@ workflow.
 ::: callout-important
 Supply chain attacks are a real and growing threat for software and
 software distribution. Creating a contained environment on GitHub is a
-way to mitigate that risk of attack. Through the Trusted Publishing, a
+way to mitigate that risk of attack. With Trusted Publishing, a
 package can only be published if it happens from a specific environment
 (e.g. `"crates-io"`) for a specific workflow file (e.g. `release.yml`)
 in a specific repository. So these steps are critical to help improve
