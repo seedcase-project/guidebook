@@ -6,7 +6,7 @@ To publish a Rust package in a secure way, you can use the
 [Trusted Publishing](https://crates.io/docs/trusted-publishing) process.
 To set it up, you first need to manually publish the first version of
 your package to crates.io. After that, the GitHub `release.yml` (or
-similarly named) workflow can upload a release to crates.io. 
+similarly named) workflow can upload a release to crates.io.
 
 So, to start, open a terminal in the root of your Rust package, and use `cargo`
 to log in and authenticate yourself:
@@ -58,7 +58,7 @@ When ready to publish, run:
 cargo publish
 ```
 
-This will publish the package onto crates.io. 
+This will publish the package onto crates.io.
 
 Now, to set up Trusted
 Publishing,  go to the newly created package on crates.io and set up
