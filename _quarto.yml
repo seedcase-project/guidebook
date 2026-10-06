@@ -51,6 +51,9 @@ book:
       chapters:
         - python/code.qmd
         - python/tests.qmd
+    - part: "Rust"
+      chapters:
+        - rust/publishing.qmd
     - part: "Operations"
       chapters:
         - operations/security.qmd
