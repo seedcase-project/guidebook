@@ -9,21 +9,32 @@ use [pytest](https://docs.pytest.org/en/stable/) for testing.
 ## When to write tests
 
 Writing tests is a powerful way for you to know what your code is doing
-and if it's doing what you expect. And while you are completely free
-(and encouraged) to write tests at any time for any functionality, the
-only tests you *must* write and commit to the Git repository are those
-for functionality that is public (exposed to users) and not for internal
-or private functionality.
-
-::: callout-note
-The generally
+and if it's doing what you expect. The generally
 [accepted](https://softwareengineering.stackexchange.com/questions/380287/why-is-unit-testing-private-methods-considered-as-bad-practice)
-"best practice" is to commit tests for public functionality only. We
-agree with this principle, as it helps keep the codebase smaller, more
-maintainable, and focused on what the package is designed to do. In
-particular, it allows you as the developer to relatively easily refactor
-internal code without having to also update tests for the internal
-functionality that you are modifying.
+"best practice" is to write and commit tests for public functionality
+only (what the user actually interacts with). So while you are
+completely free to write tests at any time for any functionality, the
+only tests you must write and commit to Git are for functionality that
+is public.
+
+::: callout-tip
+Why write tests only for public interfaces? For a few reasons:
+
+- It keeps the test suite focused on how the code will actually be used.
+- It minimizes the chance that tests need to be updated or rewritten if
+  there are changes. Internal functionality can change quite
+  substantially, but usually the public interface (if it's been well
+  designed) won't change that much.
+- It makes it easier to find dead code (code that is not used by any
+  public functionality). Often dead code detectors rely on whether the
+  code was used or not. If code has a test but is no longer used by any
+  public functionality, than it's harder to find this dead code.
+- It gives more accurate code coverage results, as code coverage is
+  calculated based on the code used in tests.
+
+So we in general agree with and follow this principle, as it helps keep
+the codebase smaller, more maintainable, and focused on what the package
+is designed to do.
 :::
 
 For every public function, class, or method that is part of the public
@@ -121,7 +132,7 @@ This is sometimes called
 In our example of a `math` package and an `adding.py` script, the
 function might look like:
 
-``` {.python filename="src/math/adding.py"}
+```python {filename="src/math/adding.py"}
 def add(a, b):
     """Add two numbers together."""
     return a + b
@@ -129,7 +140,7 @@ def add(a, b):
 
 And a test for this function might look like:
 
-``` {.python filename="tests/test_adding.py"}
+```python {filename="tests/test_adding.py"}
 import pytest
 from math.adding import add
 
@@ -173,14 +184,14 @@ includes a recipe for running the tests with pytest. You can see a list
 of the recipes, including the testing recipe, by running this command in
 the terminal:
 
-``` {.bash filename="Terminal"}
+```bash {filename="Terminal"}
 just
 ```
 
 You can also run the tests directly with pytest (via
 [uv](https://docs.astral.sh/uv/)) by running this command:
 
-``` {.bash filename="Terminal"}
+```bash {filename="Terminal"}
 # If pytest is installed in the virtual environment
 uv run pytest
 # Or if pytest is installed globally
