@@ -51,6 +51,7 @@ book:
       chapters:
         - python/code.qmd
         - python/tests.qmd
+        - python/security.qmd
     - part: "Operations"
       chapters:
         - operations/security.qmd

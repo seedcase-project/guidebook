@@ -1,0 +1,62 @@
+# Security in Python {#sec-python-security}
+
+Python has a lot of flexibility, which for some tasks is helpful.
+However, this comes with the limitation that it is a bit harder to build
+robust and reliable software in a secure and consistent way with Python.
+These are some guidelines to follow when writing Python and developing
+Python packages.
+
+## Multiple names for a single executable
+
+It's possible to create an executable from a Python package that can be
+used in the terminal. It's also possible to create many executables,
+including by allowing short-forms of the executable name. For example,
+you might include to executable "entry-points" (command names) that
+point to the same `main` function in the `cli` module.
+
+```toml {filename="pyproject.toml"}
+[project.scripts]
+package-name = "package_name.cli:main"
+alias-name = "package_name.cli:main"
+```
+
+With the popularity of [uv](https://docs.astral.sh/uv), people likely
+will try using your package via `uvx` (which installs and then uses the
+executable command). For example:
+
+```bash {filename="Terminal"}
+uvx package-name command
+```
+
+`uvx` will look for the `package-name` Python package on
+[PyPI](https://pypi.org), install it, and then run the `command` from
+the `package-name` executable. But, if you include multiple executables,
+someone may also do:
+
+```bash {filename="Terminal"}
+uvx alias-name command
+```
+
+What `uvx` will do is look for the `alias-name` and try to install it.
+It doesn't know about all the different executables all Python packages
+on PyPI may have. This use pattern exposes your users to supply chain
+attacks, because a malicious actor could create a package called
+`alias-name` on PyPI that does similar functionality as your package,
+but also potentially steal secrets or otherwise compromises the
+computer.
+
+The correct way of using the `alias-name` via `uvx` would be:
+
+```bash {filename="Terminal"}
+uvx --from package-name alias-name command
+```
+
+But this is quite clunky and the user needs to know about this format as
+well as this different name for the executable.
+
+To prevent this potential supply chain attack, follow the design pattern
+that a package has only one executable and that the executable name is
+the same name as the package name (as titled on PyPI). Any extra
+executables should either be another package or be a subcommand within
+the main CLI. That way `uvx` can be used in the simple form (without
+needing to use `--from`).
