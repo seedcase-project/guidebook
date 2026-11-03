@@ -15,6 +15,13 @@ that any individual release will not have many changes within it. Below
 is a list of the releases we've made so far, along with what was changed
 within each release.
 
+## 0.12.0 (2026-11-03)
+
+### Feat
+
+- ✨ add chapter on Rust publishing (#169)
+- ✨ add section on Python security (#174)
+
 ## 0.11.1 (2026-11-03)
 
 ### Refactor
